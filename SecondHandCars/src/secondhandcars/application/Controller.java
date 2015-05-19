@@ -9,6 +9,6 @@ package secondhandcars.application;
  *
  * @author Kristian
  */
-public class Controller {
+public class Controller implements IController {
     
 }

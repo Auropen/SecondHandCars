@@ -10,5 +10,4 @@ package secondhandcars.technical;
  * @author Kristian
  */
 public class DBHandler {
-    
 }
