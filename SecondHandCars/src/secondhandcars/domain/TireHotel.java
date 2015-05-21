@@ -26,7 +26,7 @@ public class TireHotel {
         return instance;
     }
     
-    public TireSet getTireSet(byte binaryCode) {
+    public TireSet getTireSetByLocation(byte binaryCode) {
         //Takes a byte and converts it to binary as a 32 bit (Integer), and removes the unsigned bits which results in a 8 bits (1 Byte) long binary
         String binary = String.format("%8s", Integer.toBinaryString(binaryCode & 0xFF)).replace(' ', '0');
         
@@ -37,12 +37,38 @@ public class TireHotel {
         return tireSets[x][y][z];                            //Gets the specific tireSet
     }
     
-    public ArrayList<TireSet> getTireSet(String description) {
+    public ArrayList<TireSet> getTireSetByDescription(String description) {
         ArrayList<TireSet> returnSet = new ArrayList();
         for(TireSet[][] tireSet : tireSets){
             for(TireSet[] tireSet2 : tireSet){
                 for(TireSet tireSet3 : tireSet2){
                     if(tireSet3.getDescription().contains(description)){
+                        returnSet.add(tireSet3);
+                    }
+                }
+            }
+        }
+        return returnSet;
+    }
+    public ArrayList<TireSet> getTireSetByCustomerName(String firstName, String lastName){
+        ArrayList<TireSet> returnSet = new ArrayList();
+        for(TireSet[][] tireSet : tireSets){
+            for(TireSet[] tireSet2 : tireSet){
+                for(TireSet tireSet3 : tireSet2){
+                    if(tireSet3.getCustomer().getFirstName().equalsIgnoreCase(firstName) && tireSet3.getCustomer().getLastName().equalsIgnoreCase(lastName)){
+                        returnSet.add(tireSet3);
+                    }
+                }
+            }
+        }
+        return returnSet;
+    }
+    public ArrayList<TireSet> getTireSetByCustomerID(int customerID){
+        ArrayList<TireSet> returnSet = new ArrayList();
+        for(TireSet[][] tireSet : tireSets){
+            for(TireSet[] tireSet2 : tireSet){
+                for(TireSet tireSet3 : tireSet2){
+                    if(tireSet3.getCustomer().getCustomerID() == customerID){
                         returnSet.add(tireSet3);
                     }
                 }

@@ -9,6 +9,6 @@ package secondhandcars.domain;
  *
  * @author Baku
  */
-public class Order {
+public abstract class Order {
     
 }
