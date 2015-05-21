@@ -27,5 +27,4 @@ public class CarStock {
         }
         return instance;
     }
-    public Car search
 }
