@@ -11,6 +11,14 @@ package secondhandcars.domain;
  */
 public class TireSet {
     private String description;
+    private int tireAmount;
+    private Customer customer;
+
+    public TireSet(String description, int tireAmount, Customer customer) {
+        this.description = description;
+        this.tireAmount = tireAmount;
+        this.customer = customer;
+    }
 
     public String getDescription() {
         return description;
@@ -18,5 +26,13 @@ public class TireSet {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }

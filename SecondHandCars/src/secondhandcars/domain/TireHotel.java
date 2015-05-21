@@ -5,12 +5,26 @@
  */
 package secondhandcars.domain;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Kristian
  */
 public class TireHotel {
-    private static TireSet[][][] tireSet = new TireSet[25][3][2];
+    private static TireHotel instance;
+    private String address;
+    private TireSet[][][] tireSets;
+    private TireHotel(){
+        address = "Ze Other Street 33, Ze Town";
+        tireSets = new TireSet[25][3][2];
+    }
+    public static synchronized TireHotel getInstance(){
+        if(instance == null){
+            instance = new TireHotel();
+        }
+        return instance;
+    }
     
     public TireSet getTireSet(byte binaryCode) {
         //Takes a byte and converts it to binary as a 32 bit (Integer), and removes the unsigned bits which results in a 8 bits (1 Byte) long binary
@@ -20,6 +34,20 @@ public class TireHotel {
         byte y = Byte.parseByte(binary.substring(5, 7), 2); //Next 2 bits for the y (Rows)
         byte z = Byte.parseByte(binary.substring(7), 2);    //Last bit for the z (Depths)
         
-        return tireSet[x][y][z];                            //Gets the specific tireSet
+        return tireSets[x][y][z];                            //Gets the specific tireSet
+    }
+    
+    public ArrayList<TireSet> getTireSet(String description) {
+        ArrayList<TireSet> returnSet = new ArrayList();
+        for(TireSet[][] tireSet : tireSets){
+            for(TireSet[] tireSet2 : tireSet){
+                for(TireSet tireSet3 : tireSet2){
+                    if(tireSet3.getDescription().contains(description)){
+                        returnSet.add(tireSet3);
+                    }
+                }
+            }
+        }
+        return returnSet;
     }
 }
