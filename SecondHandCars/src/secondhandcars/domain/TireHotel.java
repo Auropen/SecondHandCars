@@ -37,6 +37,10 @@ public class TireHotel {
         return tireSets[x][y][z];                            //Gets the specific tireSet
     }
     
+    public TireSet getTireSetByLocation(byte x, byte y, byte z) {
+        return tireSets[x][y][z];                            //Gets the specific tireSet
+    }
+    
     public ArrayList<TireSet> getTireSetByDescription(String description) {
         ArrayList<TireSet> returnSet = new ArrayList();
         for(TireSet[][] tireSet : tireSets){
