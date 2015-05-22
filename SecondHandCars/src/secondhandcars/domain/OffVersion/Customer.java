@@ -3,37 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package secondhandcars.domain;
+package secondhandcars.domain.OffVersion;
 
 /**
  *
  * @author Baku
  */
-public class Employee {
-    private int employeeID;
+public class Customer {
     private String firstName;
     private String lastName;
-    private String address;
     private String phoneNumber;
+    private String address;
     private String email;
-    private String qualification;
+    private int customerID;
 
-    public Employee(int employeeID, String firstName, String lastName, String address, String phoneNumber, String email, String qualification) {
-        this.employeeID = employeeID;
+    public Customer(String firstName, String lastName, String phoneNumber, String address, String email, int customerID) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.address = address;
         this.phoneNumber = phoneNumber;
+        this.address = address;
         this.email = email;
-        this.qualification = qualification;
-    }
-
-    public int getEmployeeID() {
-        return employeeID;
-    }
-
-    public void setEmployeeID(int employeeID) {
-        this.employeeID = employeeID;
+        this.customerID = customerID;
     }
 
     public String getFirstName() {
@@ -52,20 +42,20 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getEmail() {
@@ -76,11 +66,11 @@ public class Employee {
         this.email = email;
     }
 
-    public String getQualification() {
-        return qualification;
+    public int getCustomerID() {
+        return customerID;
     }
 
-    public void setQualification(String qualification) {
-        this.qualification = qualification;
+    public void setCustomerID(int customerID) {
+        this.customerID = customerID;
     }
 }

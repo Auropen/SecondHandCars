@@ -3,27 +3,37 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package secondhandcars.domain;
+package secondhandcars.domain.OffVersion;
 
 /**
  *
  * @author Baku
  */
-public class Customer {
+public class Employee {
+    private int employeeID;
     private String firstName;
     private String lastName;
-    private String phoneNumber;
     private String address;
+    private String phoneNumber;
     private String email;
-    private int customerID;
+    private String qualification;
 
-    public Customer(String firstName, String lastName, String phoneNumber, String address, String email, int customerID) {
+    public Employee(int employeeID, String firstName, String lastName, String address, String phoneNumber, String email, String qualification) {
+        this.employeeID = employeeID;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
         this.address = address;
+        this.phoneNumber = phoneNumber;
         this.email = email;
-        this.customerID = customerID;
+        this.qualification = qualification;
+    }
+
+    public int getEmployeeID() {
+        return employeeID;
+    }
+
+    public void setEmployeeID(int employeeID) {
+        this.employeeID = employeeID;
     }
 
     public String getFirstName() {
@@ -42,20 +52,20 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
     public String getAddress() {
         return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getEmail() {
@@ -66,11 +76,11 @@ public class Customer {
         this.email = email;
     }
 
-    public int getCustomerID() {
-        return customerID;
+    public String getQualification() {
+        return qualification;
     }
 
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
+    public void setQualification(String qualification) {
+        this.qualification = qualification;
     }
 }

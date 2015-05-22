@@ -5,6 +5,9 @@
  */
 package secondhandcars.domain;
 
+import secondhandcars.domain.OffVersion.Order;
+import secondhandcars.domain.OffVersion.TireHotel;
+import secondhandcars.domain.OffVersion.Employee;
 import java.util.ArrayList;
 import java.util.List;
 
