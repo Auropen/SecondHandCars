@@ -41,153 +41,46 @@ public class Car {
         this.description = description;
         this.dateOfPurchase = dateOfPurchase;
     }
-    public Car(String fuelType, double sellingPrice, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase) {
-        this.fuelType = fuelType;
-        this.sellingPrice = sellingPrice;
-        this.licensePlate = "";
-        this.year = year;
-        this.mark = mark;
-        this.model = model;
-        this.version = version;
-        this.volumeOfEngine = volumeOfEngine;
-        this.odometer = odometer;
-        this.priceOfPurchase = priceOfPurchase;
-        this.type = type;
-        this.description = description;
-        this.dateOfPurchase = dateOfPurchase;
-    }
+    
     public Car(String fuelType, double sellingPrice, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, Date dateOfPurchase) {
-        this.fuelType = fuelType;
-        this.sellingPrice = sellingPrice;
-        this.licensePlate = "";
-        this.year = year;
-        this.mark = mark;
-        this.model = model;
-        this.version = version;
-        this.volumeOfEngine = volumeOfEngine;
-        this.odometer = odometer;
-        this.priceOfPurchase = priceOfPurchase;
-        this.type = type;
-        this.description = "";
-        this.dateOfPurchase = dateOfPurchase;
-    }
-    public Car(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, Date dateOfPurchase) {
-        this.fuelType = fuelType;
-        this.sellingPrice = sellingPrice;
-        this.licensePlate = licensePlate;
-        this.year = year;
-        this.mark = mark;
-        this.model = model;
-        this.version = version;
-        this.volumeOfEngine = volumeOfEngine;
-        this.odometer = odometer;
-        this.priceOfPurchase = priceOfPurchase;
-        this.type = type;
-        this.description = "";
-        this.dateOfPurchase = dateOfPurchase;
+        this(fuelType, sellingPrice, "", year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, "", dateOfPurchase);
     }
     
-    public String getFuelType() {
-        return fuelType;
+    public Car(String fuelType, double sellingPrice, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase) {
+        this(fuelType, sellingPrice, "", year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, description, dateOfPurchase);
+    }
+    
+    public Car(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, Date dateOfPurchase) {
+        this(fuelType, sellingPrice, licensePlate, year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, "", dateOfPurchase);
     }
 
-    public void setFuelType(String fuelType) {
-        this.fuelType = fuelType;
-    }
-
-    public double getSellingPrice() {
-        return sellingPrice;
-    }
-
-    public void setSellingPrice(double sellingPrice) {
-        this.sellingPrice = sellingPrice;
-    }
-
-    public String getLicensePlate() {
-        return licensePlate;
-    }
-
-    public void setLicensePlate(String licensePlate) {
-        this.licensePlate = licensePlate;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public String getMark() {
-        return mark;
-    }
-
-    public void setMark(String mark) {
-        this.mark = mark;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
-    public double getVolumeOfEngine() {
-        return volumeOfEngine;
-    }
-
-    public void setVolumeOfEngine(double volumeOfEngine) {
-        this.volumeOfEngine = volumeOfEngine;
-    }
-
-    public double getOdometer() {
-        return odometer;
-    }
-
-    public void setOdometer(double odometer) {
-        this.odometer = odometer;
-    }
-
-    public double getPriceOfPurchase() {
-        return priceOfPurchase;
-    }
-
-    public void setPriceOfPurchase(double priceOfPurchase) {
-        this.priceOfPurchase = priceOfPurchase;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Date getDateOfPurchase() {
-        return dateOfPurchase;
-    }
-
-    public void setDateOfPurchase(Date dateOfPurchase) {
-        this.dateOfPurchase = dateOfPurchase;
-    }
+    //Accessor methods
+    public String getFuelType()         {   return fuelType;        }
+    public double getSellingPrice()     {   return sellingPrice;    }
+    public String getLicensePlate()     {   return licensePlate;    }
+    public int getYear()                {   return year;            }
+    public String getMark()             {   return mark;            }
+    public String getModel()            {   return model;           }
+    public String getVersion()          {   return version;         }
+    public double getVolumeOfEngine()   {   return volumeOfEngine;  }
+    public double getOdometer()         {   return odometer;        }
+    public double getPriceOfPurchase()  {   return priceOfPurchase; }
+    public String getType()             {   return type;            }
+    public String getDescription()      {   return description;     }
+    public Date getDateOfPurchase()     {   return dateOfPurchase;  }
+    
+    //Mutator methods
+    public void setFuelType(String fuelType)                {   this.fuelType = fuelType;               }
+    public void setSellingPrice(double sellingPrice)        {   this.sellingPrice = sellingPrice;       }
+    public void setLicensePlate(String licensePlate)        {   this.licensePlate = licensePlate;       }
+    public void setYear(int year)                           {   this.year = year;                       }
+    public void setMark(String mark)                        {   this.mark = mark;                       }
+    public void setModel(String model)                      {   this.model = model;                     }
+    public void setVersion(String version)                  {   this.version = version;                 }
+    public void setVolumeOfEngine(double volumeOfEngine)    {   this.volumeOfEngine = volumeOfEngine;   }
+    public void setOdometer(double odometer)                {   this.odometer = odometer;               }
+    public void setPriceOfPurchase(double priceOfPurchase)  {   this.priceOfPurchase = priceOfPurchase; }
+    public void setType(String type)                        {   this.type = type;                       }
+    public void setDescription(String description)          {   this.description = description;         }
+    public void setDateOfPurchase(Date dateOfPurchase)      {   this.dateOfPurchase = dateOfPurchase;   }
 }
