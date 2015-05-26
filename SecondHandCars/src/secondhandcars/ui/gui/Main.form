@@ -169,6 +169,7 @@
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="btnAllCars" max="32767" attributes="0"/>
                       <Component id="btnSeachCar" max="32767" attributes="0"/>
+                      <Component id="btnViewAllSoldCars" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
@@ -181,7 +182,9 @@
                   <Component id="btnAllCars" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btnSeachCar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="83" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="btnViewAllSoldCars" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="49" max="32767" attributes="0"/>
                   <Component id="ErrorText" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -201,6 +204,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSeachCarActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnViewAllSoldCars">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sold cars"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewAllSoldCarsActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

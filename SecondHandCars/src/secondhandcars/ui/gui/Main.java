@@ -11,12 +11,10 @@ import javax.swing.JFrame;
  *
  * @author Kristian
  */
-public class AllCarsInStock extends javax.swing.JFrame {
+public class Main extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MainMenu
-     */
-    public AllCarsInStock() {
+           
+    public Main() {
         initComponents();
     }
 
@@ -35,6 +33,7 @@ public class AllCarsInStock extends javax.swing.JFrame {
         btnAllCars = new javax.swing.JButton();
         ErrorText = new javax.swing.JTextField();
         btnSeachCar = new javax.swing.JButton();
+        btnViewAllSoldCars = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,6 +99,13 @@ public class AllCarsInStock extends javax.swing.JFrame {
             }
         });
 
+        btnViewAllSoldCars.setText("Sold cars");
+        btnViewAllSoldCars.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewAllSoldCarsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -110,7 +116,8 @@ public class AllCarsInStock extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnAllCars, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSeachCar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSeachCar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnViewAllSoldCars, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -120,7 +127,9 @@ public class AllCarsInStock extends javax.swing.JFrame {
                 .addComponent(btnAllCars)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSeachCar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnViewAllSoldCars)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(ErrorText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -157,6 +166,18 @@ public class AllCarsInStock extends javax.swing.JFrame {
         servicesMenu.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnSeachCarActionPerformed
 
+    private void btnViewAllSoldCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewAllSoldCarsActionPerformed
+        
+        JFrame soldCars = new SoldCars();
+        
+        
+        soldCars.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        soldCars.setResizable(false);
+        soldCars.setTitle("Services Menu");
+        soldCars.setVisible(true);
+        soldCars.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnViewAllSoldCarsActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -174,14 +195,18 @@ public class AllCarsInStock extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AllCarsInStock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AllCarsInStock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AllCarsInStock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AllCarsInStock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -190,7 +215,7 @@ public class AllCarsInStock extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AllCarsInStock().setVisible(true);
+                new Main().setVisible(true);
             }
         });
     }
@@ -200,6 +225,7 @@ public class AllCarsInStock extends javax.swing.JFrame {
     private javax.swing.JTable MainFrame;
     private javax.swing.JButton btnAllCars;
     private javax.swing.JButton btnSeachCar;
+    private javax.swing.JButton btnViewAllSoldCars;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
