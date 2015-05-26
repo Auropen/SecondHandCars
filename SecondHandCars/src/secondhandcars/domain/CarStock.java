@@ -33,7 +33,7 @@ public class CarStock {
     public List<Car> searchCar(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
         ArrayList<Car> result = new ArrayList<Car>();
         
-        for (Car c : cars) {
+        for (Car c : getCars()) {
             if (fuelType.equals("") && !fuelType.equalsIgnoreCase(c.getFuelType()))
                 continue;
             if (sellingPrice < 0 && sellingPrice != c.getSellingPrice())
@@ -79,4 +79,10 @@ public class CarStock {
         
         return result;
     }
+
+    public int getCarAmount()   {   return carAmount;   }
+    public List<Car> getCars()  {   return cars;        }
+
+    public void setCarAmount(int carAmount)     {   this.carAmount = carAmount; }
+    public void setCars(List<Car> cars)         {   this.cars = cars;           }
 }
