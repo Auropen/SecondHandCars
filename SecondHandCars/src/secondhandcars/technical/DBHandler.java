@@ -65,7 +65,7 @@ public class DBHandler {
         }
     }
     
-    public static void getAllCarsInStock() throws SQLException{
+    public static ResultSet getAllCarsInStock() throws SQLException{
         connectToCarDatabase();
         createStatement();
         int columnType;
@@ -103,5 +103,6 @@ public class DBHandler {
             }
         }
         closeConnection();
+        return rs;
     }
 }

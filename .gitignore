@@ -1,3 +1,5 @@
 /SecondHandCars/nbproject/private/
 /SecondHandCars/build/
 *.properties
+/SecondHandCars/dist/
+SecondHandCars/nbproject/project.properties
