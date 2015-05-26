@@ -62,10 +62,8 @@ public class CarStock {
                 
                 while (searchTokens.hasMoreTokens()) {
                     String part = searchTokens.nextToken().trim();
-                    if (!description.contains(part)) {
+                    if (!description.contains(part))
                         inDescription = false;
-                        break;
-                    }
                 }
                 if (!inDescription)
                     continue;
