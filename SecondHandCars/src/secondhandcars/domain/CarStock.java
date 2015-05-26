@@ -15,11 +15,11 @@ import java.util.List;
 public class CarStock {
     private static CarStock instance;
     private int carAmount;
-    private List<Car> carStock;
+    private List<Car> cars;
     
     private CarStock(){
-        this.carStock = new ArrayList();
-        this.carAmount = carStock.size();
+        this.cars = new ArrayList();
+        this.carAmount = cars.size();
     }
     public static synchronized CarStock getInstance(){
         if(instance == null){
