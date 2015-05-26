@@ -30,47 +30,49 @@ public class CarStock {
         return instance;
     }
     
-    public List<Car> searchCar(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
+    public List<Car> searchCar(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, Boolean inStock) {
         ArrayList<Car> result = new ArrayList<Car>();
         
         for (Car c : getCars()) {
-            if (fuelType.equals("") && !fuelType.equalsIgnoreCase(c.getFuelType()))
+            if (!fuelType.equals("") && !fuelType.equalsIgnoreCase(c.getFuelType()))
                 continue;
-            if (sellingPrice < 0 && sellingPrice != c.getSellingPrice())
+            if (sellingPrice >= 0 && sellingPrice != c.getSellingPrice())
                 continue;
-            if (licensePlate.equals("") && !licensePlate.equalsIgnoreCase(c.getLicensePlate()))
+            if (!licensePlate.equals("") && !licensePlate.equalsIgnoreCase(c.getLicensePlate()))
                 continue;
-            if (year < 0 && year != c.getYear())
+            if (year >= 0 && year != c.getYear())
                 continue;
-            if (mark.equals("") && !mark.equalsIgnoreCase(c.getMark()))
+            if (!mark.equals("") && !mark.equalsIgnoreCase(c.getMark()))
                 continue;
-            if (model.equals("") && !model.equalsIgnoreCase(c.getModel()))
+            if (!model.equals("") && !model.equalsIgnoreCase(c.getModel()))
                 continue;
-            if (version.equals("") && !version.equalsIgnoreCase(c.getVersion()))
+            if (!version.equals("") && !version.equalsIgnoreCase(c.getVersion()))
                 continue;
-            if (volumeOfEngine.equals("") && volumeOfEngine.equalsIgnoreCase(c.getVolumeOfEngine()))
+            if (!volumeOfEngine.equals("") && volumeOfEngine.equalsIgnoreCase(c.getVolumeOfEngine()))
                 continue;
-            if (odometer < 0 && odometer != c.getOdometer())
+            if (odometer >= 0 && odometer != c.getOdometer())
                 continue;
-            if (priceOfPurchase < 0 && priceOfPurchase != c.getPriceOfPurchase())
+            if (priceOfPurchase >= 0 && priceOfPurchase != c.getPriceOfPurchase())
                 continue;
-            if (type.equals("") && !type.equalsIgnoreCase(c.getType()))
+            if (!type.equals("") && !type.equalsIgnoreCase(c.getType()))
                 continue;
-            if (description.equals("")) {
+            if (!description.equals("")) {
                 StringTokenizer searchTokens = new StringTokenizer(description, ",");
                 boolean inDescription = true;
                 
                 while (searchTokens.hasMoreTokens()) {
                     String part = searchTokens.nextToken().trim();
-                    if (!description.contains(part))
+                    if (!description.contains(part)) {
                         inDescription = false;
+                        break;
+                    }
                 }
                 if (!inDescription)
                     continue;
             }
             if (dateOfPurchase != null && !dateOfPurchase.equals(c.getDateOfPurchase()))
                 continue;
-            if (inStock != (Boolean) null && inStock != c.getStockStatus())
+            if (inStock != null && inStock != c.getStockStatus())
                 continue;
             result.add(c);
         }
