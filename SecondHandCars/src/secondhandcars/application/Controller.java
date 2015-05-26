@@ -29,24 +29,29 @@ public class Controller implements IController {
     }
     
     @Override
-    public List<Car> searchCars(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
+    public List<Car> searchCars(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
         return company.getCarStock().searchCar(fuelType, sellingPrice, licensePlate, year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, description, dateOfPurchase, inStock);
     }
 
     @Override
     public void createCarsFromDB() {
         try {
-            ResultSet rs = dbHandler.getAllCarsInStock();
+            ResultSet rs = DBHandler.getAllCarsInStock();
             while (rs.next()) {
                 Car car = new Car(rs.getString("fuelType"), rs.getDouble("sellingPrice"), rs.getString("licensePlate"), 
                         rs.getInt("year"), rs.getString("mark"), rs.getString("model"), rs.getString("version"), 
-                        rs.getDouble("volumeOfEngine"), rs.getDouble("odometer"), rs.getDouble("priceOfPurchase"), 
+                        rs.getString("volumeOfEngine"), rs.getDouble("odometer"), rs.getDouble("priceOfPurchase"), 
                         rs.getString("type"), rs.getString("description"), rs.getDate("dateOfPurchase"), rs.getBoolean("inStock"));
                 company.getCarStock().getCars().add(car);
             }
         } catch (SQLException ex) {
-            ex.getMessage();
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+            ex.getStackTrace();
         }
-        System.out.print("Debug This");
+        finally{
+            DBHandler.closeConnection();
+        }
     }
 }

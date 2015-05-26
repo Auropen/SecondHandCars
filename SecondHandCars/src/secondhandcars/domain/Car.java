@@ -19,7 +19,7 @@ public class Car {
     private String mark;
     private String model;
     private String version;
-    private double volumeOfEngine;
+    private String volumeOfEngine;
     private double odometer;
     private double priceOfPurchase;
     private String type;
@@ -27,7 +27,7 @@ public class Car {
     private Date dateOfPurchase;
     private boolean inStock;
 
-    public Car(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
+    public Car(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
         this.fuelType = fuelType;
         this.sellingPrice = sellingPrice;
         this.licensePlate = licensePlate;
@@ -44,15 +44,15 @@ public class Car {
         this.inStock = inStock;
     }
     
-    public Car(String fuelType, double sellingPrice, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, Date dateOfPurchase, boolean inStock) {
+    public Car(String fuelType, double sellingPrice, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, Date dateOfPurchase, boolean inStock) {
         this(fuelType, sellingPrice, "", year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, "", dateOfPurchase, inStock);
     }
     
-    public Car(String fuelType, double sellingPrice, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
+    public Car(String fuelType, double sellingPrice, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
         this(fuelType, sellingPrice, "", year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, description, dateOfPurchase, inStock);
     }
     
-    public Car(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, Date dateOfPurchase, boolean inStock) {
+    public Car(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, Date dateOfPurchase, boolean inStock) {
         this(fuelType, sellingPrice, licensePlate, year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, "", dateOfPurchase, inStock);
     }
 
@@ -64,7 +64,7 @@ public class Car {
     public String getMark()             {   return mark;            }
     public String getModel()            {   return model;           }
     public String getVersion()          {   return version;         }
-    public double getVolumeOfEngine()   {   return volumeOfEngine;  }
+    public String getVolumeOfEngine()   {   return volumeOfEngine;  }
     public double getOdometer()         {   return odometer;        }
     public double getPriceOfPurchase()  {   return priceOfPurchase; }
     public String getType()             {   return type;            }
@@ -80,7 +80,7 @@ public class Car {
     public void setMark(String mark)                        {   this.mark = mark;                       }
     public void setModel(String model)                      {   this.model = model;                     }
     public void setVersion(String version)                  {   this.version = version;                 }
-    public void setVolumeOfEngine(double volumeOfEngine)    {   this.volumeOfEngine = volumeOfEngine;   }
+    public void setVolumeOfEngine(String volumeOfEngine)    {   this.volumeOfEngine = volumeOfEngine;   }
     public void setOdometer(double odometer)                {   this.odometer = odometer;               }
     public void setPriceOfPurchase(double priceOfPurchase)  {   this.priceOfPurchase = priceOfPurchase; }
     public void setType(String type)                        {   this.type = type;                       }

@@ -30,7 +30,7 @@ public class CarStock {
         return instance;
     }
     
-    public List<Car> searchCar(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
+    public List<Car> searchCar(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
         ArrayList<Car> result = new ArrayList<Car>();
         
         for (Car c : getCars()) {
@@ -48,7 +48,7 @@ public class CarStock {
                 continue;
             if (version.equals("") && !version.equalsIgnoreCase(c.getVersion()))
                 continue;
-            if (volumeOfEngine < 0 && volumeOfEngine != c.getVolumeOfEngine())
+            if (volumeOfEngine.equals("") && volumeOfEngine.equalsIgnoreCase(c.getVolumeOfEngine()))
                 continue;
             if (odometer < 0 && odometer != c.getOdometer())
                 continue;

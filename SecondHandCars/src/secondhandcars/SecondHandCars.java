@@ -5,6 +5,10 @@
  */
 package secondhandcars;
 
+import java.util.List;
+import secondhandcars.application.Controller;
+import secondhandcars.domain.Car;
+
 /**
  *
  * @author Kristian
@@ -17,16 +21,11 @@ public class SecondHandCars {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        addBit(1);
-        addBit(5);
-        addBit(7);
-        System.out.println(Integer.toBinaryString(tires).substring(24));
-    }
-    
-    
-    public static void addBit(int bitLocation) {
-        if (bitLocation < 0 || bitLocation > 7)
-            throw new IllegalArgumentException("There is only 8 bits, represented by 0 to 7.");
-        tires += 1 << bitLocation;
+        Controller cont = new Controller();
+        cont.createCarsFromDB();
+        List<Car> list = cont.searchCars("", -1, "", -1, "", "", "", "", -1, -1, "St.car", "", null, true);
+        for(Car car : list){
+            System.out.println(car.getLicensePlate());
+        }
     }
 }

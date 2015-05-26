@@ -68,41 +68,7 @@ public class DBHandler {
     public static ResultSet getAllCarsInStock() throws SQLException{
         connectToCarDatabase();
         createStatement();
-        int columnType;
-        ResultSet rs = stmt.executeQuery("USE " + databaseName + " GO SELECT * FROM getCarsInStock");
-        ResultSetMetaData rsmd = rs.getMetaData();
-        int numberOfColumns = rsmd.getColumnCount();
-        while(rs.next()){
-            for(int i = 1; i <= numberOfColumns; i++){
-                columnType = rsmd.getColumnType(i);
-                switch(columnType){
-                    case 1:
-                        System.out.print(rs.getString(i));
-                        break;
-                    case 12:
-                        System.out.print(rs.getString(i));
-                        break;
-                    case 4:
-                        System.out.print(rs.getInt(i));
-                        break;
-                    case 3:
-                        System.out.print(rs.getDouble(i));
-                        break;
-                    case 91:
-                        System.out.print(rs.getDate(i));
-                        break;
-                    case -7:
-                        if(rs.getBoolean(i)){
-                            System.out.print("In Stock");
-                        }
-                        else{
-                            System.out.print("Sold");
-                        }
-                    break;
-                }
-            }
-        }
-        closeConnection();
+        ResultSet rs = stmt.executeQuery("USE " + databaseName + " SELECT * FROM getCarsInStock");
         return rs;
     }
 }

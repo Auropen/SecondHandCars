@@ -15,6 +15,6 @@ import secondhandcars.domain.Car;
  */
 public interface IController {
     //Car methods
-    List<Car> searchCars(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock);
+    List<Car> searchCars(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock);
     void createCarsFromDB();
 }
