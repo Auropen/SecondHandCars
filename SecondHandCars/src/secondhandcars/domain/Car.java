@@ -25,8 +25,9 @@ public class Car {
     private String type;
     private String description;
     private Date dateOfPurchase;
+    private boolean inStock;
 
-    public Car(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase) {
+    public Car(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
         this.fuelType = fuelType;
         this.sellingPrice = sellingPrice;
         this.licensePlate = licensePlate;
@@ -40,18 +41,19 @@ public class Car {
         this.type = type;
         this.description = description;
         this.dateOfPurchase = dateOfPurchase;
+        this.inStock = inStock;
     }
     
-    public Car(String fuelType, double sellingPrice, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, Date dateOfPurchase) {
-        this(fuelType, sellingPrice, "", year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, "", dateOfPurchase);
+    public Car(String fuelType, double sellingPrice, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, Date dateOfPurchase, boolean inStock) {
+        this(fuelType, sellingPrice, "", year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, "", dateOfPurchase, inStock);
     }
     
-    public Car(String fuelType, double sellingPrice, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase) {
-        this(fuelType, sellingPrice, "", year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, description, dateOfPurchase);
+    public Car(String fuelType, double sellingPrice, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
+        this(fuelType, sellingPrice, "", year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, description, dateOfPurchase, inStock);
     }
     
-    public Car(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, Date dateOfPurchase) {
-        this(fuelType, sellingPrice, licensePlate, year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, "", dateOfPurchase);
+    public Car(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, Date dateOfPurchase, boolean inStock) {
+        this(fuelType, sellingPrice, licensePlate, year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, "", dateOfPurchase, inStock);
     }
 
     //Accessor methods
@@ -68,6 +70,7 @@ public class Car {
     public String getType()             {   return type;            }
     public String getDescription()      {   return description;     }
     public Date getDateOfPurchase()     {   return dateOfPurchase;  }
+    public boolean getStockStatus()     {   return inStock;         }
     
     //Mutator methods
     public void setFuelType(String fuelType)                {   this.fuelType = fuelType;               }
@@ -83,4 +86,5 @@ public class Car {
     public void setType(String type)                        {   this.type = type;                       }
     public void setDescription(String description)          {   this.description = description;         }
     public void setDateOfPurchase(Date dateOfPurchase)      {   this.dateOfPurchase = dateOfPurchase;   }
+    public void setStockStatus(boolean inStock)             {   this.inStock = inStock;                 }
 }
