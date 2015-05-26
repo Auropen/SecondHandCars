@@ -6,7 +6,9 @@
 package secondhandcars.domain;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.StringTokenizer;
 
 /**
  *
@@ -26,5 +28,17 @@ public class CarStock {
             instance = new CarStock();
         }
         return instance;
+    }
+    
+    public List<Car> searchCar(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, double volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
+        ArrayList<Car> result = new ArrayList<Car>();
+        StringTokenizer searchTokens = new StringTokenizer(description, ",");
+        
+        while (searchTokens.hasMoreTokens()) {
+            String part = searchTokens.nextToken();
+            
+        }
+        
+        return result;
     }
 }

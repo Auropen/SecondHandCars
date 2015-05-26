@@ -75,20 +75,30 @@ public class DBHandler {
         while(rs.next()){
             for(int i = 1; i <= numberOfColumns; i++){
                 columnType = rsmd.getColumnType(i);
-                if(columnType == 1 || columnType == 12){    //1= CHAR, 12 = VARCHAR
-                    System.out.print(rs.getString(i));
-                }
-                else if(columnType == 4){   //4=INTEGER
-                    System.out.print(rs.getInt(i));
-                }
-                else if(columnType == 3){   //3=DECIMAL
-                    System.out.print(rs.getDouble(i));
-                }
-                else if(columnType == 91){  //91=DATE
-                    System.out.print(rs.getDate(i));
-                }
-                else if(columnType == -7){
-                    System.out.print(rs.getBoolean(i));
+                switch(columnType){
+                    case 1:
+                        System.out.print(rs.getString(i));
+                        break;
+                    case 12:
+                        System.out.print(rs.getString(i));
+                        break;
+                    case 4:
+                        System.out.print(rs.getInt(i));
+                        break;
+                    case 3:
+                        System.out.print(rs.getDouble(i));
+                        break;
+                    case 91:
+                        System.out.print(rs.getDate(i));
+                        break;
+                    case -7:
+                        if(rs.getBoolean(i)){
+                            System.out.print("In Stock");
+                        }
+                        else{
+                            System.out.print("Sold");
+                        }
+                    break;
                 }
             }
         }
