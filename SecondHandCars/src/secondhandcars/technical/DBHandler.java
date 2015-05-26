@@ -21,7 +21,7 @@ public class DBHandler {
     private static Connection conn;
     final private static String connectorURL = "jdbc:sqlserver://localhost;instanceName=JDBCSERVER;user=BakuBoisen;password=Blackguard3";
     private static Statement stmt;
-    private final String databaseName = "SecondhandCars";
+    private static final String databaseName = "SecondhandCars";
     
     public static void connectToCarDatabase(){
         try{
@@ -69,7 +69,7 @@ public class DBHandler {
         connectToCarDatabase();
         createStatement();
         int columnType;
-        ResultSet rs = stmt.executeQuery("SELECT * FROM [CarStock] WHERE status = 'In Stock'");
+        ResultSet rs = stmt.executeQuery("USE " + databaseName + " GO SELECT * FROM getCarsInStock");
         ResultSetMetaData rsmd = rs.getMetaData();
         int numberOfColumns = rsmd.getColumnCount();
         while(rs.next()){
