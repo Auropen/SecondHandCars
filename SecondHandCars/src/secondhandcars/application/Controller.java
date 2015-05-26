@@ -5,8 +5,12 @@
  */
 package secondhandcars.application;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import secondhandcars.domain.Car;
 import secondhandcars.domain.Company;
 import secondhandcars.technical.DBHandler;
@@ -31,6 +35,18 @@ public class Controller implements IController {
 
     @Override
     public void createCarsFromDB() {
-        
+        try {
+            ResultSet rs = dbHandler.getAllCarsInStock();
+            while (rs.next()) {
+                Car car = new Car(rs.getString("fuelType"), rs.getDouble("sellingPrice"), rs.getString("licensePlate"), 
+                        rs.getInt("year"), rs.getString("mark"), rs.getString("model"), rs.getString("version"), 
+                        rs.getDouble("volumeOfEngine"), rs.getDouble("odometer"), rs.getDouble("priceOfPurchase"), 
+                        rs.getString("type"), rs.getString("description"), rs.getDate("dateOfPurchase"), rs.getBoolean("inStock"));
+                company.getCarStock().getCars().add(car);
+            }
+        } catch (SQLException ex) {
+            ex.getMessage();
+        }
+        System.out.print("Debug This");
     }
 }
