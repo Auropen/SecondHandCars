@@ -8,6 +8,7 @@ package secondhandcars;
 import java.util.List;
 import secondhandcars.application.Controller;
 import secondhandcars.domain.Car;
+import secondhandcars.ui.gui.Main;
 
 /**
  *
@@ -21,9 +22,10 @@ public class SecondHandCars {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Controller cont = new Controller();
-        cont.createCarsFromDB();
-        List<Car> list = cont.searchCars("", -1, "", -1, "", "", "", "", -1, -1, "St.car", "", null);
+        Controller ctr = new Controller();
+        Main mainPage = new Main(ctr);
+        ctr.createCarsFromDB();
+        List<Car> list = ctr.searchCars("", -1, "", -1, "", "", "", "", -1, -1, "St.car", "", null);
         for(Car car : list){
             System.out.println(car.getLicensePlate());
         }

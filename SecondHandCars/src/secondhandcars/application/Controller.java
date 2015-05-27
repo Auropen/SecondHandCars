@@ -7,8 +7,11 @@ package secondhandcars.application;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import secondhandcars.domain.Car;
 import secondhandcars.domain.Company;
 import secondhandcars.technical.DBHandler;
@@ -56,5 +59,27 @@ public class Controller implements IController {
         finally{
             DBHandler.closeConnection();
         }
+    }
+    
+    public List<Car> getAllCars(){
+        List<Car> cars = new ArrayList();
+        try {
+            ResultSet rs = DBHandler.getAllCarsInStock();
+            while (rs.next()) {
+                Car car = new Car(rs.getString("fuelType"), rs.getDouble("sellingPrice"), rs.getString("licensePlate"), 
+                        rs.getInt("year"), rs.getString("mark"), rs.getString("model"), rs.getString("version"), 
+                        rs.getString("volumeOfEngine"), rs.getDouble("odometer"), rs.getDouble("priceOfPurchase"), 
+                        rs.getString("type"), rs.getString("description"), rs.getDate("dateOfPurchase"), rs.getBoolean("inStock"));
+                cars.add(car);
+            }
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        finally{
+            DBHandler.closeConnection();
+        }
+        return cars;
     }
 }

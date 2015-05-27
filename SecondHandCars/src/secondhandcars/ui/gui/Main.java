@@ -5,15 +5,21 @@
  */
 package secondhandcars.ui.gui;
 
+import java.sql.ResultSet;
 import javax.swing.JFrame;
+import secondhandcars.application.Controller;
 
 /**
  *
  * @author Kristian
  */
 public class Main extends javax.swing.JFrame {
-
-           
+    Controller ctr;
+    
+    public Main(Controller ctr){
+        this.ctr = ctr;
+    }
+    
     public Main() {
         initComponents();
     }
@@ -91,6 +97,11 @@ public class Main extends javax.swing.JFrame {
         }
 
         btnAllCars.setText("View all available cars");
+        btnAllCars.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAllCarsActionPerformed(evt);
+            }
+        });
 
         btnSeachCar.setText("Search cars");
         btnSeachCar.addActionListener(new java.awt.event.ActionListener() {
@@ -177,6 +188,11 @@ public class Main extends javax.swing.JFrame {
         soldCars.setVisible(true);
         soldCars.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnViewAllSoldCarsActionPerformed
+
+    private void btnAllCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAllCarsActionPerformed
+        Controller cont = new Controller();
+        ResultSet rs = cont.db
+    }//GEN-LAST:event_btnAllCarsActionPerformed
 
     /**
      * @param args the command line arguments
