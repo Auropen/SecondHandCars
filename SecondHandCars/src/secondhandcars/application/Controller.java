@@ -65,13 +65,20 @@ public class Controller implements IController {
     }
 
     @Override
-    public Double stringToDouble(String s) {
-        try{
-         return Double.parseDouble(s);
-                }
-        catch(NumberFormatException ex){
-        ex.getMessage();
+    public double stringToDouble(String s) {
+        try {
+            return Double.parseDouble(s);
         }
-        return null;
+        catch(NumberFormatException ex) {}
+        return -1;
+    }
+
+    @Override
+    public int stringToInt(String s) {
+        try {
+            return Integer.parseInt(s);
+        }
+        catch(NumberFormatException ex) {}
+        return -1;
     }
 }

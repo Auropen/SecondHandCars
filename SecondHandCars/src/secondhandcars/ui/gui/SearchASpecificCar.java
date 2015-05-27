@@ -5,6 +5,7 @@
  */
 package secondhandcars.ui.gui;
 
+import java.util.Date;
 import javax.swing.JFrame;
 import secondhandcars.application.IController;
 
@@ -238,7 +239,10 @@ public class SearchASpecificCar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        ctr.searchCars(fieldFuel.getText(), ctr.stringToDouble(fieldSellingPrice.getText()), fieldLicensePlate.getText(), 
+                ctr.stringToInt(fieldYear.getText()), fieldMark.getText(), fieldModel.getText(), 
+                fieldVersion.getText(), fieldVolumeOfEngine.getText(), ctr.stringToDouble(fieldOdometer.getText()), 
+                ctr.stringToDouble(fieldPriceOfPurchase.getText()), fieldType.getText(), fieldDescription.getText(), null);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

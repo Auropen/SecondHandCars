@@ -19,5 +19,6 @@ public interface IController {
     public List<Car> searchCars(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock);
     public void createCarsFromDB();
     public List<Car> getAllCars();
-    public Double stringToDouble(String s);
+    public double stringToDouble(String s);
+    public int stringToInt(String s);
 }
