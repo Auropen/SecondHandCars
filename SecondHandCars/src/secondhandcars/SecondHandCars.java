@@ -22,6 +22,7 @@ public class SecondHandCars {
      */
     public static void main(String[] args) {
         Controller ctr = new Controller();
+        ctr.createCarsFromDB();
         MainWindow mainPage = new MainWindow(ctr);
         mainPage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         mainPage.setResizable(false);
