@@ -23,7 +23,7 @@ public class SecondHandCars {
     public static void main(String[] args) {
         Controller cont = new Controller();
         cont.createCarsFromDB();
-        List<Car> list = cont.searchCars("", -1, "", -1, "", "", "", "", -1, -1, "St.car", "");
+        List<Car> list = cont.searchCars("", -1, "", -1, "", "", "", "", -1, -1, "St.car", "", null);
         for(Car car : list){
             System.out.println(car.getLicensePlate());
         }
