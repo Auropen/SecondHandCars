@@ -5,6 +5,8 @@
  */
 package secondhandcars.technical;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -12,18 +14,31 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 
 /**
  *
  * @author Kristian
  */
 public class DBHandler {
-    private static Connection conn;
-    final private static String connectorURL = "jdbc:sqlserver://localhost;instanceName=JDBCSERVER;user=BakuBoisen;password=Blackguard3";
-    private static Statement stmt;
-    private static final String databaseName = "SecondhandCars";
+    Properties dbProp = new Properties();   
+    private Connection conn;
+    final private String connectorURL;
+    private Statement stmt;
+    private final String databaseName = "SecondhandCars";
     
-    public static void connectToCarDatabase(){
+    public DBHandler(){
+        try{
+            FileInputStream in = new FileInputStream("DB.properties");
+            dbProp.load(in);
+        }
+        catch(IOException io){
+            System.out.println("No Properties file found.");
+        }
+        connectorURL = "jdbc:sqlserver://localhost;instanceName="+dbProp.getProperty("instanceName")+";user="+dbProp.getProperty("user")+";password="+dbProp.getProperty("password");
+    }
+    
+    public void connectToCarDatabase(){
         try{
             conn = DriverManager.getConnection(connectorURL);
             System.out.println("Connection SUCCESS");
@@ -43,7 +58,7 @@ public class DBHandler {
         }
     }
     
-    public static void closeConnection(){
+    public void closeConnection(){
         try{
             conn.close();
         }
@@ -54,7 +69,7 @@ public class DBHandler {
         }
     }
     
-    public static void createStatement(){
+    public void createStatement(){
         try{
             stmt = conn.createStatement();
         }
@@ -65,7 +80,7 @@ public class DBHandler {
         }
     }
     
-    public static ResultSet getAllCarsInStock() throws SQLException{
+    public ResultSet getAllCarsInStock() throws SQLException{
         connectToCarDatabase();
         createStatement();
         ResultSet rs = stmt.executeQuery("USE " + databaseName + " SELECT * FROM getCarsInStock");

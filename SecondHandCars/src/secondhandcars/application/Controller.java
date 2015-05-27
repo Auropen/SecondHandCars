@@ -42,7 +42,7 @@ public class Controller implements IController {
     @Override
     public void createCarsFromDB() {
         try {
-            ResultSet rs = DBHandler.getAllCarsInStock();
+            ResultSet rs = dbHandler.getAllCarsInStock();
             while (rs.next()) {
                 Car car = new Car(rs.getString("fuelType"), rs.getDouble("sellingPrice"), rs.getString("licensePlate"), 
                         rs.getInt("year"), rs.getString("mark"), rs.getString("model"), rs.getString("version"), 
@@ -57,14 +57,14 @@ public class Controller implements IController {
             ex.getStackTrace();
         }
         finally{
-            DBHandler.closeConnection();
+            dbHandler.closeConnection();
         }
     }
     
     public List<Car> getAllCars(){
         List<Car> cars = new ArrayList();
         try {
-            ResultSet rs = DBHandler.getAllCarsInStock();
+            ResultSet rs = dbHandler.getAllCarsInStock();
             while (rs.next()) {
                 Car car = new Car(rs.getString("fuelType"), rs.getDouble("sellingPrice"), rs.getString("licensePlate"), 
                         rs.getInt("year"), rs.getString("mark"), rs.getString("model"), rs.getString("version"), 
@@ -78,7 +78,7 @@ public class Controller implements IController {
             System.out.println("VendorError: " + ex.getErrorCode());
         }
         finally{
-            DBHandler.closeConnection();
+            dbHandler.closeConnection();
         }
         return cars;
     }

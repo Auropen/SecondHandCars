@@ -6,6 +6,7 @@
 package secondhandcars;
 
 import java.util.List;
+import javax.swing.JFrame;
 import secondhandcars.application.Controller;
 import secondhandcars.domain.Car;
 import secondhandcars.ui.gui.Main;
@@ -24,10 +25,10 @@ public class SecondHandCars {
     public static void main(String[] args) {
         Controller ctr = new Controller();
         Main mainPage = new Main(ctr);
-        ctr.createCarsFromDB();
-        List<Car> list = ctr.searchCars("", -1, "", -1, "", "", "", "", -1, -1, "St.car", "", null);
-        for(Car car : list){
-            System.out.println(car.getLicensePlate());
-        }
+        mainPage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        mainPage.setResizable(false);
+        mainPage.setTitle("CarStock");
+        mainPage.setVisible(true);
+        mainPage.setLocationRelativeTo(null);
     }
 }
