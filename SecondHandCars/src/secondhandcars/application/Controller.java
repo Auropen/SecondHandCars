@@ -41,24 +41,7 @@ public class Controller implements IController {
 
     @Override
     public void createCarsFromDB() {
-        try {
-            ResultSet rs = dbHandler.getAllCarsInStock();
-            while (rs.next()) {
-                Car car = new Car(rs.getString("fuelType"), rs.getDouble("sellingPrice"), rs.getString("licensePlate"), 
-                        rs.getInt("year"), rs.getString("mark"), rs.getString("model"), rs.getString("version"), 
-                        rs.getString("volumeOfEngine"), rs.getDouble("odometer"), rs.getDouble("priceOfPurchase"), 
-                        rs.getString("type"), rs.getString("description"), rs.getDate("dateOfPurchase"), rs.getBoolean("inStock"));
-                company.getCarStock().getCars().add(car);
-            }
-        } catch (SQLException ex) {
-            System.out.println("SQLException: " + ex.getMessage());
-            System.out.println("SQLState: " + ex.getSQLState());
-            System.out.println("VendorError: " + ex.getErrorCode());
-            ex.getStackTrace();
-        }
-        finally{
-            dbHandler.closeConnection();
-        }
+        company.getCarStock().getCars().addAll(getAllCars());
     }
     
     public List<Car> getAllCars(){
