@@ -5,10 +5,8 @@
  */
 package secondhandcars;
 
-import java.util.List;
 import javax.swing.JFrame;
 import secondhandcars.application.Controller;
-import secondhandcars.domain.Car;
 import secondhandcars.ui.gui.MainWindow;
 
 /**

@@ -6,7 +6,6 @@
 package secondhandcars.ui.gui;
 
 import javax.swing.JFrame;
-import secondhandcars.application.Controller;
 import secondhandcars.application.IController;
 
 /**
