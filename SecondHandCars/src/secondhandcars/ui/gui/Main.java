@@ -6,8 +6,11 @@
 package secondhandcars.ui.gui;
 
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JFrame;
 import secondhandcars.application.Controller;
+import secondhandcars.domain.Car;
 
 /**
  *
@@ -190,8 +193,8 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnViewAllSoldCarsActionPerformed
 
     private void btnAllCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAllCarsActionPerformed
-        Controller cont = new Controller();
-        ResultSet rs = cont.db
+        List<Car> cars = new ArrayList();
+        
     }//GEN-LAST:event_btnAllCarsActionPerformed
 
     /**
