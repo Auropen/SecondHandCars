@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
 import secondhandcars.application.Controller;
 import secondhandcars.domain.Car;
 
@@ -18,13 +19,18 @@ import secondhandcars.domain.Car;
  */
 public class Main extends javax.swing.JFrame {
     Controller ctr;
+    Object [][] tableDate = {
+        {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+    };
+    String[] tableColumnName = {
+        "Year", "Mark", "Model", "Version", "Volume of engine", "Fuel", "Odometer", "Price of purchase", "Selling price", "Type", "Description", "License plate", "Date of purchase", "In stock"
+    };
+    DefaultTableModel dtm = new DefaultTableModel(tableDate, tableColumnName);
     
-    public Main(Controller ctr){
+    public Main(Controller ctr) {
         this.ctr = ctr;
-    }
-    
-    public Main() {
         initComponents();
+        MainFrame.setModel(dtm);
     }
 
     /**
@@ -193,8 +199,26 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnViewAllSoldCarsActionPerformed
 
     private void btnAllCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAllCarsActionPerformed
-        List<Car> cars = new ArrayList();
-        
+        List<Car> cars = ctr.getAllCars();
+        for (int i = 0; i < cars.size(); i++) {
+            String[] data = new String[14];
+            data[0] = "" + cars.get(i).getYear();
+            data[1] = "" + cars.get(i).getMark();
+            data[2] = "" + cars.get(i).getModel();
+            data[3] = "" + cars.get(i).getVersion();
+            data[4] = "" + cars.get(i).getVolumeOfEngine();
+            data[5] = "" + cars.get(i).getFuelType();
+            data[6] = "" + cars.get(i).getOdometer();
+            data[7] = "" + cars.get(i).getPriceOfPurchase();
+            data[8] = "" + cars.get(i).getSellingPrice();
+            data[9] = "" + cars.get(i).getType();
+            data[10] = "" + cars.get(i).getDescription();
+            data[11] = "" + cars.get(i).getLicensePlate();
+            data[12] = "" + cars.get(i).getDateOfPurchase();
+            data[13] = "" + cars.get(i).getStockStatus();
+            dtm.addRow(data);
+        }
+        //this.repaint();
     }//GEN-LAST:event_btnAllCarsActionPerformed
 
     /**
@@ -234,7 +258,7 @@ public class Main extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Main().setVisible(true);
+                new Main(new Controller()).setVisible(true);
             }
         });
     }
