@@ -16,21 +16,29 @@ import java.util.StringTokenizer;
  */
 public class CarStock {
     private static CarStock instance;
-    private int carAmount;
     private List<Car> cars;
     
     private CarStock(){
         this.cars = new ArrayList();
-        this.carAmount = cars.size();
     }
     public static synchronized CarStock getInstance(){
-        if(instance == null){
+        if(instance == null)
             instance = new CarStock();
-        }
         return instance;
     }
     
-    public List<Car> searchCar(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, Boolean inStock) {
+    public List<Car> searchCar(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
+        List<Car> result = searchCar(fuelType, sellingPrice, licensePlate, year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, description, dateOfPurchase);
+        
+        for (Car c : result) {
+            if (inStock != c.getStockStatus())
+                result.remove(c);
+        }
+        
+        return result;
+    }
+    
+    public List<Car> searchCar(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase) {
         ArrayList<Car> result = new ArrayList<Car>();
         
         for (Car c : getCars()) {
@@ -72,17 +80,14 @@ public class CarStock {
             }
             if (dateOfPurchase != null && !dateOfPurchase.equals(c.getDateOfPurchase()))
                 continue;
-            if (inStock != null && inStock != c.getStockStatus())
-                continue;
             result.add(c);
         }
         
         return result;
     }
 
-    public int getCarAmount()   {   return carAmount;   }
-    public List<Car> getCars()  {   return cars;        }
+    public int getCarAmount()   {   return cars.size();     }
+    public List<Car> getCars()  {   return cars;            }
 
-    public void setCarAmount(int carAmount)     {   this.carAmount = carAmount; }
     public void setCars(List<Car> cars)         {   this.cars = cars;           }
 }
