@@ -65,7 +65,13 @@ public class Controller implements IController {
     }
 
     @Override
-    public Double stringToDouble() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Double stringToDouble(String s) {
+        try{
+         return Double.parseDouble(s);
+                }
+        catch(NumberFormatException ex){
+        ex.getMessage();
+        }
+        return null;
     }
 }
