@@ -93,10 +93,10 @@ public class Main extends javax.swing.JFrame {
             MainFrame.getColumnModel().getColumn(1).setPreferredWidth(90);
             MainFrame.getColumnModel().getColumn(2).setPreferredWidth(90);
             MainFrame.getColumnModel().getColumn(3).setPreferredWidth(90);
-            MainFrame.getColumnModel().getColumn(4).setPreferredWidth(110);
+            MainFrame.getColumnModel().getColumn(4).setPreferredWidth(130);
             MainFrame.getColumnModel().getColumn(5).setPreferredWidth(90);
             MainFrame.getColumnModel().getColumn(6).setPreferredWidth(70);
-            MainFrame.getColumnModel().getColumn(7).setPreferredWidth(110);
+            MainFrame.getColumnModel().getColumn(7).setPreferredWidth(130);
             MainFrame.getColumnModel().getColumn(8).setPreferredWidth(90);
             MainFrame.getColumnModel().getColumn(9).setPreferredWidth(90);
             MainFrame.getColumnModel().getColumn(10).setPreferredWidth(110);
@@ -161,7 +161,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 772, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
