@@ -65,4 +65,9 @@ public class Controller implements IController {
         }
         return cars;
     }
+
+    @Override
+    public Double stringToDouble() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

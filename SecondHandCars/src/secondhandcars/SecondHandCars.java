@@ -9,7 +9,7 @@ import java.util.List;
 import javax.swing.JFrame;
 import secondhandcars.application.Controller;
 import secondhandcars.domain.Car;
-import secondhandcars.ui.gui.Main;
+import secondhandcars.ui.gui.MainWindow;
 
 /**
  *
@@ -24,7 +24,7 @@ public class SecondHandCars {
      */
     public static void main(String[] args) {
         Controller ctr = new Controller();
-        Main mainPage = new Main(ctr);
+        MainWindow mainPage = new MainWindow(ctr);
         mainPage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         mainPage.setResizable(false);
         mainPage.setTitle("CarStock");

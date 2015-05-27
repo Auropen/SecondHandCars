@@ -9,14 +9,15 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 import secondhandcars.application.Controller;
+import secondhandcars.application.IController;
 import secondhandcars.domain.Car;
 
 /**
  *
  * @author Kristian
  */
-public class Main extends javax.swing.JFrame {
-    Controller ctr;
+public class MainWindow extends javax.swing.JFrame {
+    IController ctr;
     Object [][] tableDate = {
         {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
     };
@@ -25,7 +26,7 @@ public class Main extends javax.swing.JFrame {
     };
     DefaultTableModel dtm = new DefaultTableModel(tableDate, tableColumnName);
     
-    public Main(Controller ctr) {
+    public MainWindow(IController ctr) {
         this.ctr = ctr;
         initComponents();
         MainFrame.setModel(dtm);
@@ -188,7 +189,7 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSeachCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeachCarActionPerformed
-        JFrame servicesMenu = new SearchASpecificCar();
+        JFrame servicesMenu = new SearchASpecificCar(ctr, this);
         
         
         servicesMenu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -239,48 +240,6 @@ public class Main extends javax.swing.JFrame {
             data[13] = cars.get(i).getStockStatus();
             dtm.addRow(data);
         }
-    }
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Main(new Controller()).setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
