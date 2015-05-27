@@ -86,4 +86,11 @@ public class DBHandler {
         ResultSet rs = stmt.executeQuery("USE " + databaseName + " SELECT * FROM getCarsInStock");
         return rs;
     }
+    
+    public ResultSet getSoldCars() throws SQLException{
+        connectToCarDatabase();
+        createStatement();
+        ResultSet rs = stmt.executeQuery("USE " + databaseName + " SELECT * FROM getSoldCars");
+        return rs;
+    }
 }
