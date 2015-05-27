@@ -130,7 +130,7 @@ public class SearchASpecificCar extends javax.swing.JFrame {
                         .addComponent(fieldSellingPrice))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(labelType)
-                        .addGap(90, 90, 90)
+                        .addGap(87, 87, 87)
                         .addComponent(fieldType))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(labelDescription)
