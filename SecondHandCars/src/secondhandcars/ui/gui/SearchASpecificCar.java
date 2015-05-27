@@ -14,12 +14,12 @@ import secondhandcars.application.IController;
  * @author Kristian
  */
 public class SearchASpecificCar extends javax.swing.JFrame {
-    JFrame mainWindow;
+    MainWindow mainWindow;
     IController ctr;
     /**
      * Creates new form MainMenu
      */
-    public SearchASpecificCar(IController ctr, JFrame mainWindow) {
+    public SearchASpecificCar(IController ctr, MainWindow mainWindow) {
         this.ctr = ctr;
         this.mainWindow = mainWindow;
         initComponents();
@@ -239,10 +239,10 @@ public class SearchASpecificCar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ctr.searchCars(fieldFuel.getText(), ctr.stringToDouble(fieldSellingPrice.getText()), fieldLicensePlate.getText(), 
+        mainWindow.displayCars(ctr.searchCars(fieldFuel.getText(), ctr.stringToDouble(fieldSellingPrice.getText()), fieldLicensePlate.getText(), 
                 ctr.stringToInt(fieldYear.getText()), fieldMark.getText(), fieldModel.getText(), 
                 fieldVersion.getText(), fieldVolumeOfEngine.getText(), ctr.stringToDouble(fieldOdometer.getText()), 
-                ctr.stringToDouble(fieldPriceOfPurchase.getText()), fieldType.getText(), fieldDescription.getText(), null);
+                ctr.stringToDouble(fieldPriceOfPurchase.getText()), fieldType.getText(), fieldDescription.getText(), null));
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

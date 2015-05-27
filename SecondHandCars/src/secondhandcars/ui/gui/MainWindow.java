@@ -216,7 +216,7 @@ public class MainWindow extends javax.swing.JFrame {
         displayCars(cars);
     }//GEN-LAST:event_btnAllCarsActionPerformed
 
-    private void displayCars(List<Car> cars) {
+    public void displayCars(List<Car> cars) {
         if (dtm.getRowCount() > 0) {
             for (int i = dtm.getRowCount() - 1; i > -1; i--) {
                 dtm.removeRow(i);
