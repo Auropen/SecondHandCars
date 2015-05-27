@@ -212,27 +212,35 @@ public class Main extends javax.swing.JFrame {
 
     private void btnAllCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAllCarsActionPerformed
         List<Car> cars = ctr.getAllCars();
-        for (int i = 0; i < cars.size(); i++) {
-            String[] data = new String[14];
-            data[0] = "" + cars.get(i).getYear();
-            data[1] = "" + cars.get(i).getMark();
-            data[2] = "" + cars.get(i).getModel();
-            data[3] = "" + cars.get(i).getVersion();
-            data[4] = "" + cars.get(i).getVolumeOfEngine();
-            data[5] = "" + cars.get(i).getFuelType();
-            data[6] = "" + cars.get(i).getOdometer();
-            data[7] = "" + cars.get(i).getPriceOfPurchase();
-            data[8] = "" + cars.get(i).getSellingPrice();
-            data[9] = "" + cars.get(i).getType();
-            data[10] = "" + cars.get(i).getDescription();
-            data[11] = "" + cars.get(i).getLicensePlate();
-            data[12] = "" + cars.get(i).getDateOfPurchase();
-            data[13] = "" + cars.get(i).getStockStatus();
-            dtm.addRow(data);
-        }
-        //this.repaint();
+        displayCars(cars);
     }//GEN-LAST:event_btnAllCarsActionPerformed
 
+    private void displayCars(List<Car> cars) {
+        if (dtm.getRowCount() > 0) {
+            for (int i = dtm.getRowCount() - 1; i > -1; i--) {
+                dtm.removeRow(i);
+            }
+        }
+        for (int i = 0; i < cars.size(); i++) {
+            Object[] data = new Object[14];
+            data[0] = cars.get(i).getYear();
+            data[1] = cars.get(i).getMark();
+            data[2] = cars.get(i).getModel();
+            data[3] = cars.get(i).getVersion();
+            data[4] = cars.get(i).getVolumeOfEngine();
+            data[5] = cars.get(i).getFuelType();
+            data[6] = cars.get(i).getOdometer();
+            data[7] = cars.get(i).getPriceOfPurchase();
+            data[8] = cars.get(i).getSellingPrice();
+            data[9] = cars.get(i).getType();
+            data[10] = cars.get(i).getDescription();
+            data[11] = cars.get(i).getLicensePlate();
+            data[12] = cars.get(i).getDateOfPurchase();
+            data[13] = cars.get(i).getStockStatus();
+            dtm.addRow(data);
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
