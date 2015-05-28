@@ -39,7 +39,6 @@ public class SearchASpecificCar extends javax.swing.JFrame {
         fieldYear = new javax.swing.JTextField();
         labelMark = new javax.swing.JLabel();
         fieldMark = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         labelModel = new javax.swing.JLabel();
         fieldModel = new javax.swing.JTextField();
         fieldVersion = new javax.swing.JTextField();
@@ -61,20 +60,19 @@ public class SearchASpecificCar extends javax.swing.JFrame {
         labelLicensePlate = new javax.swing.JLabel();
         fieldLicensePlate = new javax.swing.JTextField();
         labelDateOfPurchase = new javax.swing.JLabel();
-        fieldDateOfPurchase = new javax.swing.JTextField();
+        fieldDayOfPurchase = new javax.swing.JTextField();
+        dayOfPurchaseLabel = new javax.swing.JLabel();
+        fieldMonthOfPurchase = new javax.swing.JTextField();
+        yearOfPurchaseLabel = new javax.swing.JLabel();
+        monthOfPurchaseLabel = new javax.swing.JLabel();
+        fieldYearOfPurchase = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         labelYear.setText("Year:");
 
         labelMark.setText("Mark:");
-
-        jButton1.setText("Search");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         labelModel.setText("Model");
 
@@ -97,6 +95,28 @@ public class SearchASpecificCar extends javax.swing.JFrame {
         labelLicensePlate.setText("License place");
 
         labelDateOfPurchase.setText("Date of purchase");
+
+        fieldDayOfPurchase.setText("  ");
+
+        dayOfPurchaseLabel.setText("day");
+        dayOfPurchaseLabel.setToolTipText("");
+
+        fieldMonthOfPurchase.setText("  ");
+
+        yearOfPurchaseLabel.setText("year");
+        yearOfPurchaseLabel.setToolTipText("");
+
+        monthOfPurchaseLabel.setText("month");
+        monthOfPurchaseLabel.setToolTipText("");
+
+        fieldYearOfPurchase.setText("  ");
+
+        jButton1.setText("Search");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -137,7 +157,7 @@ public class SearchASpecificCar extends javax.swing.JFrame {
                         .addComponent(fieldSellingPrice))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(labelType)
-                        .addGap(87, 87, 87)
+                        .addGap(91, 91, 91)
                         .addComponent(fieldType))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(labelDescription)
@@ -146,15 +166,28 @@ public class SearchASpecificCar extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(labelLicensePlate)
                         .addGap(40, 40, 40)
-                        .addComponent(fieldLicensePlate))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(fieldLicensePlate)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(dayOfPurchaseLabel)
+                                .addGap(43, 43, 43)
+                                .addComponent(monthOfPurchaseLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(yearOfPurchaseLabel)
+                                .addGap(26, 26, 26))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(labelDateOfPurchase)
-                        .addGap(23, 23, 23)
-                        .addComponent(fieldDateOfPurchase)))
+                        .addGap(18, 18, 18)
+                        .addComponent(fieldDayOfPurchase, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(fieldMonthOfPurchase, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(fieldYearOfPurchase, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jButton1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,20 +236,24 @@ public class SearchASpecificCar extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fieldDescription, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelDescription))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(41, 84, Short.MAX_VALUE)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(fieldLicensePlate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelLicensePlate))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(fieldDateOfPurchase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelDateOfPurchase))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fieldLicensePlate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelLicensePlate))
+                .addGap(3, 3, 3)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dayOfPurchaseLabel)
+                    .addComponent(monthOfPurchaseLabel)
+                    .addComponent(yearOfPurchaseLabel))
+                .addGap(1, 1, 1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelDateOfPurchase)
+                    .addComponent(fieldMonthOfPurchase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldDayOfPurchase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldYearOfPurchase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -232,7 +269,7 @@ public class SearchASpecificCar extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -247,12 +284,14 @@ public class SearchASpecificCar extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField fieldDateOfPurchase;
+    private javax.swing.JLabel dayOfPurchaseLabel;
+    private javax.swing.JTextField fieldDayOfPurchase;
     private javax.swing.JTextField fieldDescription;
     private javax.swing.JTextField fieldFuel;
     private javax.swing.JTextField fieldLicensePlate;
     private javax.swing.JTextField fieldMark;
     private javax.swing.JTextField fieldModel;
+    private javax.swing.JTextField fieldMonthOfPurchase;
     private javax.swing.JTextField fieldOdometer;
     private javax.swing.JTextField fieldPriceOfPurchase;
     private javax.swing.JTextField fieldSellingPrice;
@@ -260,6 +299,7 @@ public class SearchASpecificCar extends javax.swing.JFrame {
     private javax.swing.JTextField fieldVersion;
     private javax.swing.JTextField fieldVolumeOfEngine;
     private javax.swing.JTextField fieldYear;
+    private javax.swing.JTextField fieldYearOfPurchase;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelDateOfPurchase;
@@ -275,5 +315,7 @@ public class SearchASpecificCar extends javax.swing.JFrame {
     private javax.swing.JLabel labelVersion;
     private javax.swing.JLabel labelVolumeOfEngine;
     private javax.swing.JLabel labelYear;
+    private javax.swing.JLabel monthOfPurchaseLabel;
+    private javax.swing.JLabel yearOfPurchaseLabel;
     // End of variables declaration//GEN-END:variables
 }
