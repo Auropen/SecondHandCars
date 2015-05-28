@@ -7,7 +7,8 @@ package secondhandcars;
 
 import javax.swing.JFrame;
 import secondhandcars.application.Controller;
-import secondhandcars.ui.gui.MainWindow;
+import secondhandcars.ui.gui.CarWindow;
+import secondhandcars.ui.gui.MainMenu;
 
 /**
  *
@@ -22,7 +23,7 @@ public class SecondHandCars {
         ctr.createCarsFromDB();                     //Stores cars from the database to the memory of the program.
         
         //Sets up the GUI with dispose closing and passing the controller to the GUI
-        MainWindow mainPage = new MainWindow(ctr);
+        MainMenu mainPage = new MainMenu();
         mainPage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         mainPage.setResizable(false);
         mainPage.setTitle("CarStock");
