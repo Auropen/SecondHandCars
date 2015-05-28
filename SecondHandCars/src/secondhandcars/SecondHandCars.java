@@ -14,15 +14,14 @@ import secondhandcars.ui.gui.MainWindow;
  * @author Kristian
  */
 public class SecondHandCars {
-    private static byte tires = 0;
-    
-    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         Controller ctr = new Controller();
-        ctr.createCarsFromDB();
+        ctr.createCarsFromDB();                     //Stores cars from the database to the memory of the program.
+        
+        //Sets up the GUI with dispose closing and passing the controller to the GUI
         MainWindow mainPage = new MainWindow(ctr);
         mainPage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         mainPage.setResizable(false);

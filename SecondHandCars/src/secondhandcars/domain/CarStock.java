@@ -21,23 +21,33 @@ public class CarStock {
     private CarStock(){
         this.cars = new ArrayList();
     }
+    
+    //Singleton creation method
     public static synchronized CarStock getInstance(){
         if(instance == null)
             instance = new CarStock();
         return instance;
     }
     
-    public List<Car> searchCar(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
-        List<Car> result = searchCar(fuelType, sellingPrice, licensePlate, year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, description, dateOfPurchase);
-        
-        for (Car c : result) {
-            if (inStock != c.getStockStatus())
-                result.remove(c);
-        }
-        
-        return result;
-    }
-    
+    /**
+     * Search for a list of specific cars, using all data from the Car class except stock status. 
+     * An empty String, -1 for numeric values or null for date will skip that criteria.
+     * @param fuelType - The fuel of the car.
+     * @param sellingPrice - the sellingPrice of the car.
+     * @param licensePlate - the licensePlate of the car.
+     * @param year - the year the car was made.
+     * @param mark - the mark of the car.
+     * @param model - the model of the car.
+     * @param version - the version of the car.
+     * @param volumeOfEngine - the volume of the engine in the car.
+     * @param odometer - the odometer of the car.
+     * @param priceOfPurchase - the price of the purchase.
+     * @param type - the type of the car.
+     * @param description - the description of the car.
+     * @param dateOfPurchase - the date of purchase of the car.
+     * @param inStock - if the car is in stock.
+     * @return the list of cars that fulfills the search criteria.
+     */
     public List<Car> searchCar(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase) {
         ArrayList<Car> result = new ArrayList<Car>();
         
@@ -85,9 +95,41 @@ public class CarStock {
         
         return result;
     }
+    
+    /**
+     * Search for a list of specific cars, using all data from the Car class including stock status. 
+     * An empty String, -1 for numeric values or null for date will skip that criteria.
+     * @param fuelType - The fuel of the car.
+     * @param sellingPrice - the sellingPrice of the car.
+     * @param licensePlate - the licensePlate of the car.
+     * @param year - the year the car was made.
+     * @param mark - the mark of the car.
+     * @param model - the model of the car.
+     * @param version - the version of the car.
+     * @param volumeOfEngine - the volume of the engine in the car.
+     * @param odometer - the odometer of the car.
+     * @param priceOfPurchase - the price of the purchase.
+     * @param type - the type of the car.
+     * @param description - the description of the car.
+     * @param dateOfPurchase - the date of purchase of the car.
+     * @param inStock - if the car is in stock.
+     * @return the list of cars that fulfills the search criteria.
+     */
+    public List<Car> searchCar(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
+        List<Car> result = searchCar(fuelType, sellingPrice, licensePlate, year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, description, dateOfPurchase);
+        
+        for (Car c : result) {
+            if (inStock != c.getStockStatus())
+                result.remove(c);
+        }
+        
+        return result;
+    }
 
+    //Accessors methods
     public int getCarAmount()   {   return cars.size();     }
     public List<Car> getCars()  {   return cars;            }
 
+    //Mutator methods
     public void setCars(List<Car> cars)         {   this.cars = cars;           }
 }

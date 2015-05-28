@@ -44,14 +44,23 @@ public class Car {
         this.inStock = inStock;
     }
     
+    /**
+     * Overloads the constructor without licensePlate and description.
+     */
     public Car(String fuelType, double sellingPrice, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, Date dateOfPurchase, boolean inStock) {
         this(fuelType, sellingPrice, "", year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, "", dateOfPurchase, inStock);
     }
     
+    /**
+     * Overloads the constructor without licensePlate.
+     */
     public Car(String fuelType, double sellingPrice, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
         this(fuelType, sellingPrice, "", year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, description, dateOfPurchase, inStock);
     }
     
+    /**
+     * Overloads the constructor without description.
+     */
     public Car(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, Date dateOfPurchase, boolean inStock) {
         this(fuelType, sellingPrice, licensePlate, year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, "", dateOfPurchase, inStock);
     }

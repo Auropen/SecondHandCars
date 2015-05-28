@@ -24,10 +24,14 @@ public class Company {
         this.phoneNumber = "78862209";
         this.carStock = CarStock.getInstance();
     }
+    
+    /**
+     * Singleton creation method
+     * @return this instance of company
+     */
     public static synchronized Company getInstance(){
-        if(instance == null){
+        if(instance == null)
             instance = new Company();
-        }
         return instance;
     }
 

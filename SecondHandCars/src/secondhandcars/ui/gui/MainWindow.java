@@ -216,6 +216,10 @@ public class MainWindow extends javax.swing.JFrame {
         displayCars(cars);
     }//GEN-LAST:event_btnAllCarsActionPerformed
 
+    /**
+     * Takes a list of car and display them on the table.
+     * @param cars - List of cars to be displayed
+     */
     public void displayCars(List<Car> cars) {
         if (dtm.getRowCount() > 0) {
             for (int i = dtm.getRowCount() - 1; i > -1; i--) {

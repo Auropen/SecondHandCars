@@ -36,12 +36,8 @@ public class Controller implements IController {
     public List<Car> searchCars(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
         return company.getCarStock().searchCar(fuelType, sellingPrice, licensePlate, year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, description, dateOfPurchase, inStock);
     }
-
-    @Override
-    public void createCarsFromDB() {
-        company.getCarStock().getCars().addAll(getAllCars());
-    }
     
+    @Override
     public List<Car> getAllCars(){
         List<Car> cars = new ArrayList();
         try {
@@ -62,6 +58,11 @@ public class Controller implements IController {
             dbHandler.closeConnection();
         }
         return cars;
+    }
+
+    @Override
+    public void createCarsFromDB() {
+        company.getCarStock().getCars().addAll(getAllCars());
     }
 
     @Override
