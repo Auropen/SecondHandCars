@@ -26,7 +26,7 @@ public class Company {
     }
     
     /**
-     * Singleton creation method
+     * Singleton creation/accessing method
      * @return this instance of company
      */
     public static synchronized Company getInstance(){

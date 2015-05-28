@@ -22,7 +22,10 @@ public class CarStock {
         this.cars = new ArrayList();
     }
     
-    //Singleton creation method
+    /**
+     * Singleton creation method
+     * @return Returns this instance of carStock
+     */
     public static synchronized CarStock getInstance(){
         if(instance == null)
             instance = new CarStock();

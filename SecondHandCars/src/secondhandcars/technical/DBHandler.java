@@ -38,17 +38,13 @@ public class DBHandler {
         connectorURL = "jdbc:sqlserver://localhost;instanceName="+dbProp.getProperty("instanceName")+";user="+dbProp.getProperty("user")+";password="+dbProp.getProperty("password");
     }
     
+    /**
+     * Attempts creating a connection to the database.
+     */
     public void connectToCarDatabase(){
         try{
             conn = DriverManager.getConnection(connectorURL);
             System.out.println("Connection SUCCESS");
-        }
-        catch(SQLException e){
-            System.out.println("SQLException: " + e.getMessage());
-            System.out.println("SQLState: " + e.getSQLState());
-            System.out.println("VendorError: " + e.getErrorCode());
-        }
-        try{
             conn.setAutoCommit(true);
         }
         catch(SQLException e){
@@ -58,6 +54,9 @@ public class DBHandler {
         }
     }
     
+    /**
+     * Attempts closing the connection to the database
+     */
     public void closeConnection(){
         try{
             conn.close();
@@ -69,6 +68,9 @@ public class DBHandler {
         }
     }
     
+    /**
+     * Creates a statement for the database
+     */
     public void createStatement(){
         try{
             stmt = conn.createStatement();
@@ -80,17 +82,49 @@ public class DBHandler {
         }
     }
     
-    public ResultSet getAllCarsInStock() throws SQLException{
+    /**
+     * Gets all the cars that are in stock from the database
+     * @return a ResultSet of the cars in stock
+     */
+    public ResultSet getAllCarsInStock() {
         connectToCarDatabase();
         createStatement();
-        ResultSet rs = stmt.executeQuery("USE " + databaseName + " SELECT * FROM getCarsInStock");
+        ResultSet rs = null;
+        
+        try {
+            rs = stmt.executeQuery("USE " + databaseName + " SELECT * FROM getCarsInStock");
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        finally{
+            closeConnection();
+        }
+        
         return rs;
     }
     
-    public ResultSet getSoldCars() throws SQLException{
+    /**
+     * Gets all sold cars from the database
+     * @return a ResultSet of the sold cars
+     */
+    public ResultSet getSoldCars() {
         connectToCarDatabase();
         createStatement();
-        ResultSet rs = stmt.executeQuery("USE " + databaseName + " SELECT * FROM getSoldCars");
+        ResultSet rs = null;
+        
+        try {
+            rs = stmt.executeQuery("USE " + databaseName + " SELECT * FROM getSoldCars");
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        finally{
+            closeConnection();
+        }
+        
         return rs;
     }
 }
