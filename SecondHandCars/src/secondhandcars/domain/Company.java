@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package secondhandcars.domain;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
