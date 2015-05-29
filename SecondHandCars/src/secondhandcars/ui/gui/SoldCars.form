@@ -71,7 +71,7 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="btnGetAllCars">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Get all cars"/>
+            <Property name="text" type="java.lang.String" value="Get sold cars"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGetAllCarsActionPerformed"/>
