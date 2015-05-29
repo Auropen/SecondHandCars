@@ -5,27 +5,22 @@
  */
 package secondhandcars.ui.gui;
 
+import secondhandcars.application.IController;
+
 /**
  *
  * @author Cornel
  */
 public class SoldCars extends javax.swing.JFrame {
-<<<<<<< HEAD
     CarWindow mainWindow;
     IController ctr;
-=======
->>>>>>> parent of ca10509... Finished view sold cars function :8ball:  #33
 
     /**
      * Creates new form SoldCars
      */
-<<<<<<< HEAD
     public SoldCars(IController ctr, CarWindow mainWindow) {
         this.ctr = ctr;
         this.mainWindow = mainWindow;
-=======
-    public SoldCars() {
->>>>>>> parent of ca10509... Finished view sold cars function :8ball:  #33
         initComponents();
         removeGetCarsPanel();
     }
@@ -40,7 +35,7 @@ public class SoldCars extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnGetAllCars = new javax.swing.JButton();
+        btnGetSoldCars = new javax.swing.JButton();
         btnGetCars = new javax.swing.JButton();
         panelGetCars = new javax.swing.JPanel();
         labelFromDay = new javax.swing.JLabel();
@@ -58,13 +53,14 @@ public class SoldCars extends javax.swing.JFrame {
         fieldToMonth = new javax.swing.JTextField();
         fieldToYear = new javax.swing.JTextField();
         btnSearchGetCars = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnGetAllCars.setText("Get all cars");
-        btnGetAllCars.addActionListener(new java.awt.event.ActionListener() {
+        btnGetSoldCars.setText("Get sold cars");
+        btnGetSoldCars.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGetAllCarsActionPerformed(evt);
+                btnGetSoldCarsActionPerformed(evt);
             }
         });
 
@@ -98,6 +94,8 @@ public class SoldCars extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("<Iteration 2>");
+
         javax.swing.GroupLayout panelGetCarsLayout = new javax.swing.GroupLayout(panelGetCars);
         panelGetCars.setLayout(panelGetCarsLayout);
         panelGetCarsLayout.setHorizontalGroup(
@@ -125,7 +123,9 @@ public class SoldCars extends javax.swing.JFrame {
                         .addGap(150, 150, 150)
                         .addComponent(labelToTheDate))
                     .addGroup(panelGetCarsLayout.createSequentialGroup()
-                        .addGap(147, 147, 147)
+                        .addContainerGap()
+                        .addComponent(jLabel1)
+                        .addGap(103, 103, 103)
                         .addComponent(labelFromDate))
                     .addGroup(panelGetCarsLayout.createSequentialGroup()
                         .addContainerGap()
@@ -136,7 +136,9 @@ public class SoldCars extends javax.swing.JFrame {
             panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGetCarsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelFromDate)
+                .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelFromDate)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fieldFromDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -175,7 +177,7 @@ public class SoldCars extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnGetAllCars)
+                        .addComponent(btnGetSoldCars)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnGetCars, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -187,7 +189,7 @@ public class SoldCars extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGetAllCars)
+                    .addComponent(btnGetSoldCars)
                     .addComponent(btnGetCars))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelGetCars, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -216,52 +218,18 @@ public class SoldCars extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnSearchGetCarsActionPerformed
 
-    private void btnGetAllCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetAllCarsActionPerformed
+    private void btnGetSoldCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetSoldCarsActionPerformed
+        mainWindow.displayCars(ctr.getSoldCars());
         this.dispose();
-    }//GEN-LAST:event_btnGetAllCarsActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SoldCars.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SoldCars.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SoldCars.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SoldCars.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new SoldCars().setVisible(true);
-            }
-        });
-    }
+    }//GEN-LAST:event_btnGetSoldCarsActionPerformed
     
     public void removeGetCarsPanel(){
         panelGetCars.setVisible(false);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGetAllCars;
     private javax.swing.JButton btnGetCars;
+    private javax.swing.JButton btnGetSoldCars;
     private javax.swing.JButton btnSearchGetCars;
     private javax.swing.JTextField fieldFromDay;
     private javax.swing.JTextField fieldFromMonth;
@@ -269,6 +237,7 @@ public class SoldCars extends javax.swing.JFrame {
     private javax.swing.JTextField fieldToDay;
     private javax.swing.JTextField fieldToMonth;
     private javax.swing.JTextField fieldToYear;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelFromDate;
     private javax.swing.JLabel labelFromDay;

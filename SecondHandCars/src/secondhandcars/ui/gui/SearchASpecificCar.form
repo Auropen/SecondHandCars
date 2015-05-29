@@ -49,66 +49,20 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="labelMark" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelModel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelVersion" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelYear" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelVolumeOfEngine" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelFuel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelOdometer" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="fieldOdometer" max="32767" attributes="0"/>
-                              <Component id="fieldFuel" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="fieldModel" pref="191" max="32767" attributes="0"/>
-                                  <Component id="fieldVolumeOfEngine" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="fieldVersion" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
-                                      <Component id="fieldYear" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
-                                      <Component id="fieldMark" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="labelPriceOfPurchase" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                          <Component id="fieldPriceOfPurchase" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="labelSellingPrice" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                          <Component id="fieldSellingPrice" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="labelType" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                          <Component id="fieldType" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="labelDescription" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                          <Component id="fieldDescription" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
                           <Component id="labelLicensePlate" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="fieldLicensePlate" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                                   <Component id="dayOfPurchaseLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                   <Component id="monthOfPurchaseLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="yearOfPurchaseLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                  <Component id="fieldLicensePlate" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -120,6 +74,52 @@
                           <Component id="fieldMonthOfPurchase" min="-2" pref="52" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="fieldYearOfPurchase" min="-2" pref="52" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="labelSellingPrice" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelType" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelDescription" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="fieldType" max="32767" attributes="0"/>
+                              <Component id="fieldSellingPrice" max="32767" attributes="0"/>
+                              <Component id="fieldDescription" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="labelMark" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelModel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelVersion" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelYear" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelVolumeOfEngine" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelFuel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelOdometer" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelPriceOfPurchase" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="fieldPriceOfPurchase" max="32767" attributes="0"/>
+                              <Component id="fieldOdometer" max="32767" attributes="0"/>
+                              <Component id="fieldFuel" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="fieldModel" pref="191" max="32767" attributes="0"/>
+                                      <Component id="fieldVolumeOfEngine" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="fieldVersion" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
+                                      <Component id="fieldYear" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
+                                      <Component id="fieldMark" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
