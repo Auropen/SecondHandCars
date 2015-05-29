@@ -5,7 +5,11 @@
  */
 package secondhandcars.ui.gui;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import secondhandcars.application.IController;
 
@@ -66,7 +70,7 @@ public class SearchASpecificCar extends javax.swing.JFrame {
         yearOfPurchaseLabel = new javax.swing.JLabel();
         monthOfPurchaseLabel = new javax.swing.JLabel();
         fieldYearOfPurchase = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnSearch = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,12 +100,8 @@ public class SearchASpecificCar extends javax.swing.JFrame {
 
         labelDateOfPurchase.setText("Date of purchase");
 
-        fieldDayOfPurchase.setText("  ");
-
         dayOfPurchaseLabel.setText("day");
         dayOfPurchaseLabel.setToolTipText("");
-
-        fieldMonthOfPurchase.setText("  ");
 
         yearOfPurchaseLabel.setText("year");
         yearOfPurchaseLabel.setToolTipText("");
@@ -109,12 +109,10 @@ public class SearchASpecificCar extends javax.swing.JFrame {
         monthOfPurchaseLabel.setText("month");
         monthOfPurchaseLabel.setToolTipText("");
 
-        fieldYearOfPurchase.setText("  ");
-
-        jButton1.setText("Search");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSearch.setText("Search");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSearchActionPerformed(evt);
             }
         });
 
@@ -186,7 +184,7 @@ public class SearchASpecificCar extends javax.swing.JFrame {
                         .addComponent(fieldYearOfPurchase, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jButton1)
+                .addComponent(btnSearch)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -252,7 +250,7 @@ public class SearchASpecificCar extends javax.swing.JFrame {
                     .addComponent(fieldDayOfPurchase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fieldYearOfPurchase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnSearch)
                 .addContainerGap())
         );
 
@@ -275,15 +273,28 @@ public class SearchASpecificCar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         carWindow.displayCars(ctr.searchCars(fieldFuel.getText(), ctr.stringToDouble(fieldSellingPrice.getText()), fieldLicensePlate.getText(), 
                 ctr.stringToInt(fieldYear.getText()), fieldMark.getText(), fieldModel.getText(), 
                 fieldVersion.getText(), fieldVolumeOfEngine.getText(), ctr.stringToDouble(fieldOdometer.getText()), 
-                ctr.stringToDouble(fieldPriceOfPurchase.getText()), fieldType.getText(), fieldDescription.getText(), null));
+                ctr.stringToDouble(fieldPriceOfPurchase.getText()), fieldType.getText(), fieldDescription.getText(), 
+                createDate(ctr.stringToInt(fieldDayOfPurchase.getText()), ctr.stringToInt(fieldMonthOfPurchase.getText()), ctr.stringToInt(fieldYearOfPurchase.getText()))));
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnSearchActionPerformed
 
+    private Date createDate(int d, int m, int y) {
+        String sD = (d < 10) ? "0" + d: "" + d;
+        String sM = (m < 10) ? "0" + m: "" + m;
+        try {
+            return new SimpleDateFormat("dd-MM-yyyy").parse(sD + "-" + sM + "-" + y);
+        } catch (ParseException ex) {
+            ex.getMessage();
+        }
+        return null;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSearch;
     private javax.swing.JLabel dayOfPurchaseLabel;
     private javax.swing.JTextField fieldDayOfPurchase;
     private javax.swing.JTextField fieldDescription;
@@ -300,7 +311,6 @@ public class SearchASpecificCar extends javax.swing.JFrame {
     private javax.swing.JTextField fieldVolumeOfEngine;
     private javax.swing.JTextField fieldYear;
     private javax.swing.JTextField fieldYearOfPurchase;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelDateOfPurchase;
     private javax.swing.JLabel labelDescription;
