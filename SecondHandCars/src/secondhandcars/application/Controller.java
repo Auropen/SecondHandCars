@@ -10,8 +10,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import secondhandcars.domain.Car;
 import secondhandcars.domain.Company;
 import secondhandcars.technical.DBHandler;
@@ -83,7 +81,7 @@ public class Controller implements IController {
      *  @return a list of cars
      */
     public List<Car> getAllCars(){
-        List<Car> cars = new ArrayList();
+        List<Car> cars;
         ResultSet rs = dbHandler.getAllCarsInStock();
         cars = getCarsFromResultset(rs);
         return cars;
@@ -120,6 +118,9 @@ public class Controller implements IController {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        finally {
+             dbHandler.closeConnection();
         }
         return cars;
     }

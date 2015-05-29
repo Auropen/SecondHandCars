@@ -201,7 +201,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btnViewAllSoldCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewAllSoldCarsActionPerformed
         
-        JFrame soldCars = new SoldCars();
+        JFrame soldCars = new SoldCars(ctr, this);
         
         
         soldCars.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
