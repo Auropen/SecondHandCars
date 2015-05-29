@@ -5,25 +5,27 @@
  */
 package secondhandcars.ui.gui;
 
-import secondhandcars.application.IController;
-
 /**
  *
  * @author Cornel
  */
 public class SoldCars extends javax.swing.JFrame {
+<<<<<<< HEAD
     CarWindow mainWindow;
     IController ctr;
+=======
+>>>>>>> parent of ca10509... Finished view sold cars function :8ball:  #33
+
     /**
      * Creates new form SoldCars
      */
-
+<<<<<<< HEAD
     public SoldCars(IController ctr, CarWindow mainWindow) {
         this.ctr = ctr;
         this.mainWindow = mainWindow;
-    }
-
+=======
     public SoldCars() {
+>>>>>>> parent of ca10509... Finished view sold cars function :8ball:  #33
         initComponents();
         removeGetCarsPanel();
     }

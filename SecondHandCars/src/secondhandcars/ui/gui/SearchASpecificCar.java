@@ -13,8 +13,13 @@ import secondhandcars.application.IController;
  *
  * @author Kristian
  */
-public class SearchASpecificCar extends javax.swing.JFrame {
+<<<<<<< HEAD
+public class SearchASpecificCar extends JFrame {
     CarWindow mainWindow;
+=======
+public class SearchASpecificCar extends javax.swing.JFrame {
+    MainWindow mainWindow;
+>>>>>>> parent of ca10509... Finished view sold cars function :8ball:  #33
     IController ctr;
     /**
      * Creates new form MainMenu
