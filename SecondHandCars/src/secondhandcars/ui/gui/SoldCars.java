@@ -20,7 +20,7 @@ public class SoldCars extends javax.swing.JFrame {
      */
     public SoldCars(IController ctr, CarWindow carWindow) {
         this.ctr = ctr;
-        this.carWindow = this.carWindow;
+        this.carWindow = carWindow;
         initComponents();
         removeGetCarsPanel();
     }
