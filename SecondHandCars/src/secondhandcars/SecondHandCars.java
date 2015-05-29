@@ -14,9 +14,7 @@ import secondhandcars.ui.gui.CarWindow;
  * @author Kristian
  */
 public class SecondHandCars {
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         Controller ctr = new Controller();
         ctr.createCarsFromDB();                     //Stores cars from the database to the memory of the program.
@@ -25,7 +23,7 @@ public class SecondHandCars {
         CarWindow mainPage = new CarWindow(ctr);
         mainPage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         mainPage.setResizable(false);
-        mainPage.setTitle("CarStock");
+        mainPage.setTitle("Car window");
         mainPage.setVisible(true);
         mainPage.setLocationRelativeTo(null);
     }

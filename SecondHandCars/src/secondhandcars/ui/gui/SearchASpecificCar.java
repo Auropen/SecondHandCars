@@ -8,9 +8,6 @@ package secondhandcars.ui.gui;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JFrame;
 import secondhandcars.application.IController;
 
 /**
@@ -20,9 +17,7 @@ import secondhandcars.application.IController;
 public class SearchASpecificCar extends javax.swing.JFrame {
     CarWindow carWindow;
     IController ctr;
-    /**
-     * Creates new form MainMenu
-     */
+    
     public SearchASpecificCar(IController ctr, CarWindow carWindow) {
         this.ctr = ctr;
         this.carWindow = carWindow;
@@ -274,14 +269,30 @@ public class SearchASpecificCar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        //Creates the date
+        int d = ctr.stringToInt(fieldDayOfPurchase.getText());                                       
+        int m = ctr.stringToInt(fieldMonthOfPurchase.getText());                                       
+        int y = ctr.stringToInt(fieldYearOfPurchase.getText());
+        Date date;
+        if (d < 0 || m < 0 || y < 0)
+            date = null;                            //If the fields of the date are untouched.
+        else 
+            date = createDate(d, m, y);             //Creates the date if fields were possitive.
         carWindow.displayCars(ctr.searchCars(fieldFuel.getText(), ctr.stringToDouble(fieldSellingPrice.getText()), fieldLicensePlate.getText(), 
                 ctr.stringToInt(fieldYear.getText()), fieldMark.getText(), fieldModel.getText(), 
                 fieldVersion.getText(), fieldVolumeOfEngine.getText(), ctr.stringToDouble(fieldOdometer.getText()), 
-                ctr.stringToDouble(fieldPriceOfPurchase.getText()), fieldType.getText(), fieldDescription.getText(), 
-                createDate(ctr.stringToInt(fieldDayOfPurchase.getText()), ctr.stringToInt(fieldMonthOfPurchase.getText()), ctr.stringToInt(fieldYearOfPurchase.getText()))));
+                ctr.stringToDouble(fieldPriceOfPurchase.getText()), fieldType.getText(), fieldDescription.getText(), date)); 
+                
         this.dispose();
     }//GEN-LAST:event_btnSearchActionPerformed
 
+    /**
+     * Creates a date from an int day, month and year.
+     * @param d - the day to be parsed
+     * @param m - the month to be parsed
+     * @param y - the year to be parsed
+     * @return the date
+     */
     private Date createDate(int d, int m, int y) {
         String sD = (d < 10) ? "0" + d: "" + d;
         String sM = (m < 10) ? "0" + m: "" + m;
