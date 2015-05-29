@@ -14,12 +14,12 @@ import secondhandcars.application.IController;
  * @author Kristian
  */
 public class SearchASpecificCar extends JFrame {
-    CarWindow mainWindow;
+    MainWindow mainWindow;
     IController ctr;
     /**
      * Creates new form MainMenu
      */
-    public SearchASpecificCar(IController ctr, CarWindow mainWindow) {
+    public SearchASpecificCar(IController ctr, MainWindow mainWindow) {
         this.ctr = ctr;
         this.mainWindow = mainWindow;
         initComponents();

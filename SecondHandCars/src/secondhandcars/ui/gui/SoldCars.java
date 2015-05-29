@@ -12,13 +12,13 @@ import secondhandcars.application.IController;
  * @author Cornel
  */
 public class SoldCars extends javax.swing.JFrame {
-    CarWindow mainWindow;
+    MainWindow mainWindow;
     IController ctr;
 
     /**
      * Creates new form SoldCars
      */
-    public SoldCars(IController ctr, CarWindow mainWindow) {
+    public SoldCars(IController ctr, MainWindow mainWindow) {
         this.ctr = ctr;
         this.mainWindow = mainWindow;
         initComponents();

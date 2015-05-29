@@ -16,7 +16,7 @@ import secondhandcars.domain.Car;
  *
  * @author Kristian
  */
-public class CarWindow extends javax.swing.JFrame {
+public class MainWindow extends javax.swing.JFrame {
     IController ctr;
     Object [][] tableDate = {
         {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
@@ -26,7 +26,7 @@ public class CarWindow extends javax.swing.JFrame {
     };
     DefaultTableModel dtm = new DefaultTableModel(tableDate, tableColumnName);
     
-    public CarWindow(IController ctr) {
+    public MainWindow(IController ctr) {
         this.ctr = ctr;
         initComponents();
         MainFrame.setModel(dtm);
@@ -201,7 +201,7 @@ public class CarWindow extends javax.swing.JFrame {
 
     private void btnViewAllSoldCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewAllSoldCarsActionPerformed
         
-        JFrame soldCars = new SoldCars(ctr,this);
+        JFrame soldCars = new SoldCars();
         
         
         soldCars.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
