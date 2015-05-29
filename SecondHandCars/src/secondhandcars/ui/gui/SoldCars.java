@@ -12,13 +12,13 @@ import secondhandcars.application.IController;
  * @author Cornel
  */
 public class SoldCars extends javax.swing.JFrame {
-    MainWindow mainWindow;
+    CarWindow mainWindow;
     IController ctr;
 
     /**
      * Creates new form SoldCars
      */
-    public SoldCars(IController ctr, MainWindow carWindow) {
+    public SoldCars(IController ctr, CarWindow carWindow) {
         this.ctr = ctr;
         this.mainWindow = mainWindow;
         initComponents();
@@ -35,7 +35,7 @@ public class SoldCars extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnGetAllCars = new javax.swing.JButton();
+        btnGetSoldCars = new javax.swing.JButton();
         btnGetCars = new javax.swing.JButton();
         panelGetCars = new javax.swing.JPanel();
         labelFromDay = new javax.swing.JLabel();
@@ -56,10 +56,10 @@ public class SoldCars extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnGetAllCars.setText("Get sold cars");
-        btnGetAllCars.addActionListener(new java.awt.event.ActionListener() {
+        btnGetSoldCars.setText("Get sold cars");
+        btnGetSoldCars.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGetAllCarsActionPerformed(evt);
+                btnGetSoldCarsActionPerformed(evt);
             }
         });
 
@@ -170,7 +170,7 @@ public class SoldCars extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnGetAllCars)
+                        .addComponent(btnGetSoldCars)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnGetCars, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -182,7 +182,7 @@ public class SoldCars extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGetAllCars)
+                    .addComponent(btnGetSoldCars)
                     .addComponent(btnGetCars))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelGetCars, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -211,18 +211,18 @@ public class SoldCars extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnSearchGetCarsActionPerformed
 
-    private void btnGetAllCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetAllCarsActionPerformed
+    private void btnGetSoldCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetSoldCarsActionPerformed
         mainWindow.displayCars(ctr.getSoldCars());
         this.dispose();
-    }//GEN-LAST:event_btnGetAllCarsActionPerformed
+    }//GEN-LAST:event_btnGetSoldCarsActionPerformed
 
     public void removeGetCarsPanel(){
         panelGetCars.setVisible(false);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGetAllCars;
     private javax.swing.JButton btnGetCars;
+    private javax.swing.JButton btnGetSoldCars;
     private javax.swing.JButton btnSearchGetCars;
     private javax.swing.JTextField fieldFromDay;
     private javax.swing.JTextField fieldFromMonth;
