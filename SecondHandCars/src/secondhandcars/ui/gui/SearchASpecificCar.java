@@ -14,14 +14,14 @@ import secondhandcars.application.IController;
  * @author Kristian
  */
 public class SearchASpecificCar extends javax.swing.JFrame {
-    CarWindow mainWindow;
+    CarWindow carWindow;
     IController ctr;
     /**
      * Creates new form MainMenu
      */
-    public SearchASpecificCar(IController ctr, CarWindow mainWindow) {
+    public SearchASpecificCar(IController ctr, CarWindow carWindow) {
         this.ctr = ctr;
-        this.mainWindow = mainWindow;
+        this.carWindow = carWindow;
         initComponents();
     }
 
@@ -276,7 +276,7 @@ public class SearchASpecificCar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        mainWindow.displayCars(ctr.searchCars(fieldFuel.getText(), ctr.stringToDouble(fieldSellingPrice.getText()), fieldLicensePlate.getText(), 
+        carWindow.displayCars(ctr.searchCars(fieldFuel.getText(), ctr.stringToDouble(fieldSellingPrice.getText()), fieldLicensePlate.getText(), 
                 ctr.stringToInt(fieldYear.getText()), fieldMark.getText(), fieldModel.getText(), 
                 fieldVersion.getText(), fieldVolumeOfEngine.getText(), ctr.stringToDouble(fieldOdometer.getText()), 
                 ctr.stringToDouble(fieldPriceOfPurchase.getText()), fieldType.getText(), fieldDescription.getText(), null));

@@ -93,7 +93,7 @@ public class Controller implements IController {
      *  @return a list of cars
      */
     public List<Car> getSoldCars(){
-        List<Car> cars = new ArrayList();
+        List<Car> cars;
         ResultSet rs = dbHandler.getSoldCars();
         cars = getCarsFromResultset(rs);
         return cars;

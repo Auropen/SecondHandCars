@@ -12,7 +12,7 @@ import secondhandcars.application.IController;
  * @author Cornel
  */
 public class SoldCars extends javax.swing.JFrame {
-    CarWindow mainWindow;
+    CarWindow carWindow;
     IController ctr;
 
     /**
@@ -20,7 +20,7 @@ public class SoldCars extends javax.swing.JFrame {
      */
     public SoldCars(IController ctr, CarWindow carWindow) {
         this.ctr = ctr;
-        this.mainWindow = mainWindow;
+        this.carWindow = this.carWindow;
         initComponents();
         removeGetCarsPanel();
     }
@@ -212,7 +212,7 @@ public class SoldCars extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSearchGetCarsActionPerformed
 
     private void btnGetSoldCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetSoldCarsActionPerformed
-        mainWindow.displayCars(ctr.getSoldCars());
+        carWindow.displayCars(ctr.getSoldCars());
         this.dispose();
     }//GEN-LAST:event_btnGetSoldCarsActionPerformed
 

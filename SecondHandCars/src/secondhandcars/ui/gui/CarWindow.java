@@ -8,7 +8,6 @@ package secondhandcars.ui.gui;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
-import secondhandcars.application.Controller;
 import secondhandcars.application.IController;
 import secondhandcars.domain.Car;
 
@@ -191,7 +190,6 @@ public class CarWindow extends javax.swing.JFrame {
     private void btnSeachCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeachCarActionPerformed
         JFrame searchMenu = new SearchASpecificCar(ctr, this);
         
-        
         searchMenu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         searchMenu.setResizable(false);
         searchMenu.setTitle("Search Cars Menu");
@@ -220,26 +218,26 @@ public class CarWindow extends javax.swing.JFrame {
      */
     public void displayCars(List<Car> cars) {
         if (dtm.getRowCount() > 0) {
-            for (int i = dtm.getRowCount() - 1; i > -1; i--) {
+            for (int i = dtm.getRowCount() - 1; i >= 0; i--) {
                 dtm.removeRow(i);
             }
         }
-        for (int i = 0; i < cars.size(); i++) {
+        for (Car car : cars) {
             Object[] data = new Object[14];
-            data[0] = cars.get(i).getYear();
-            data[1] = cars.get(i).getMark();
-            data[2] = cars.get(i).getModel();
-            data[3] = cars.get(i).getVersion();
-            data[4] = cars.get(i).getVolumeOfEngine();
-            data[5] = cars.get(i).getFuelType();
-            data[6] = cars.get(i).getOdometer();
-            data[7] = cars.get(i).getPriceOfPurchase();
-            data[8] = cars.get(i).getSellingPrice();
-            data[9] = cars.get(i).getType();
-            data[10] = cars.get(i).getDescription();
-            data[11] = cars.get(i).getLicensePlate();
-            data[12] = cars.get(i).getDateOfPurchase();
-            data[13] = cars.get(i).getStockStatus();
+            data[0] = car.getYear();
+            data[1] = car.getMark();
+            data[2] = car.getModel();
+            data[3] = car.getVersion();
+            data[4] = car.getVolumeOfEngine();
+            data[5] = car.getFuelType();
+            data[6] = car.getOdometer();
+            data[7] = car.getPriceOfPurchase();
+            data[8] = car.getSellingPrice();
+            data[9] = car.getType();
+            data[10] = car.getDescription();
+            data[11] = car.getLicensePlate();
+            data[12] = car.getDateOfPurchase();
+            data[13] = car.getStockStatus();
             dtm.addRow(data);
         }
     }
