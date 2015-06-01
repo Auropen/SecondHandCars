@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author Baku
+ * @author Kritian
  */
 public class Company {
     private static Company instance;
