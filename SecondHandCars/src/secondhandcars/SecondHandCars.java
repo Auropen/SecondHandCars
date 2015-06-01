@@ -7,7 +7,6 @@ package secondhandcars;
 
 import javax.swing.JFrame;
 import secondhandcars.application.Controller;
-import secondhandcars.ui.gui.CarWindow;
 import secondhandcars.ui.gui.MainMenu;
 
 /**
@@ -24,7 +23,7 @@ public class SecondHandCars {
         MainMenu mainPage = new MainMenu(ctr);
         mainPage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         mainPage.setResizable(false);
-        mainPage.setTitle("Car window");
+        mainPage.setTitle("Main Menu");
         mainPage.setVisible(true);
         mainPage.setLocationRelativeTo(null);
     }
