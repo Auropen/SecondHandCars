@@ -5,7 +5,9 @@
  */
 package secondhandcars.ui.gui;
 
+import java.util.List;
 import secondhandcars.application.IController;
+import secondhandcars.domain.Car;
 
 /**
  *
@@ -212,7 +214,8 @@ public class SoldCars extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSearchGetCarsActionPerformed
 
     private void btnGetSoldCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetSoldCarsActionPerformed
-        carWindow.displayCars(ctr.getSoldCars());
+        List<Car> cars = ctr.getSoldCars();
+        carWindow.displayCars(cars);
         this.dispose();
     }//GEN-LAST:event_btnGetSoldCarsActionPerformed
 
