@@ -5,6 +5,9 @@
  */
 package secondhandcars.ui.gui;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import secondhandcars.application.IController;
 import secondhandcars.domain.Car;
@@ -40,21 +43,21 @@ public class SoldCars extends javax.swing.JFrame {
         btnGetSoldCars = new javax.swing.JButton();
         btnGetCars = new javax.swing.JButton();
         panelGetCars = new javax.swing.JPanel();
-        labelFromDay = new javax.swing.JLabel();
-        labelFromMonth = new javax.swing.JLabel();
-        labelFromYear = new javax.swing.JLabel();
         labelFromDate = new javax.swing.JLabel();
         labelToTheDate = new javax.swing.JLabel();
-        fieldFromDay = new javax.swing.JTextField();
-        fieldFromMonth = new javax.swing.JTextField();
-        fieldFromYear = new javax.swing.JTextField();
-        labelToDay = new javax.swing.JLabel();
-        labelToMonth = new javax.swing.JLabel();
-        labelToYear = new javax.swing.JLabel();
-        fieldToDay = new javax.swing.JTextField();
-        fieldToMonth = new javax.swing.JTextField();
-        fieldToYear = new javax.swing.JTextField();
         btnSearchGetCars = new javax.swing.JButton();
+        fieldStartYear = new javax.swing.JTextField();
+        fieldStartMonth = new javax.swing.JTextField();
+        fieldStartDay = new javax.swing.JTextField();
+        dayOfPurchaseLabel = new javax.swing.JLabel();
+        monthOfPurchaseLabel = new javax.swing.JLabel();
+        yearOfPurchaseLabel = new javax.swing.JLabel();
+        fieldEndYear = new javax.swing.JTextField();
+        fieldEndMonth = new javax.swing.JTextField();
+        fieldEndDay = new javax.swing.JTextField();
+        dayOfPurchaseLabel1 = new javax.swing.JLabel();
+        monthOfPurchaseLabel1 = new javax.swing.JLabel();
+        yearOfPurchaseLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,21 +75,11 @@ public class SoldCars extends javax.swing.JFrame {
             }
         });
 
-        labelFromDay.setText("Day");
-
-        labelFromMonth.setText("Month");
-
-        labelFromYear.setText("Year");
-
+        labelFromDate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         labelFromDate.setText("From Date");
 
+        labelToTheDate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         labelToTheDate.setText("To Date");
-
-        labelToDay.setText("Day");
-
-        labelToMonth.setText("Month");
-
-        labelToYear.setText("Year");
 
         btnSearchGetCars.setText("Search");
         btnSearchGetCars.addActionListener(new java.awt.event.ActionListener() {
@@ -95,6 +88,24 @@ public class SoldCars extends javax.swing.JFrame {
             }
         });
 
+        dayOfPurchaseLabel.setText("day");
+        dayOfPurchaseLabel.setToolTipText("");
+
+        monthOfPurchaseLabel.setText("month");
+        monthOfPurchaseLabel.setToolTipText("");
+
+        yearOfPurchaseLabel.setText("year");
+        yearOfPurchaseLabel.setToolTipText("");
+
+        dayOfPurchaseLabel1.setText("day");
+        dayOfPurchaseLabel1.setToolTipText("");
+
+        monthOfPurchaseLabel1.setText("month");
+        monthOfPurchaseLabel1.setToolTipText("");
+
+        yearOfPurchaseLabel1.setText("year");
+        yearOfPurchaseLabel1.setToolTipText("");
+
         javax.swing.GroupLayout panelGetCarsLayout = new javax.swing.GroupLayout(panelGetCars);
         panelGetCars.setLayout(panelGetCarsLayout);
         panelGetCarsLayout.setHorizontalGroup(
@@ -102,32 +113,46 @@ public class SoldCars extends javax.swing.JFrame {
             .addGroup(panelGetCarsLayout.createSequentialGroup()
                 .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelGetCarsLayout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(94, 94, 94)
                         .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelFromDay)
-                            .addComponent(labelFromMonth)
-                            .addComponent(labelFromYear)
-                            .addComponent(labelToDay)
-                            .addComponent(labelToMonth)
-                            .addComponent(labelToYear))
-                        .addGap(54, 54, 54)
-                        .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(fieldToYear, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(fieldToMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(fieldToDay, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(fieldFromYear, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(fieldFromMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(fieldFromDay, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(panelGetCarsLayout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(labelToTheDate))
-                    .addGroup(panelGetCarsLayout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(labelFromDate))
+                            .addGroup(panelGetCarsLayout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panelGetCarsLayout.createSequentialGroup()
+                                        .addComponent(dayOfPurchaseLabel)
+                                        .addGap(43, 43, 43)
+                                        .addComponent(monthOfPurchaseLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(yearOfPurchaseLabel))
+                                    .addGroup(panelGetCarsLayout.createSequentialGroup()
+                                        .addComponent(dayOfPurchaseLabel1)
+                                        .addGap(43, 43, 43)
+                                        .addComponent(monthOfPurchaseLabel1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(yearOfPurchaseLabel1)))
+                                .addGap(26, 26, 26))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGetCarsLayout.createSequentialGroup()
+                                .addComponent(fieldStartDay, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                                .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelFromDate)
+                                    .addGroup(panelGetCarsLayout.createSequentialGroup()
+                                        .addComponent(fieldStartMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(fieldStartYear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGetCarsLayout.createSequentialGroup()
+                                .addComponent(fieldEndDay, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                                .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelToTheDate)
+                                    .addGroup(panelGetCarsLayout.createSequentialGroup()
+                                        .addComponent(fieldEndMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(fieldEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(panelGetCarsLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnSearchGetCars)))
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addGap(96, 96, 96))
         );
         panelGetCarsLayout.setVerticalGroup(
             panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,31 +161,27 @@ public class SoldCars extends javax.swing.JFrame {
                 .addComponent(labelFromDate)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fieldFromDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelFromDay))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(dayOfPurchaseLabel)
+                    .addComponent(monthOfPurchaseLabel)
+                    .addComponent(yearOfPurchaseLabel))
+                .addGap(1, 1, 1)
                 .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fieldFromMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelFromMonth))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fieldFromYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelFromYear))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(fieldStartMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldStartDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldStartYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
                 .addComponent(labelToTheDate)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fieldToDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelToDay))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(dayOfPurchaseLabel1)
+                    .addComponent(monthOfPurchaseLabel1)
+                    .addComponent(yearOfPurchaseLabel1))
+                .addGap(1, 1, 1)
                 .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fieldToMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelToMonth))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fieldToYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelToYear))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                    .addComponent(fieldEndMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldEndDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(btnSearchGetCars))
         );
 
@@ -219,6 +240,24 @@ public class SoldCars extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnGetSoldCarsActionPerformed
 
+    /**
+     * Creates a date from an integer day, month and year.
+     * @param d - the day to be parsed
+     * @param m - the month to be parsed
+     * @param y - the year to be parsed
+     * @return the date
+     */
+    private Date createDate(int d, int m, int y) {
+        String sD = (d < 10) ? "0" + d: "" + d;
+        String sM = (m < 10) ? "0" + m: "" + m;
+        try {
+            return new SimpleDateFormat("dd-MM-yyyy").parse(sD + "-" + sM + "-" + y);
+        } catch (ParseException ex) {
+            ex.getMessage();
+        }
+        return null;
+    }
+    
     public void removeGetCarsPanel(){
         panelGetCars.setVisible(false);
     }
@@ -227,21 +266,21 @@ public class SoldCars extends javax.swing.JFrame {
     private javax.swing.JButton btnGetCars;
     private javax.swing.JButton btnGetSoldCars;
     private javax.swing.JButton btnSearchGetCars;
-    private javax.swing.JTextField fieldFromDay;
-    private javax.swing.JTextField fieldFromMonth;
-    private javax.swing.JTextField fieldFromYear;
-    private javax.swing.JTextField fieldToDay;
-    private javax.swing.JTextField fieldToMonth;
-    private javax.swing.JTextField fieldToYear;
+    private javax.swing.JLabel dayOfPurchaseLabel;
+    private javax.swing.JLabel dayOfPurchaseLabel1;
+    private javax.swing.JTextField fieldEndDay;
+    private javax.swing.JTextField fieldEndMonth;
+    private javax.swing.JTextField fieldEndYear;
+    private javax.swing.JTextField fieldStartDay;
+    private javax.swing.JTextField fieldStartMonth;
+    private javax.swing.JTextField fieldStartYear;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelFromDate;
-    private javax.swing.JLabel labelFromDay;
-    private javax.swing.JLabel labelFromMonth;
-    private javax.swing.JLabel labelFromYear;
-    private javax.swing.JLabel labelToDay;
-    private javax.swing.JLabel labelToMonth;
     private javax.swing.JLabel labelToTheDate;
-    private javax.swing.JLabel labelToYear;
+    private javax.swing.JLabel monthOfPurchaseLabel;
+    private javax.swing.JLabel monthOfPurchaseLabel1;
     private javax.swing.JPanel panelGetCars;
+    private javax.swing.JLabel yearOfPurchaseLabel;
+    private javax.swing.JLabel yearOfPurchaseLabel1;
     // End of variables declaration//GEN-END:variables
 }
