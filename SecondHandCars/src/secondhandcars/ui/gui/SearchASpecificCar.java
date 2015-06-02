@@ -270,8 +270,8 @@ public class SearchASpecificCar extends javax.swing.JFrame {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         //Creates the date
-        int d = ctr.stringToInt(fieldDayOfPurchase.getText());                                       
-        int m = ctr.stringToInt(fieldMonthOfPurchase.getText());                                       
+        int d = ctr.stringToInt(fieldDayOfPurchase.getText());
+        int m = ctr.stringToInt(fieldMonthOfPurchase.getText());
         int y = ctr.stringToInt(fieldYearOfPurchase.getText());
         Date date;
         if (d < 0 || m < 0 || y < 0)

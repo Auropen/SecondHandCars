@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package secondhandcars.domain.OffVersion;
+package secondhandcars.domain;
 
 import java.util.List;
+import secondhandcars.domain.OffVersion.Order;
 
 /**
  *

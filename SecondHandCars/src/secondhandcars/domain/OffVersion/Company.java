@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package secondhandcars.domain.OffVersion;
+import secondhandcars.domain.TireHotel;
 import java.util.ArrayList;
 import java.util.List;
 import secondhandcars.domain.CarStock;
