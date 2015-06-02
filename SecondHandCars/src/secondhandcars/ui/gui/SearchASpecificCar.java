@@ -277,7 +277,7 @@ public class SearchASpecificCar extends javax.swing.JFrame {
         if (d < 0 || m < 0 || y < 0)
             date = null;                            //If one or more fields of the date are empty.
         else 
-            date = createDate(d, m, y);             //Creates the date if fields were possitive.
+            date = createDate(d, m, y);             //Creates the date if fields were filled.
         carWindow.displayCars(ctr.searchCars(fieldFuel.getText(), ctr.stringToDouble(fieldSellingPrice.getText()), fieldLicensePlate.getText(), 
                 ctr.stringToInt(fieldYear.getText()), fieldMark.getText(), fieldModel.getText(), 
                 fieldVersion.getText(), fieldVolumeOfEngine.getText(), ctr.stringToDouble(fieldOdometer.getText()), 

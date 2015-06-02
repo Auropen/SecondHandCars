@@ -27,7 +27,6 @@ public class Controller implements IController {
         dbHandler = new DBHandler();
     }
     
-    @Override
     /**
      * Search for a list of specific cars, using all data from the Car class except stock status. 
      * An empty String, -1 for numeric values or null for date will skip that criteria.
@@ -47,11 +46,11 @@ public class Controller implements IController {
      * @param inStock - if the car is in stock.
      * @return the list of cars that fulfils the search criteria.
      */
+    @Override
     public List<Car> searchCars(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase) {
         return company.getCarStock().searchCar(fuelType, sellingPrice, licensePlate, year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, description, dateOfPurchase);
     }
     
-    @Override
     /**
      * Search for a list of specific cars, using all data from the Car class including stock status. 
      * An empty String, -1 for numeric values or null for date will skip that criteria.
@@ -71,15 +70,16 @@ public class Controller implements IController {
      * @param inStock - if the car is in stock.
      * @return the list of cars that fulfills the search criteria.
      */
+    @Override
     public List<Car> searchCars(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
         return company.getCarStock().searchCar(fuelType, sellingPrice, licensePlate, year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, description, dateOfPurchase, inStock);
     }
     
-    @Override
     /**
      *  Gets the all car from the dbHandler, and converts the data to car objects
      *  @return a list of cars
      */
+    @Override
     public List<Car> getAllCars(){
         List<Car> cars;
         ResultSet rs = dbHandler.getAllCarsInStock();
@@ -87,11 +87,11 @@ public class Controller implements IController {
         return cars;
     }
     
-    @Override
     /**
      *  Gets the sold car from the dbHandler, and converts the data to car objects
      *  @return a list of cars
      */
+    @Override
     public List<Car> getSoldCars(){
         List<Car> cars;
         ResultSet rs = dbHandler.getSoldCars();
@@ -125,20 +125,31 @@ public class Controller implements IController {
         return cars;
     }
     
-    @Override
     /**
-     * Stores the cars from the database to the carstock
+     * Stores the cars from the database to the CarStock
      */
+    @Override
     public void createCarsFromDB() {
         company.getCarStock().getCars().addAll(getAllCars());
     }
 
+    /**
+     *
+     * @param startDate
+     * @param endDate
+     * @return
+     */
     @Override
+    public List<Car> getSoldCarsBetweenDate(Date startDate, Date endDate) {
+        return company.getCarStock().getSoldCarsBetweenDate(startDate, endDate);
+    }
+
     /**
      * Safely converts string to a double
      * @param s The string of the double
      * @return the converted double
      */
+    @Override
     public double stringToDouble(String s) {
         try {
             return Double.parseDouble(s);
@@ -147,12 +158,12 @@ public class Controller implements IController {
         return -1;
     }
 
-    @Override
     /**
-     * Safely converts string to a int
-     * @param s The string of the int
-     * @return the converted int
+     * Safely converts string to a integer
+     * @param s The string of the integer
+     * @return the converted integer
      */
+    @Override
     public int stringToInt(String s) {
         try {
             return Integer.parseInt(s);

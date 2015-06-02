@@ -128,6 +128,18 @@ public class CarStock {
         
         return result;
     }
+    
+    public List<Car> getSoldCarsBetweenDate(Date startDate, Date endDate) {
+        List<Car> result = new ArrayList<Car>();
+        
+        for (Car c : cars) {
+            if (c.getDateOfPurchase().after(startDate) && c.getDateOfPurchase().before(endDate)) {
+                result.add(c);
+            }
+        }
+        
+        return result;
+    }
 
     //Accessors methods
     public int getCarAmount()   {   return cars.size();     }

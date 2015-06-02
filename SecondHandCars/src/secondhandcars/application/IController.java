@@ -20,6 +20,7 @@ public interface IController {
     public void createCarsFromDB();
     public List<Car> getAllCars();
     public List<Car> getSoldCars();
+    public List<Car> getSoldCarsBetweenDate(Date startDate, Date endDate);
     
     //Utilities methods
     public double stringToDouble(String s);

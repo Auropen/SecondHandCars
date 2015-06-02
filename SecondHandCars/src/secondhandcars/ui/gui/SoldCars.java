@@ -231,6 +231,27 @@ public class SoldCars extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGetCarsActionPerformed
 
     private void btnSearchGetCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchGetCarsActionPerformed
+        //Creates the date
+        int sD = ctr.stringToInt(fieldStartDay.getText());                                       
+        int sM = ctr.stringToInt(fieldStartMonth.getText());                                       
+        int sY = ctr.stringToInt(fieldStartYear.getText());
+        int eD = ctr.stringToInt(fieldEndDay.getText());                                       
+        int eM = ctr.stringToInt(fieldEndMonth.getText());                                       
+        int eY = ctr.stringToInt(fieldEndYear.getText());
+        Date startDate;
+        Date endDate;
+        if (sD < 0 || sM < 0 || sY < 0 || eD < 0 || eM < 0 || eY < 0) {
+            startDate = null;                       //If one or more fields of the date are empty.
+            endDate = null;
+        }
+        else {
+            startDate = createDate(sD, sM, sY);     //Creates the dates if fields were filled.
+            endDate = createDate(eD, eM, eY);
+        }
+        if (startDate != null) {
+            List<Car> cars = ctr.getSoldCarsBetweenDate(startDate, endDate);
+            carWindow.displayCars(cars);
+        }
         this.dispose();
     }//GEN-LAST:event_btnSearchGetCarsActionPerformed
 
