@@ -83,7 +83,7 @@ public class Controller implements IController {
     public List<Car> getAllCars(){
         List<Car> cars;
         ResultSet rs = dbHandler.getAllCarsInStock();
-        cars = getCarsFromResultset(rs);
+        cars = getCarsFromResultSet(rs);
         return cars;
     }
     
@@ -95,7 +95,7 @@ public class Controller implements IController {
     public List<Car> getSoldCars(){
         List<Car> cars;
         ResultSet rs = dbHandler.getSoldCars();
-        cars = getCarsFromResultset(rs);
+        cars = getCarsFromResultSet(rs);
         return cars;
     }
 
@@ -104,7 +104,7 @@ public class Controller implements IController {
      * @param rs - the ResultSet of cars
      * @return a list of car
      */
-    private List<Car> getCarsFromResultset(ResultSet rs) {
+    private List<Car> getCarsFromResultSet(ResultSet rs) {
         List<Car> cars = new ArrayList();
         try {
             while (rs.next()) {
