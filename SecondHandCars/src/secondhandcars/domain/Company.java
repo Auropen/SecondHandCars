@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package secondhandcars.domain;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -17,12 +15,14 @@ public class Company {
     private String address;
     private String phoneNumber;
     private CarStock carStock;
+    private TireHotel tireHotel;
     
     private Company(){
         this.companyName = "Second Hand Cars";
         this.address = "Ze Street 22, Ze Town";
         this.phoneNumber = "78862209";
         this.carStock = CarStock.getInstance();
+        this.tireHotel = TireHotel.getInstance();
     }
     
     /**
@@ -40,10 +40,12 @@ public class Company {
     public String getAddress()      {   return address;         }
     public String getPhoneNumber()  {   return phoneNumber;     }
     public CarStock getCarStock()   {   return carStock;        }
+    public TireHotel getTireHotel() {   return tireHotel;       }
     
     //Mutator methods
     public void setCompanyName(String companyName)  {   this.companyName = companyName;     }
     public void setAddress(String address)          {   this.address = address;             }
     public void setPhoneNumber(String phoneNumber)  {   this.phoneNumber = phoneNumber;     }
     public void setCarStock(CarStock carStock)      {   this.carStock = carStock;           }
+    public void setTireHotel(TireHotel tireHotel)   {   this.tireHotel = tireHotel;         }
 }

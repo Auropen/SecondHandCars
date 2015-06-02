@@ -37,6 +37,10 @@ public class TireHotel {
         return tireSets[x][y][z];                            //Gets the specific tireSet
     }
     
+    public void setTireSet(byte x, byte y, byte z, TireSet ts) {
+        tireSets[x][y][z] = ts;                             //Sets specified tireset in the tiresets
+    }
+    
     public TireSet getTireSetByLocation(byte x, byte y, byte z) {
         return tireSets[x][y][z];                            //Gets the specific tireSet
     }
