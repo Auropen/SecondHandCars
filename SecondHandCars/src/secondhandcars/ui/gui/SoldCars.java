@@ -252,6 +252,8 @@ public class SoldCars extends javax.swing.JFrame {
             List<Car> cars = ctr.getSoldCarsBetweenDate(startDate, endDate);
             carWindow.displayCars(cars);
         }
+        else
+            carWindow.setInfoText("Invalid date!", true);
         this.dispose();
     }//GEN-LAST:event_btnSearchGetCarsActionPerformed
 

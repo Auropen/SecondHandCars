@@ -162,7 +162,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="ErrorText" max="32767" attributes="0"/>
+                  <Component id="infoText" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
@@ -185,7 +185,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btnViewAllSoldCars" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="49" max="32767" attributes="0"/>
-                  <Component id="ErrorText" min="-2" max="-2" attributes="0"/>
+                  <Component id="infoText" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -199,7 +199,10 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAllCarsActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="ErrorText">
+        <Component class="javax.swing.JTextField" name="infoText">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnSeachCar">
           <Properties>

@@ -5,8 +5,11 @@
  */
 package secondhandcars.ui.gui;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.util.List;
 import javax.swing.JFrame;
+import javax.swing.plaf.FontUIResource;
 import javax.swing.table.DefaultTableModel;
 import secondhandcars.application.IController;
 import secondhandcars.domain.Car;
@@ -58,7 +61,7 @@ public class CarWindow extends javax.swing.JFrame {
         MainFrame = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         btnAllCars = new javax.swing.JButton();
-        ErrorText = new javax.swing.JTextField();
+        infoText = new javax.swing.JTextField();
         btnSeachCar = new javax.swing.JButton();
         btnViewAllSoldCars = new javax.swing.JButton();
 
@@ -124,6 +127,8 @@ public class CarWindow extends javax.swing.JFrame {
             }
         });
 
+        infoText.setEnabled(false);
+
         btnSeachCar.setText("Search cars");
         btnSeachCar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,7 +148,7 @@ public class CarWindow extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(ErrorText)
+                .addComponent(infoText)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -162,7 +167,7 @@ public class CarWindow extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnViewAllSoldCars)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                .addComponent(ErrorText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(infoText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -241,13 +246,24 @@ public class CarWindow extends javax.swing.JFrame {
             dtm.addRow(data);
         }
     }
+    
+    public void setInfoText(String text, boolean error) {
+        if (error) {
+            infoText.setDisabledTextColor(Color.red);
+            infoText.setText(text);
+        }
+        else {
+            infoText.setDisabledTextColor(Color.black);
+            infoText.setText(text);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField ErrorText;
     private javax.swing.JTable MainFrame;
     private javax.swing.JButton btnAllCars;
     private javax.swing.JButton btnSeachCar;
     private javax.swing.JButton btnViewAllSoldCars;
+    private javax.swing.JTextField infoText;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables

@@ -77,6 +77,7 @@ public class MainMenu extends javax.swing.JFrame {
     private void btnCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarsActionPerformed
         CarWindow carWindow = new CarWindow(ctr);
         
+        this.dispose();
         carWindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         carWindow.setResizable(false);
         carWindow.setTitle("Cars Window");
