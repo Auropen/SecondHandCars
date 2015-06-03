@@ -43,7 +43,6 @@ public class Controller implements IController {
      * @param type - the type of the car.
      * @param description - the description of the car.
      * @param dateOfPurchase - the date of purchase of the car.
-     * @param inStock - if the car is in stock.
      * @return the list of cars that fulfils the search criteria.
      */
     @Override
@@ -68,7 +67,7 @@ public class Controller implements IController {
      * @param description - the description of the car.
      * @param dateOfPurchase - the date of purchase of the car.
      * @param inStock - if the car is in stock.
-     * @return the list of cars that fulfills the search criteria.
+     * @return the list of cars that fulfils the search criteria.
      */
     @Override
     public List<Car> searchCars(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {

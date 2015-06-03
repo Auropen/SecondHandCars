@@ -5,6 +5,8 @@
  */
 package secondhandcars.domain.OffVersion;
 
+import secondhandcars.domain.Customer;
+
 /**
  *
  * @author Baku

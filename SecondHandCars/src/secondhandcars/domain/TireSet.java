@@ -5,8 +5,6 @@
  */
 package secondhandcars.domain;
 
-import secondhandcars.domain.OffVersion.Customer;
-
 /**
  *
  * @author Kristian
@@ -22,19 +20,11 @@ public class TireSet {
         this.customer = customer;
     }
 
-    public String getDescription() {
-        return description;
-    }
+    public String getDescription()  {   return description;     }
+    public Customer getCustomer()   {   return customer;        }
+    public int getTireAmount()      {   return tireAmount;      }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
+    public void setDescription(String description)  {   this.description = description;     }
+    public void setCustomer(Customer customer)      {   this.customer = customer;           }
+    public void setTireAmount(int tireAmount)       {   this.tireAmount = tireAmount;       }
 }
