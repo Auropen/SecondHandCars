@@ -16,18 +16,17 @@ import secondhandcars.domain.Car;
  *
  * @author Cornel
  */
-public class SoldCars extends javax.swing.JFrame {
-    CarWindow carWindow;
+public class ServiceWindow extends javax.swing.JFrame {
+    //CarWindow carWindow;
     IController ctr;
 
     /**
      * Creates new form SoldCars
      */
-    public SoldCars(IController ctr, CarWindow carWindow) {
+    public ServiceWindow(IController ctr) {
         this.ctr = ctr;
-        this.carWindow = carWindow;
         initComponents();
-        removeGetCarsPanel();
+        
     }
 
     /**
@@ -39,9 +38,9 @@ public class SoldCars extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        btnGetSoldCars = new javax.swing.JButton();
-        btnGetCars = new javax.swing.JButton();
+        servicePanel = new javax.swing.JPanel();
+        btnRepair = new javax.swing.JButton();
+        btnChipTuning = new javax.swing.JButton();
         panelGetCars = new javax.swing.JPanel();
         labelFromDate = new javax.swing.JLabel();
         labelToTheDate = new javax.swing.JLabel();
@@ -49,29 +48,30 @@ public class SoldCars extends javax.swing.JFrame {
         fieldStartYear = new javax.swing.JTextField();
         fieldStartMonth = new javax.swing.JTextField();
         fieldStartDay = new javax.swing.JTextField();
-        dayOfPurchaseLabel = new javax.swing.JLabel();
-        monthOfPurchaseLabel = new javax.swing.JLabel();
+        dayFromLabel = new javax.swing.JLabel();
+        monthFromLabel = new javax.swing.JLabel();
         yearOfPurchaseLabel = new javax.swing.JLabel();
         fieldEndYear = new javax.swing.JTextField();
         fieldEndMonth = new javax.swing.JTextField();
         fieldEndDay = new javax.swing.JTextField();
-        dayOfPurchaseLabel1 = new javax.swing.JLabel();
-        monthOfPurchaseLabel1 = new javax.swing.JLabel();
+        dayOfEndingLabel = new javax.swing.JLabel();
+        monthOfEndingLabel = new javax.swing.JLabel();
         yearOfPurchaseLabel1 = new javax.swing.JLabel();
+        btnTireHotel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnGetSoldCars.setText("Get sold cars");
-        btnGetSoldCars.addActionListener(new java.awt.event.ActionListener() {
+        btnRepair.setText("Repair");
+        btnRepair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGetSoldCarsActionPerformed(evt);
+                btnRepairActionPerformed(evt);
             }
         });
 
-        btnGetCars.setText("Get cars");
-        btnGetCars.addActionListener(new java.awt.event.ActionListener() {
+        btnChipTuning.setText("Chip tuning");
+        btnChipTuning.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGetCarsActionPerformed(evt);
+                btnChipTuningActionPerformed(evt);
             }
         });
 
@@ -80,31 +80,41 @@ public class SoldCars extends javax.swing.JFrame {
 
         labelToTheDate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         labelToTheDate.setText("To Date");
+        labelToTheDate.setEnabled(false);
 
-        btnSearchGetCars.setText("Search");
+        btnSearchGetCars.setText("Commit");
         btnSearchGetCars.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchGetCarsActionPerformed(evt);
             }
         });
 
-        dayOfPurchaseLabel.setText("day");
-        dayOfPurchaseLabel.setToolTipText("");
+        dayFromLabel.setText("day");
+        dayFromLabel.setToolTipText("");
 
-        monthOfPurchaseLabel.setText("month");
-        monthOfPurchaseLabel.setToolTipText("");
+        monthFromLabel.setText("month");
+        monthFromLabel.setToolTipText("");
 
         yearOfPurchaseLabel.setText("year");
         yearOfPurchaseLabel.setToolTipText("");
 
-        dayOfPurchaseLabel1.setText("day");
-        dayOfPurchaseLabel1.setToolTipText("");
+        fieldEndYear.setEnabled(false);
 
-        monthOfPurchaseLabel1.setText("month");
-        monthOfPurchaseLabel1.setToolTipText("");
+        fieldEndMonth.setEnabled(false);
+
+        fieldEndDay.setEnabled(false);
+
+        dayOfEndingLabel.setText("day");
+        dayOfEndingLabel.setToolTipText("");
+        dayOfEndingLabel.setEnabled(false);
+
+        monthOfEndingLabel.setText("month");
+        monthOfEndingLabel.setToolTipText("");
+        monthOfEndingLabel.setEnabled(false);
 
         yearOfPurchaseLabel1.setText("year");
         yearOfPurchaseLabel1.setToolTipText("");
+        yearOfPurchaseLabel1.setEnabled(false);
 
         javax.swing.GroupLayout panelGetCarsLayout = new javax.swing.GroupLayout(panelGetCars);
         panelGetCars.setLayout(panelGetCarsLayout);
@@ -119,15 +129,15 @@ public class SoldCars extends javax.swing.JFrame {
                                 .addGap(12, 12, 12)
                                 .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panelGetCarsLayout.createSequentialGroup()
-                                        .addComponent(dayOfPurchaseLabel)
+                                        .addComponent(dayFromLabel)
                                         .addGap(43, 43, 43)
-                                        .addComponent(monthOfPurchaseLabel)
+                                        .addComponent(monthFromLabel)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(yearOfPurchaseLabel))
                                     .addGroup(panelGetCarsLayout.createSequentialGroup()
-                                        .addComponent(dayOfPurchaseLabel1)
+                                        .addComponent(dayOfEndingLabel)
                                         .addGap(43, 43, 43)
-                                        .addComponent(monthOfPurchaseLabel1)
+                                        .addComponent(monthOfEndingLabel)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(yearOfPurchaseLabel1)))
                                 .addGap(26, 26, 26))
@@ -164,8 +174,8 @@ public class SoldCars extends javax.swing.JFrame {
                 .addComponent(labelFromDate)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dayOfPurchaseLabel)
-                    .addComponent(monthOfPurchaseLabel)
+                    .addComponent(dayFromLabel)
+                    .addComponent(monthFromLabel)
                     .addComponent(yearOfPurchaseLabel))
                 .addGap(1, 1, 1)
                 .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -176,8 +186,8 @@ public class SoldCars extends javax.swing.JFrame {
                 .addComponent(labelToTheDate)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dayOfPurchaseLabel1)
-                    .addComponent(monthOfPurchaseLabel1)
+                    .addComponent(dayOfEndingLabel)
+                    .addComponent(monthOfEndingLabel)
                     .addComponent(yearOfPurchaseLabel1))
                 .addGap(1, 1, 1)
                 .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -188,28 +198,38 @@ public class SoldCars extends javax.swing.JFrame {
                 .addComponent(btnSearchGetCars))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        btnTireHotel.setText("Tire Hotel");
+        btnTireHotel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTireHotelActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout servicePanelLayout = new javax.swing.GroupLayout(servicePanel);
+        servicePanel.setLayout(servicePanelLayout);
+        servicePanelLayout.setHorizontalGroup(
+            servicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(servicePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnGetSoldCars)
+                .addGroup(servicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(servicePanelLayout.createSequentialGroup()
+                        .addComponent(btnRepair)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnGetCars, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnChipTuning, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnTireHotel, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(panelGetCars, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        servicePanelLayout.setVerticalGroup(
+            servicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(servicePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGetSoldCars)
-                    .addComponent(btnGetCars))
+                .addGroup(servicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRepair)
+                    .addComponent(btnChipTuning)
+                    .addComponent(btnTireHotel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelGetCars, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -219,19 +239,19 @@ public class SoldCars extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(servicePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(servicePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnGetCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetCarsActionPerformed
+    private void btnChipTuningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChipTuningActionPerformed
         panelGetCars.setVisible(true);
-    }//GEN-LAST:event_btnGetCarsActionPerformed
+    }//GEN-LAST:event_btnChipTuningActionPerformed
 
     private void btnSearchGetCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchGetCarsActionPerformed
         //Creates the date
@@ -253,18 +273,27 @@ public class SoldCars extends javax.swing.JFrame {
         }
         if (startDate != null) {
             List<Car> cars = ctr.getSoldCarsBetweenDate(startDate, endDate);
-            carWindow.displayCars(cars);
+            //carWindow.displayCars(cars);
         }
         else
-            carWindow.setInfoText("Invalid date!", true);
+            //carWindow.setInfoText("Invalid date!", true);
         this.dispose();
     }//GEN-LAST:event_btnSearchGetCarsActionPerformed
 
-    private void btnGetSoldCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetSoldCarsActionPerformed
-        List<Car> cars = ctr.getSoldCars();
-        carWindow.displayCars(cars);
-        this.dispose();
-    }//GEN-LAST:event_btnGetSoldCarsActionPerformed
+    private void btnRepairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRepairActionPerformed
+        
+        
+    }//GEN-LAST:event_btnRepairActionPerformed
+
+    private void btnTireHotelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTireHotelActionPerformed
+        labelToTheDate.setEnabled(true);
+        dayOfEndingLabel.setEnabled(true);
+        monthOfEndingLabel.setEnabled(true);
+        yearOfPurchaseLabel1.setEnabled(true);
+        fieldEndDay.setEnabled(true);
+        fieldEndMonth.setEnabled(true);
+        fieldEndYear.setEnabled(true);
+    }//GEN-LAST:event_btnTireHotelActionPerformed
 
     /**
      * Creates a date from an integer day, month and year.
@@ -284,28 +313,26 @@ public class SoldCars extends javax.swing.JFrame {
         return null;
     }
     
-    public void removeGetCarsPanel(){
-        panelGetCars.setVisible(false);
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGetCars;
-    private javax.swing.JButton btnGetSoldCars;
+    private javax.swing.JButton btnChipTuning;
+    private javax.swing.JButton btnRepair;
     private javax.swing.JButton btnSearchGetCars;
-    private javax.swing.JLabel dayOfPurchaseLabel;
-    private javax.swing.JLabel dayOfPurchaseLabel1;
+    private javax.swing.JButton btnTireHotel;
+    private javax.swing.JLabel dayFromLabel;
+    private javax.swing.JLabel dayOfEndingLabel;
     private javax.swing.JTextField fieldEndDay;
     private javax.swing.JTextField fieldEndMonth;
     private javax.swing.JTextField fieldEndYear;
     private javax.swing.JTextField fieldStartDay;
     private javax.swing.JTextField fieldStartMonth;
     private javax.swing.JTextField fieldStartYear;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelFromDate;
     private javax.swing.JLabel labelToTheDate;
-    private javax.swing.JLabel monthOfPurchaseLabel;
-    private javax.swing.JLabel monthOfPurchaseLabel1;
+    private javax.swing.JLabel monthFromLabel;
+    private javax.swing.JLabel monthOfEndingLabel;
     private javax.swing.JPanel panelGetCars;
+    private javax.swing.JPanel servicePanel;
     private javax.swing.JLabel yearOfPurchaseLabel;
     private javax.swing.JLabel yearOfPurchaseLabel1;
     // End of variables declaration//GEN-END:variables
