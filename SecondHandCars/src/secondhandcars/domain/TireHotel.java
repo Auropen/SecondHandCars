@@ -84,4 +84,10 @@ public class TireHotel {
         }
         return returnSet;
     }
+
+    //Accessor methods
+    public String getAddress() {    return address;     }
+
+    //Mutator methods
+    public void setAddress(String address)  {   this.address = address;     }
 }
