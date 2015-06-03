@@ -195,7 +195,7 @@ public class Controller implements IController {
      * @param r 
      */
     @Override
-    public void createRepairService(Repair r) {
+    public void createRepairService() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -204,7 +204,7 @@ public class Controller implements IController {
      * @param r 
      */
     @Override
-    public void updateRepairService(Repair r) {
+    public void updateRepairService(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -213,7 +213,7 @@ public class Controller implements IController {
      * @param r 
      */
     @Override
-    public void deleteRepairService(Repair r) {
+    public void deleteRepairService(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -222,7 +222,7 @@ public class Controller implements IController {
      * @param ct 
      */
     @Override
-    public void createChipTuningService(ChipTuning ct) {
+    public void createChipTuningService() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -231,7 +231,7 @@ public class Controller implements IController {
      * @param ct 
      */
     @Override
-    public void updateChipTuningService(ChipTuning ct) {
+    public void updateChipTuningService(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -240,7 +240,35 @@ public class Controller implements IController {
      * @param ct 
      */
     @Override
-    public void deleteChipTuningService(ChipTuning ct) {
+    public void deleteChipTuningService(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * 
+     * @param description 
+     */
+    @Override
+    public void createTireService(String description) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * 
+     * @param id
+     * @param description 
+     */
+    @Override
+    public void updateTireService(int id, String description) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * 
+     * @param id 
+     */
+    @Override
+    public void deleteTireService(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

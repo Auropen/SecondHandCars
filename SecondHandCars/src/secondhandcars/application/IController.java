@@ -28,15 +28,15 @@ public interface IController {
     public void deleteCar(Car c);
     
     //Services methods
-    public void createRepairService(Repair r);
-    public void updateRepairService(Repair r);
-    public void deleteRepairService(Repair r);
-    public void createChipTuningService(ChipTuning ct);
-    public void updateChipTuningService(ChipTuning ct);
-    public void deleteChipTuningService(ChipTuning ct);
-    /*public void createTireService(Tire ct);
-    public void updateChipTuningService(ChipTuning ct);
-    public void deleteChipTuningService(ChipTuning ct);*/
+    public void createRepairService();
+    public void updateRepairService(int id);
+    public void deleteRepairService(int id);
+    public void createChipTuningService();
+    public void updateChipTuningService(int id);
+    public void deleteChipTuningService(int id);
+    public void createTireService(String description);
+    public void updateTireService(int id, String description);
+    public void deleteTireService(int id);
     
     //Utilities methods
     public double stringToDouble(String s);
