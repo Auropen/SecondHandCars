@@ -11,7 +11,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import secondhandcars.domain.Car;
+import secondhandcars.domain.ChipTuning;
 import secondhandcars.domain.Company;
+import secondhandcars.domain.Repair;
 import secondhandcars.technical.DBHandler;
 
 /**
@@ -141,6 +143,105 @@ public class Controller implements IController {
     @Override
     public List<Car> getSoldCarsBetweenDate(Date startDate, Date endDate) {
         return company.getCarStock().getSoldCarsBetweenDate(startDate, endDate);
+    }
+
+    /**
+     * 
+     * @param fuelType
+     * @param sellingPrice
+     * @param licensePlate
+     * @param year
+     * @param mark
+     * @param model
+     * @param version
+     * @param volumeOfEngine
+     * @param odometer
+     * @param priceOfPurchase
+     * @param type
+     * @param description
+     * @param dateOfPurchase
+     * @param inStock 
+     */
+    @Override
+    public void createCar(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * 
+     * @param c
+     * @param sellingPrice
+     * @param licensePlate
+     * @param odometer
+     * @param description
+     * @param inStock 
+     */
+    @Override
+    public void updateCar(Car c, double sellingPrice, String licensePlate, double odometer, String description, boolean inStock) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * 
+     * @param c The car to be deleted
+     */
+    @Override
+    public void deleteCar(Car c) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * 
+     * @param r 
+     */
+    @Override
+    public void createRepairService(Repair r) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * 
+     * @param r 
+     */
+    @Override
+    public void updateRepairService(Repair r) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * 
+     * @param r 
+     */
+    @Override
+    public void deleteRepairService(Repair r) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * 
+     * @param ct 
+     */
+    @Override
+    public void createChipTuningService(ChipTuning ct) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * 
+     * @param ct 
+     */
+    @Override
+    public void updateChipTuningService(ChipTuning ct) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * 
+     * @param ct 
+     */
+    @Override
+    public void deleteChipTuningService(ChipTuning ct) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**

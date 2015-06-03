@@ -8,6 +8,8 @@ package secondhandcars.application;
 import java.util.Date;
 import java.util.List;
 import secondhandcars.domain.Car;
+import secondhandcars.domain.ChipTuning;
+import secondhandcars.domain.Repair;
 
 /**
  *
@@ -21,6 +23,20 @@ public interface IController {
     public List<Car> getAllCars();
     public List<Car> getSoldCars();
     public List<Car> getSoldCarsBetweenDate(Date startDate, Date endDate);
+    public void createCar(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock);
+    public void updateCar(Car c, double sellingPrice, String licensePlate, double odometer, String description, boolean inStock);
+    public void deleteCar(Car c);
+    
+    //Services methods
+    public void createRepairService(Repair r);
+    public void updateRepairService(Repair r);
+    public void deleteRepairService(Repair r);
+    public void createChipTuningService(ChipTuning ct);
+    public void updateChipTuningService(ChipTuning ct);
+    public void deleteChipTuningService(ChipTuning ct);
+    /*public void createTireService(Tire ct);
+    public void updateChipTuningService(ChipTuning ct);
+    public void deleteChipTuningService(ChipTuning ct);*/
     
     //Utilities methods
     public double stringToDouble(String s);

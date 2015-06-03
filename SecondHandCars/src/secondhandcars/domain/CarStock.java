@@ -133,9 +133,8 @@ public class CarStock {
         List<Car> result = new ArrayList<Car>();
         
         for (Car c : cars) {
-            if (c.getDateOfPurchase().after(startDate) && c.getDateOfPurchase().before(endDate)) {
+            if (c.getDateOfPurchase().after(startDate) && c.getDateOfPurchase().before(endDate))
                 result.add(c);
-            }
         }
         
         return result;
