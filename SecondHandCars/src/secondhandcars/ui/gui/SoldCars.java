@@ -45,7 +45,6 @@ public class SoldCars extends javax.swing.JFrame {
         panelGetCars = new javax.swing.JPanel();
         labelFromDate = new javax.swing.JLabel();
         labelToTheDate = new javax.swing.JLabel();
-        btnSearchGetCars = new javax.swing.JButton();
         fieldStartYear = new javax.swing.JTextField();
         fieldStartMonth = new javax.swing.JTextField();
         fieldStartDay = new javax.swing.JTextField();
@@ -58,8 +57,11 @@ public class SoldCars extends javax.swing.JFrame {
         dayOfPurchaseLabel1 = new javax.swing.JLabel();
         monthOfPurchaseLabel1 = new javax.swing.JLabel();
         yearOfPurchaseLabel1 = new javax.swing.JLabel();
+        btnSearchGetCars = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(445, 345));
 
         btnGetSoldCars.setText("Get sold cars");
         btnGetSoldCars.addActionListener(new java.awt.event.ActionListener() {
@@ -81,13 +83,6 @@ public class SoldCars extends javax.swing.JFrame {
         labelToTheDate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         labelToTheDate.setText("To Date");
 
-        btnSearchGetCars.setText("Search");
-        btnSearchGetCars.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchGetCarsActionPerformed(evt);
-            }
-        });
-
         dayOfPurchaseLabel.setText("day");
         dayOfPurchaseLabel.setToolTipText("");
 
@@ -106,56 +101,60 @@ public class SoldCars extends javax.swing.JFrame {
         yearOfPurchaseLabel1.setText("year");
         yearOfPurchaseLabel1.setToolTipText("");
 
+        btnSearchGetCars.setText("Search");
+        btnSearchGetCars.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchGetCarsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelGetCarsLayout = new javax.swing.GroupLayout(panelGetCars);
         panelGetCars.setLayout(panelGetCarsLayout);
         panelGetCarsLayout.setHorizontalGroup(
             panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGetCarsLayout.createSequentialGroup()
-                .addGap(106, 106, 106)
+                .addContainerGap(95, Short.MAX_VALUE)
                 .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelGetCarsLayout.createSequentialGroup()
-                        .addComponent(dayOfPurchaseLabel)
-                        .addGap(43, 43, 43)
-                        .addComponent(monthOfPurchaseLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                        .addComponent(yearOfPurchaseLabel)
-                        .addGap(122, 122, 122))
-                    .addGroup(panelGetCarsLayout.createSequentialGroup()
-                        .addComponent(dayOfPurchaseLabel1)
-                        .addGap(111, 111, 111)
-                        .addComponent(yearOfPurchaseLabel1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGetCarsLayout.createSequentialGroup()
-                .addGap(92, 92, 92)
-                .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panelGetCarsLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGetCarsLayout.createSequentialGroup()
                         .addComponent(fieldEndDay, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(fieldEndMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8))
-                    .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(panelGetCarsLayout.createSequentialGroup()
-                            .addGap(10, 10, 10)
-                            .addComponent(monthOfPurchaseLabel1))
-                        .addComponent(labelToTheDate)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(fieldEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(108, 108, 108))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(fieldEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(154, 154, 154))
+                    .addGroup(panelGetCarsLayout.createSequentialGroup()
+                        .addComponent(fieldStartDay, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(fieldStartMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(fieldStartYear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
             .addGroup(panelGetCarsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnSearchGetCars)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGetCarsLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(fieldStartDay, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(fieldStartMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(fieldStartYear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(104, 104, 104))
-            .addGroup(panelGetCarsLayout.createSequentialGroup()
-                .addGap(152, 152, 152)
-                .addComponent(labelFromDate)
+                .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGetCarsLayout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelGetCarsLayout.createSequentialGroup()
+                                .addComponent(dayOfPurchaseLabel)
+                                .addGap(43, 43, 43)
+                                .addComponent(monthOfPurchaseLabel)
+                                .addGap(34, 34, 34)
+                                .addComponent(yearOfPurchaseLabel))
+                            .addGroup(panelGetCarsLayout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(dayOfPurchaseLabel1)
+                                .addGap(30, 30, 30)
+                                .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelToTheDate)
+                                    .addGroup(panelGetCarsLayout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(monthOfPurchaseLabel1)
+                                        .addGap(41, 41, 41)
+                                        .addComponent(yearOfPurchaseLabel1))))))
+                    .addGroup(panelGetCarsLayout.createSequentialGroup()
+                        .addGap(152, 152, 152)
+                        .addComponent(labelFromDate))
+                    .addComponent(btnSearchGetCars))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelGetCarsLayout.setVerticalGroup(
@@ -175,21 +174,18 @@ public class SoldCars extends javax.swing.JFrame {
                     .addComponent(fieldStartYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(labelToTheDate)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelGetCarsLayout.createSequentialGroup()
-                        .addGap(0, 55, Short.MAX_VALUE)
-                        .addComponent(btnSearchGetCars))
-                    .addGroup(panelGetCarsLayout.createSequentialGroup()
-                        .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(dayOfPurchaseLabel1)
-                            .addComponent(monthOfPurchaseLabel1)
-                            .addComponent(yearOfPurchaseLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(fieldEndMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(fieldEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(fieldEndDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(7, 7, 7)
+                .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(monthOfPurchaseLabel1)
+                    .addComponent(yearOfPurchaseLabel1)
+                    .addComponent(dayOfPurchaseLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fieldEndMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldEndDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addComponent(btnSearchGetCars))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -199,12 +195,12 @@ public class SoldCars extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelGetCars, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnGetSoldCars)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnGetCars, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(panelGetCars, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -215,7 +211,7 @@ public class SoldCars extends javax.swing.JFrame {
                     .addComponent(btnGetSoldCars)
                     .addComponent(btnGetCars))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(panelGetCars, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelGetCars, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -223,11 +219,15 @@ public class SoldCars extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
