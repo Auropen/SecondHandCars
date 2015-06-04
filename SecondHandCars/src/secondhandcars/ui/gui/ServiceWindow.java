@@ -5,28 +5,24 @@
  */
 package secondhandcars.ui.gui;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
+import java.awt.CardLayout;
 import secondhandcars.application.IController;
-import secondhandcars.domain.Car;
 
 /**
  *
  * @author Cornel
  */
 public class ServiceWindow extends javax.swing.JFrame {
-    //CarWindow carWindow;
+
     IController ctr;
 
     /**
-     * Creates new form SoldCars
+     * Creates new form test
      */
     public ServiceWindow(IController ctr) {
+
         this.ctr = ctr;
         initComponents();
-        
     }
 
     /**
@@ -38,26 +34,52 @@ public class ServiceWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        servicePanel = new javax.swing.JPanel();
         btnRepair = new javax.swing.JButton();
-        btnChipTuning = new javax.swing.JButton();
-        panelGetCars = new javax.swing.JPanel();
+        btnChip = new javax.swing.JButton();
+        btnTire = new javax.swing.JButton();
+        mainPanel = new javax.swing.JPanel();
+        repairPanel = new javax.swing.JPanel();
         labelFromDate = new javax.swing.JLabel();
+        dayOfPurchaseLabel2 = new javax.swing.JLabel();
+        fieldStartDay2 = new javax.swing.JTextField();
+        monthOfPurchaseLabel2 = new javax.swing.JLabel();
+        fieldStartMonth2 = new javax.swing.JTextField();
+        yearOfPurchaseLabel2 = new javax.swing.JLabel();
+        fieldStartYear2 = new javax.swing.JTextField();
+        descriptionLabel = new javax.swing.JLabel();
+        descriptionTextField = new javax.swing.JTextField();
+        hoursLabel = new javax.swing.JLabel();
+        hoursTextField = new javax.swing.JTextField();
+        btnCommit2 = new javax.swing.JButton();
+        chipPanel = new javax.swing.JPanel();
+        labelFromDate1 = new javax.swing.JLabel();
+        dayOfPurchaseLabel1 = new javax.swing.JLabel();
+        fieldStartDay1 = new javax.swing.JTextField();
+        monthOfPurchaseLabel1 = new javax.swing.JLabel();
+        fieldStartMonth1 = new javax.swing.JTextField();
+        yearOfPurchaseLabel1 = new javax.swing.JLabel();
+        fieldStartYear1 = new javax.swing.JTextField();
+        descriptionLabel1 = new javax.swing.JLabel();
+        descriptionTextField1 = new javax.swing.JTextField();
+        hoursLabel1 = new javax.swing.JLabel();
+        hoursTextField1 = new javax.swing.JTextField();
+        btnCommit1 = new javax.swing.JButton();
+        tirePanel = new javax.swing.JPanel();
+        labelFromDate3 = new javax.swing.JLabel();
         labelToTheDate = new javax.swing.JLabel();
-        btnSearchGetCars = new javax.swing.JButton();
+        btnCommit = new javax.swing.JButton();
         fieldStartYear = new javax.swing.JTextField();
         fieldStartMonth = new javax.swing.JTextField();
         fieldStartDay = new javax.swing.JTextField();
-        dayFromLabel = new javax.swing.JLabel();
-        monthFromLabel = new javax.swing.JLabel();
+        dayOfPurchaseLabel = new javax.swing.JLabel();
+        monthOfPurchaseLabel = new javax.swing.JLabel();
         yearOfPurchaseLabel = new javax.swing.JLabel();
         fieldEndYear = new javax.swing.JTextField();
         fieldEndMonth = new javax.swing.JTextField();
         fieldEndDay = new javax.swing.JTextField();
-        dayOfEndingLabel = new javax.swing.JLabel();
-        monthOfEndingLabel = new javax.swing.JLabel();
-        yearOfPurchaseLabel1 = new javax.swing.JLabel();
-        btnTireHotel = new javax.swing.JButton();
+        dayOfPurchaseLabel3 = new javax.swing.JLabel();
+        monthOfPurchaseLabel3 = new javax.swing.JLabel();
+        yearOfPurchaseLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,272 +90,447 @@ public class ServiceWindow extends javax.swing.JFrame {
             }
         });
 
-        btnChipTuning.setText("Chip tuning");
-        btnChipTuning.addActionListener(new java.awt.event.ActionListener() {
+        btnChip.setText("Chip Tuning");
+        btnChip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnChipTuningActionPerformed(evt);
+                btnChipActionPerformed(evt);
             }
         });
+
+        btnTire.setText("Tire");
+        btnTire.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTireActionPerformed(evt);
+            }
+        });
+
+        mainPanel.setLayout(new java.awt.CardLayout());
 
         labelFromDate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         labelFromDate.setText("From Date");
 
-        labelToTheDate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        labelToTheDate.setText("To Date");
-        labelToTheDate.setEnabled(false);
+        dayOfPurchaseLabel2.setText("day");
+        dayOfPurchaseLabel2.setToolTipText("");
 
-        btnSearchGetCars.setText("Commit");
-        btnSearchGetCars.addActionListener(new java.awt.event.ActionListener() {
+        monthOfPurchaseLabel2.setText("month");
+        monthOfPurchaseLabel2.setToolTipText("");
+
+        yearOfPurchaseLabel2.setText("year");
+        yearOfPurchaseLabel2.setToolTipText("");
+
+        descriptionLabel.setText("Description");
+
+        hoursLabel.setText("Hours");
+
+        btnCommit2.setText("Commit");
+        btnCommit2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchGetCarsActionPerformed(evt);
+                btnCommit2ActionPerformed(evt);
             }
         });
 
-        dayFromLabel.setText("day");
-        dayFromLabel.setToolTipText("");
+        javax.swing.GroupLayout repairPanelLayout = new javax.swing.GroupLayout(repairPanel);
+        repairPanel.setLayout(repairPanelLayout);
+        repairPanelLayout.setHorizontalGroup(
+            repairPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(repairPanelLayout.createSequentialGroup()
+                .addGroup(repairPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(repairPanelLayout.createSequentialGroup()
+                        .addGroup(repairPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(repairPanelLayout.createSequentialGroup()
+                                .addGap(88, 88, 88)
+                                .addComponent(fieldStartDay2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(repairPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelFromDate)
+                                    .addGroup(repairPanelLayout.createSequentialGroup()
+                                        .addGap(9, 9, 9)
+                                        .addComponent(fieldStartMonth2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(fieldStartYear2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(repairPanelLayout.createSequentialGroup()
+                                .addGap(102, 102, 102)
+                                .addComponent(dayOfPurchaseLabel2)
+                                .addGap(47, 47, 47)
+                                .addComponent(monthOfPurchaseLabel2)
+                                .addGap(40, 40, 40)
+                                .addComponent(yearOfPurchaseLabel2)))
+                        .addGap(0, 142, Short.MAX_VALUE))
+                    .addGroup(repairPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(repairPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(repairPanelLayout.createSequentialGroup()
+                                .addComponent(descriptionLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(descriptionTextField))
+                            .addGroup(repairPanelLayout.createSequentialGroup()
+                                .addComponent(hoursLabel)
+                                .addGap(44, 44, 44)
+                                .addComponent(hoursTextField)))))
+                .addContainerGap())
+            .addGroup(repairPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnCommit2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        repairPanelLayout.setVerticalGroup(
+            repairPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(repairPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelFromDate)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(repairPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dayOfPurchaseLabel2)
+                    .addComponent(monthOfPurchaseLabel2)
+                    .addComponent(yearOfPurchaseLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(repairPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fieldStartDay2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldStartMonth2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldStartYear2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(repairPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(descriptionLabel)
+                    .addComponent(descriptionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(repairPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(hoursLabel)
+                    .addComponent(hoursTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
+                .addComponent(btnCommit2)
+                .addContainerGap())
+        );
 
-        monthFromLabel.setText("month");
-        monthFromLabel.setToolTipText("");
+        mainPanel.add(repairPanel, "repairPanel");
+
+        labelFromDate1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelFromDate1.setText("From Date");
+
+        dayOfPurchaseLabel1.setText("day");
+        dayOfPurchaseLabel1.setToolTipText("");
+
+        monthOfPurchaseLabel1.setText("month");
+        monthOfPurchaseLabel1.setToolTipText("");
+
+        yearOfPurchaseLabel1.setText("year");
+        yearOfPurchaseLabel1.setToolTipText("");
+
+        descriptionLabel1.setText("Description");
+
+        hoursLabel1.setText("Hours");
+
+        btnCommit1.setText("Commit");
+        btnCommit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCommit1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout chipPanelLayout = new javax.swing.GroupLayout(chipPanel);
+        chipPanel.setLayout(chipPanelLayout);
+        chipPanelLayout.setHorizontalGroup(
+            chipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(chipPanelLayout.createSequentialGroup()
+                .addGroup(chipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(chipPanelLayout.createSequentialGroup()
+                        .addGroup(chipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(chipPanelLayout.createSequentialGroup()
+                                .addGap(88, 88, 88)
+                                .addComponent(fieldStartDay1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(chipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelFromDate1)
+                                    .addGroup(chipPanelLayout.createSequentialGroup()
+                                        .addGap(9, 9, 9)
+                                        .addComponent(fieldStartMonth1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(fieldStartYear1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(chipPanelLayout.createSequentialGroup()
+                                .addGap(102, 102, 102)
+                                .addComponent(dayOfPurchaseLabel1)
+                                .addGap(44, 44, 44)
+                                .addComponent(monthOfPurchaseLabel1)
+                                .addGap(40, 40, 40)
+                                .addComponent(yearOfPurchaseLabel1)))
+                        .addGap(0, 142, Short.MAX_VALUE))
+                    .addGroup(chipPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(chipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(chipPanelLayout.createSequentialGroup()
+                                .addComponent(descriptionLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(descriptionTextField1))
+                            .addGroup(chipPanelLayout.createSequentialGroup()
+                                .addComponent(hoursLabel1)
+                                .addGap(44, 44, 44)
+                                .addComponent(hoursTextField1)))))
+                .addContainerGap())
+            .addGroup(chipPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnCommit1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        chipPanelLayout.setVerticalGroup(
+            chipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(chipPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelFromDate1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(chipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dayOfPurchaseLabel1)
+                    .addComponent(monthOfPurchaseLabel1)
+                    .addComponent(yearOfPurchaseLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(chipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fieldStartDay1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldStartMonth1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldStartYear1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(chipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(descriptionLabel1)
+                    .addComponent(descriptionTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(chipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(hoursLabel1)
+                    .addComponent(hoursTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
+                .addComponent(btnCommit1)
+                .addContainerGap())
+        );
+
+        mainPanel.add(chipPanel, "chipPanel");
+
+        labelFromDate3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelFromDate3.setText("From Date");
+
+        labelToTheDate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelToTheDate.setText("To Date");
+
+        btnCommit.setText("Commit");
+        btnCommit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCommitActionPerformed(evt);
+            }
+        });
+
+        dayOfPurchaseLabel.setText("day");
+        dayOfPurchaseLabel.setToolTipText("");
+
+        monthOfPurchaseLabel.setText("month");
+        monthOfPurchaseLabel.setToolTipText("");
 
         yearOfPurchaseLabel.setText("year");
         yearOfPurchaseLabel.setToolTipText("");
 
-        fieldEndYear.setEnabled(false);
+        dayOfPurchaseLabel3.setText("day");
+        dayOfPurchaseLabel3.setToolTipText("");
 
-        fieldEndMonth.setEnabled(false);
+        monthOfPurchaseLabel3.setText("month");
+        monthOfPurchaseLabel3.setToolTipText("");
 
-        fieldEndDay.setEnabled(false);
+        yearOfPurchaseLabel3.setText("year");
+        yearOfPurchaseLabel3.setToolTipText("");
 
-        dayOfEndingLabel.setText("day");
-        dayOfEndingLabel.setToolTipText("");
-        dayOfEndingLabel.setEnabled(false);
-
-        monthOfEndingLabel.setText("month");
-        monthOfEndingLabel.setToolTipText("");
-        monthOfEndingLabel.setEnabled(false);
-
-        yearOfPurchaseLabel1.setText("year");
-        yearOfPurchaseLabel1.setToolTipText("");
-        yearOfPurchaseLabel1.setEnabled(false);
-
-        javax.swing.GroupLayout panelGetCarsLayout = new javax.swing.GroupLayout(panelGetCars);
-        panelGetCars.setLayout(panelGetCarsLayout);
-        panelGetCarsLayout.setHorizontalGroup(
-            panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGetCarsLayout.createSequentialGroup()
-                .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelGetCarsLayout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelGetCarsLayout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelGetCarsLayout.createSequentialGroup()
-                                        .addComponent(dayFromLabel)
-                                        .addGap(43, 43, 43)
-                                        .addComponent(monthFromLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(yearOfPurchaseLabel))
-                                    .addGroup(panelGetCarsLayout.createSequentialGroup()
-                                        .addComponent(dayOfEndingLabel)
-                                        .addGap(43, 43, 43)
-                                        .addComponent(monthOfEndingLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(yearOfPurchaseLabel1)))
-                                .addGap(26, 26, 26))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGetCarsLayout.createSequentialGroup()
-                                .addComponent(fieldStartDay, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                                .addComponent(fieldStartMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(fieldStartYear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGetCarsLayout.createSequentialGroup()
-                                .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(panelGetCarsLayout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(labelToTheDate))
-                                    .addGroup(panelGetCarsLayout.createSequentialGroup()
-                                        .addComponent(fieldEndDay, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                                        .addComponent(fieldEndMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
-                                .addComponent(fieldEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(panelGetCarsLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnSearchGetCars)))
-                .addGap(96, 96, 96))
-            .addGroup(panelGetCarsLayout.createSequentialGroup()
-                .addGap(152, 152, 152)
-                .addComponent(labelFromDate)
+        javax.swing.GroupLayout tirePanelLayout = new javax.swing.GroupLayout(tirePanel);
+        tirePanel.setLayout(tirePanelLayout);
+        tirePanelLayout.setHorizontalGroup(
+            tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tirePanelLayout.createSequentialGroup()
+                .addGap(118, 118, 118)
+                .addComponent(dayOfPurchaseLabel)
+                .addGap(37, 37, 37)
+                .addComponent(monthOfPurchaseLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addComponent(yearOfPurchaseLabel)
+                .addGap(122, 122, 122))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tirePanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(tirePanelLayout.createSequentialGroup()
+                        .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelToTheDate)
+                            .addGroup(tirePanelLayout.createSequentialGroup()
+                                .addComponent(dayOfPurchaseLabel3)
+                                .addGap(84, 84, 84)))
+                        .addGap(14, 14, 14))
+                    .addGroup(tirePanelLayout.createSequentialGroup()
+                        .addComponent(fieldEndDay, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(fieldEndMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)))
+                .addComponent(fieldEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108))
+            .addGroup(tirePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnCommit)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tirePanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(fieldStartDay, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(fieldStartMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(fieldStartYear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(104, 104, 104))
+            .addGroup(tirePanelLayout.createSequentialGroup()
+                .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(tirePanelLayout.createSequentialGroup()
+                        .addGap(177, 177, 177)
+                        .addComponent(monthOfPurchaseLabel3)
+                        .addGap(41, 41, 41)
+                        .addComponent(yearOfPurchaseLabel3))
+                    .addGroup(tirePanelLayout.createSequentialGroup()
+                        .addGap(152, 152, 152)
+                        .addComponent(labelFromDate3)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        panelGetCarsLayout.setVerticalGroup(
-            panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGetCarsLayout.createSequentialGroup()
+        tirePanelLayout.setVerticalGroup(
+            tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tirePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelFromDate)
+                .addComponent(labelFromDate3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dayFromLabel)
-                    .addComponent(monthFromLabel)
+                .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dayOfPurchaseLabel)
+                    .addComponent(monthOfPurchaseLabel)
                     .addComponent(yearOfPurchaseLabel))
-                .addGap(1, 1, 1)
-                .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(9, 9, 9)
+                .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fieldStartMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fieldStartDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fieldStartYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(12, 12, 12)
                 .addComponent(labelToTheDate)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dayOfEndingLabel)
-                    .addComponent(monthOfEndingLabel)
-                    .addComponent(yearOfPurchaseLabel1))
-                .addGap(1, 1, 1)
-                .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dayOfPurchaseLabel3)
+                    .addComponent(monthOfPurchaseLabel3)
+                    .addComponent(yearOfPurchaseLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fieldEndMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fieldEndDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fieldEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(btnSearchGetCars))
-        );
-
-        btnTireHotel.setText("Tire Hotel");
-        btnTireHotel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTireHotelActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout servicePanelLayout = new javax.swing.GroupLayout(servicePanel);
-        servicePanel.setLayout(servicePanelLayout);
-        servicePanelLayout.setHorizontalGroup(
-            servicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(servicePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(servicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(servicePanelLayout.createSequentialGroup()
-                        .addComponent(btnRepair)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnChipTuning, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnTireHotel, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(panelGetCars, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(fieldEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldEndDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addComponent(btnCommit)
                 .addContainerGap())
         );
-        servicePanelLayout.setVerticalGroup(
-            servicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(servicePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(servicePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRepair)
-                    .addComponent(btnChipTuning)
-                    .addComponent(btnTireHotel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(panelGetCars, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+
+        mainPanel.add(tirePanel, "tirePanel");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(servicePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnRepair)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnChip)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnTire)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(servicePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRepair)
+                    .addComponent(btnChip)
+                    .addComponent(btnTire))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnChipTuningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChipTuningActionPerformed
-        panelGetCars.setVisible(true);
-    }//GEN-LAST:event_btnChipTuningActionPerformed
-
-    private void btnSearchGetCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchGetCarsActionPerformed
-        //Creates the date
-        int sD = ctr.stringToInt(fieldStartDay.getText());                                       
-        int sM = ctr.stringToInt(fieldStartMonth.getText());                                       
-        int sY = ctr.stringToInt(fieldStartYear.getText());
-        int eD = ctr.stringToInt(fieldEndDay.getText());                                       
-        int eM = ctr.stringToInt(fieldEndMonth.getText());                                       
-        int eY = ctr.stringToInt(fieldEndYear.getText());
-        Date startDate;
-        Date endDate;
-        if (sD < 0 || sM < 0 || sY < 0 || eD < 0 || eM < 0 || eY < 0) {
-            startDate = null;                       //If one or more fields of the date are empty.
-            endDate = null;
-        }
-        else {
-            startDate = createDate(sD, sM, sY);     //Creates the dates if fields were filled.
-            endDate = createDate(eD, eM, eY);
-        }
-        if (startDate != null) {
-            List<Car> cars = ctr.getSoldCarsBetweenDate(startDate, endDate);
-            //carWindow.displayCars(cars);
-        }
-        else
-            //carWindow.setInfoText("Invalid date!", true);
-        this.dispose();
-    }//GEN-LAST:event_btnSearchGetCarsActionPerformed
-
     private void btnRepairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRepairActionPerformed
-        
-        
+        CardLayout card = (CardLayout) mainPanel.getLayout();
+        card.show(mainPanel, "repairPanel");
     }//GEN-LAST:event_btnRepairActionPerformed
 
-    private void btnTireHotelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTireHotelActionPerformed
-        labelToTheDate.setEnabled(true);
-        dayOfEndingLabel.setEnabled(true);
-        monthOfEndingLabel.setEnabled(true);
-        yearOfPurchaseLabel1.setEnabled(true);
-        fieldEndDay.setEnabled(true);
-        fieldEndMonth.setEnabled(true);
-        fieldEndYear.setEnabled(true);
-    }//GEN-LAST:event_btnTireHotelActionPerformed
+    private void btnChipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChipActionPerformed
+        CardLayout card = (CardLayout) mainPanel.getLayout();
+        card.show(mainPanel, "chipPanel");
+    }//GEN-LAST:event_btnChipActionPerformed
 
-    /**
-     * Creates a date from an integer day, month and year.
-     * @param d - the day to be parsed
-     * @param m - the month to be parsed
-     * @param y - the year to be parsed
-     * @return the date
-     */
-    private Date createDate(int d, int m, int y) {
-        String sD = (d < 10) ? "0" + d: "" + d;
-        String sM = (m < 10) ? "0" + m: "" + m;
-        try {
-            return new SimpleDateFormat("dd-MM-yyyy").parse(sD + "-" + sM + "-" + y);
-        } catch (ParseException ex) {
-            ex.getMessage();
-        }
-        return null;
-    }
-    
+    private void btnTireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTireActionPerformed
+        CardLayout card = (CardLayout) mainPanel.getLayout();
+        card.show(mainPanel, "tirePanel");
+    }//GEN-LAST:event_btnTireActionPerformed
+
+    private void btnCommitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommitActionPerformed
+        //Creates the date
+        int sD = ctr.stringToInt(fieldStartDay.getText());
+        int sM = ctr.stringToInt(fieldStartMonth.getText());
+        int sY = ctr.stringToInt(fieldStartYear.getText());
+        int eD = ctr.stringToInt(fieldEndDay.getText());
+        int eM = ctr.stringToInt(fieldEndMonth.getText());
+        int eY = ctr.stringToInt(fieldEndYear.getText());
+
+    }//GEN-LAST:event_btnCommitActionPerformed
+
+    private void btnCommit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommit1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCommit1ActionPerformed
+
+    private void btnCommit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommit2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCommit2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnChipTuning;
+    private javax.swing.JButton btnChip;
+    private javax.swing.JButton btnCommit;
+    private javax.swing.JButton btnCommit1;
+    private javax.swing.JButton btnCommit2;
     private javax.swing.JButton btnRepair;
-    private javax.swing.JButton btnSearchGetCars;
-    private javax.swing.JButton btnTireHotel;
-    private javax.swing.JLabel dayFromLabel;
-    private javax.swing.JLabel dayOfEndingLabel;
+    private javax.swing.JButton btnTire;
+    private javax.swing.JPanel chipPanel;
+    private javax.swing.JLabel dayOfPurchaseLabel;
+    private javax.swing.JLabel dayOfPurchaseLabel1;
+    private javax.swing.JLabel dayOfPurchaseLabel2;
+    private javax.swing.JLabel dayOfPurchaseLabel3;
+    private javax.swing.JLabel descriptionLabel;
+    private javax.swing.JLabel descriptionLabel1;
+    private javax.swing.JTextField descriptionTextField;
+    private javax.swing.JTextField descriptionTextField1;
     private javax.swing.JTextField fieldEndDay;
     private javax.swing.JTextField fieldEndMonth;
     private javax.swing.JTextField fieldEndYear;
     private javax.swing.JTextField fieldStartDay;
+    private javax.swing.JTextField fieldStartDay1;
+    private javax.swing.JTextField fieldStartDay2;
     private javax.swing.JTextField fieldStartMonth;
+    private javax.swing.JTextField fieldStartMonth1;
+    private javax.swing.JTextField fieldStartMonth2;
     private javax.swing.JTextField fieldStartYear;
+    private javax.swing.JTextField fieldStartYear1;
+    private javax.swing.JTextField fieldStartYear2;
+    private javax.swing.JLabel hoursLabel;
+    private javax.swing.JLabel hoursLabel1;
+    private javax.swing.JTextField hoursTextField;
+    private javax.swing.JTextField hoursTextField1;
     private javax.swing.JLabel labelFromDate;
+    private javax.swing.JLabel labelFromDate1;
+    private javax.swing.JLabel labelFromDate3;
     private javax.swing.JLabel labelToTheDate;
-    private javax.swing.JLabel monthFromLabel;
-    private javax.swing.JLabel monthOfEndingLabel;
-    private javax.swing.JPanel panelGetCars;
-    private javax.swing.JPanel servicePanel;
+    private javax.swing.JPanel mainPanel;
+    private javax.swing.JLabel monthOfPurchaseLabel;
+    private javax.swing.JLabel monthOfPurchaseLabel1;
+    private javax.swing.JLabel monthOfPurchaseLabel2;
+    private javax.swing.JLabel monthOfPurchaseLabel3;
+    private javax.swing.JPanel repairPanel;
+    private javax.swing.JPanel tirePanel;
     private javax.swing.JLabel yearOfPurchaseLabel;
     private javax.swing.JLabel yearOfPurchaseLabel1;
+    private javax.swing.JLabel yearOfPurchaseLabel2;
+    private javax.swing.JLabel yearOfPurchaseLabel3;
     // End of variables declaration//GEN-END:variables
 }
