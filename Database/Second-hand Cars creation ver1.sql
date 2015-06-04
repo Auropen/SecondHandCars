@@ -15,7 +15,7 @@ CREATE TABLE CarStock (
 	sellingPrice MONEY NOT NULL,
 	type VARCHAR(50) NOT NULL,
 	description VARCHAR(500),
-	licensePlate VARCHAR(50),
+	licensePlate VARCHAR(50) NOT NULL,
 	dateOfPurchase DATE NOT NULL,
 	inStock BIT NOT NULL)
 INSERT INTO CarStock VALUES(1988,'Mercedes','250','TD','2,5T','Diesel',560,138000,159900,'St.car',null,'DP 12.087','08-09-2014',1)
