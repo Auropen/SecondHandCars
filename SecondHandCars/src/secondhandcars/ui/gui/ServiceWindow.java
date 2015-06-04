@@ -80,6 +80,10 @@ public class ServiceWindow extends javax.swing.JFrame {
         dayOfPurchaseLabel3 = new javax.swing.JLabel();
         monthOfPurchaseLabel3 = new javax.swing.JLabel();
         yearOfPurchaseLabel3 = new javax.swing.JLabel();
+        descriptionLabel2 = new javax.swing.JLabel();
+        descriptionTextField2 = new javax.swing.JTextField();
+        hoursLabel2 = new javax.swing.JLabel();
+        hoursTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -140,7 +144,7 @@ public class ServiceWindow extends javax.swing.JFrame {
                             .addGroup(repairPanelLayout.createSequentialGroup()
                                 .addGap(88, 88, 88)
                                 .addComponent(fieldStartDay2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(10, 10, 10)
                                 .addGroup(repairPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(labelFromDate)
                                     .addGroup(repairPanelLayout.createSequentialGroup()
@@ -233,27 +237,6 @@ public class ServiceWindow extends javax.swing.JFrame {
             .addGroup(chipPanelLayout.createSequentialGroup()
                 .addGroup(chipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(chipPanelLayout.createSequentialGroup()
-                        .addGroup(chipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(chipPanelLayout.createSequentialGroup()
-                                .addGap(88, 88, 88)
-                                .addComponent(fieldStartDay1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(chipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelFromDate1)
-                                    .addGroup(chipPanelLayout.createSequentialGroup()
-                                        .addGap(9, 9, 9)
-                                        .addComponent(fieldStartMonth1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(fieldStartYear1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(chipPanelLayout.createSequentialGroup()
-                                .addGap(102, 102, 102)
-                                .addComponent(dayOfPurchaseLabel1)
-                                .addGap(44, 44, 44)
-                                .addComponent(monthOfPurchaseLabel1)
-                                .addGap(40, 40, 40)
-                                .addComponent(yearOfPurchaseLabel1)))
-                        .addGap(0, 142, Short.MAX_VALUE))
-                    .addGroup(chipPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(chipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(chipPanelLayout.createSequentialGroup()
@@ -263,12 +246,31 @@ public class ServiceWindow extends javax.swing.JFrame {
                             .addGroup(chipPanelLayout.createSequentialGroup()
                                 .addComponent(hoursLabel1)
                                 .addGap(44, 44, 44)
-                                .addComponent(hoursTextField1)))))
+                                .addComponent(hoursTextField1))))
+                    .addGroup(chipPanelLayout.createSequentialGroup()
+                        .addGroup(chipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(chipPanelLayout.createSequentialGroup()
+                                .addGap(102, 102, 102)
+                                .addComponent(dayOfPurchaseLabel1)
+                                .addGap(47, 47, 47)
+                                .addComponent(monthOfPurchaseLabel1)
+                                .addGap(40, 40, 40)
+                                .addComponent(yearOfPurchaseLabel1))
+                            .addGroup(chipPanelLayout.createSequentialGroup()
+                                .addGap(88, 88, 88)
+                                .addComponent(fieldStartDay1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(19, 19, 19)
+                                .addComponent(fieldStartMonth1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(fieldStartYear1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(chipPanelLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(btnCommit1))
+                            .addGroup(chipPanelLayout.createSequentialGroup()
+                                .addGap(150, 150, 150)
+                                .addComponent(labelFromDate1)))
+                        .addGap(0, 142, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(chipPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnCommit1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         chipPanelLayout.setVerticalGroup(
             chipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -331,58 +333,71 @@ public class ServiceWindow extends javax.swing.JFrame {
         yearOfPurchaseLabel3.setText("year");
         yearOfPurchaseLabel3.setToolTipText("");
 
+        descriptionLabel2.setText("Description");
+
+        hoursLabel2.setText("Hours");
+
         javax.swing.GroupLayout tirePanelLayout = new javax.swing.GroupLayout(tirePanel);
         tirePanel.setLayout(tirePanelLayout);
         tirePanelLayout.setHorizontalGroup(
             tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tirePanelLayout.createSequentialGroup()
-                .addGap(118, 118, 118)
-                .addComponent(dayOfPurchaseLabel)
-                .addGap(37, 37, 37)
-                .addComponent(monthOfPurchaseLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                .addComponent(yearOfPurchaseLabel)
-                .addGap(122, 122, 122))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tirePanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(88, 88, 88)
                 .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(tirePanelLayout.createSequentialGroup()
-                        .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(labelToTheDate)
-                            .addGroup(tirePanelLayout.createSequentialGroup()
-                                .addComponent(dayOfPurchaseLabel3)
-                                .addGap(84, 84, 84)))
-                        .addGap(14, 14, 14))
                     .addGroup(tirePanelLayout.createSequentialGroup()
                         .addComponent(fieldEndDay, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(fieldEndMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)))
-                .addComponent(fieldEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(108, 108, 108))
-            .addGroup(tirePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnCommit)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(fieldEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(tirePanelLayout.createSequentialGroup()
+                        .addComponent(fieldStartDay, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19)
+                        .addComponent(fieldStartMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(fieldStartYear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(tirePanelLayout.createSequentialGroup()
+                        .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(tirePanelLayout.createSequentialGroup()
+                                .addGap(0, 83, Short.MAX_VALUE)
+                                .addComponent(monthOfPurchaseLabel3))
+                            .addGroup(tirePanelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(labelToTheDate)))
+                        .addGap(222, 222, 222))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tirePanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(fieldStartDay, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(fieldStartMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(fieldStartYear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(104, 104, 104))
-            .addGroup(tirePanelLayout.createSequentialGroup()
-                .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(tirePanelLayout.createSequentialGroup()
-                        .addGap(177, 177, 177)
-                        .addComponent(monthOfPurchaseLabel3)
-                        .addGap(41, 41, 41)
+                        .addContainerGap()
+                        .addComponent(hoursLabel2)
+                        .addGap(44, 44, 44)
+                        .addComponent(hoursTextField2))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tirePanelLayout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(dayOfPurchaseLabel)
+                        .addGap(47, 47, 47)
+                        .addComponent(monthOfPurchaseLabel)
+                        .addGap(40, 40, 40)
+                        .addComponent(yearOfPurchaseLabel))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tirePanelLayout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addComponent(dayOfPurchaseLabel3)
+                        .addGap(116, 116, 116)
                         .addComponent(yearOfPurchaseLabel3))
-                    .addGroup(tirePanelLayout.createSequentialGroup()
-                        .addGap(152, 152, 152)
-                        .addComponent(labelFromDate3)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tirePanelLayout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addComponent(labelFromDate3))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tirePanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCommit)
+                            .addGroup(tirePanelLayout.createSequentialGroup()
+                                .addComponent(descriptionLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(descriptionTextField2)))))
+                .addGap(16, 16, 16))
         );
         tirePanelLayout.setVerticalGroup(
             tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -394,14 +409,14 @@ public class ServiceWindow extends javax.swing.JFrame {
                     .addComponent(dayOfPurchaseLabel)
                     .addComponent(monthOfPurchaseLabel)
                     .addComponent(yearOfPurchaseLabel))
-                .addGap(9, 9, 9)
-                .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fieldStartMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fieldStartDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fieldStartYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addComponent(labelToTheDate)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fieldStartYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldStartDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldStartMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(labelToTheDate)
+                .addGap(10, 10, 10)
                 .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dayOfPurchaseLabel3)
                     .addComponent(monthOfPurchaseLabel3)
@@ -411,7 +426,15 @@ public class ServiceWindow extends javax.swing.JFrame {
                     .addComponent(fieldEndMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fieldEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fieldEndDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addGap(6, 6, 6)
+                .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(descriptionLabel2)
+                    .addComponent(descriptionTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(hoursLabel2)
+                    .addComponent(hoursTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addComponent(btnCommit)
                 .addContainerGap())
         );
@@ -444,7 +467,7 @@ public class ServiceWindow extends javax.swing.JFrame {
                     .addComponent(btnChip)
                     .addComponent(btnTire))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
+                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -474,15 +497,16 @@ public class ServiceWindow extends javax.swing.JFrame {
         int eD = ctr.stringToInt(fieldEndDay.getText());
         int eM = ctr.stringToInt(fieldEndMonth.getText());
         int eY = ctr.stringToInt(fieldEndYear.getText());
-
+        
+        this.dispose();
     }//GEN-LAST:event_btnCommitActionPerformed
 
     private void btnCommit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommit1ActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_btnCommit1ActionPerformed
 
     private void btnCommit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommit2ActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_btnCommit2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -499,8 +523,10 @@ public class ServiceWindow extends javax.swing.JFrame {
     private javax.swing.JLabel dayOfPurchaseLabel3;
     private javax.swing.JLabel descriptionLabel;
     private javax.swing.JLabel descriptionLabel1;
+    private javax.swing.JLabel descriptionLabel2;
     private javax.swing.JTextField descriptionTextField;
     private javax.swing.JTextField descriptionTextField1;
+    private javax.swing.JTextField descriptionTextField2;
     private javax.swing.JTextField fieldEndDay;
     private javax.swing.JTextField fieldEndMonth;
     private javax.swing.JTextField fieldEndYear;
@@ -515,8 +541,10 @@ public class ServiceWindow extends javax.swing.JFrame {
     private javax.swing.JTextField fieldStartYear2;
     private javax.swing.JLabel hoursLabel;
     private javax.swing.JLabel hoursLabel1;
+    private javax.swing.JLabel hoursLabel2;
     private javax.swing.JTextField hoursTextField;
     private javax.swing.JTextField hoursTextField1;
+    private javax.swing.JTextField hoursTextField2;
     private javax.swing.JLabel labelFromDate;
     private javax.swing.JLabel labelFromDate1;
     private javax.swing.JLabel labelFromDate3;
