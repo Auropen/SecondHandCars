@@ -5,7 +5,9 @@
  */
 package secondhandcars.ui.gui;
 
+import java.awt.Toolkit;
 import javax.swing.JFrame;
+import javax.swing.ImageIcon;
 import secondhandcars.application.IController;
 
 /**
@@ -20,6 +22,7 @@ public class MainMenu extends javax.swing.JFrame {
     public MainMenu(IController ctr) {
         this.ctr = ctr;
         initComponents();
+        
     }
 
     /**
@@ -108,6 +111,7 @@ public class MainMenu extends javax.swing.JFrame {
         serviceWindow.setLocationRelativeTo(null);   
     }//GEN-LAST:event_btnServiceActionPerformed
 
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCars;
     private javax.swing.JButton btnService;
