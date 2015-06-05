@@ -6,6 +6,7 @@
 package secondhandcars.ui.gui;
 
 import java.awt.CardLayout;
+import javax.swing.JFrame;
 import secondhandcars.application.IController;
 
 /**
@@ -51,6 +52,7 @@ public class ServiceWindow extends javax.swing.JFrame {
         hoursLabel = new javax.swing.JLabel();
         hoursTextField = new javax.swing.JTextField();
         btnCommit2 = new javax.swing.JButton();
+        repairLabel = new javax.swing.JLabel();
         chipPanel = new javax.swing.JPanel();
         labelFromDate1 = new javax.swing.JLabel();
         dayOfPurchaseLabel1 = new javax.swing.JLabel();
@@ -64,6 +66,7 @@ public class ServiceWindow extends javax.swing.JFrame {
         hoursLabel1 = new javax.swing.JLabel();
         hoursTextField1 = new javax.swing.JTextField();
         btnCommit1 = new javax.swing.JButton();
+        chipTuningLabel = new javax.swing.JLabel();
         tirePanel = new javax.swing.JPanel();
         labelFromDate3 = new javax.swing.JLabel();
         labelToTheDate = new javax.swing.JLabel();
@@ -84,6 +87,7 @@ public class ServiceWindow extends javax.swing.JFrame {
         descriptionTextField2 = new javax.swing.JTextField();
         hoursLabel2 = new javax.swing.JLabel();
         hoursTextField2 = new javax.swing.JTextField();
+        tireLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -133,6 +137,8 @@ public class ServiceWindow extends javax.swing.JFrame {
             }
         });
 
+        repairLabel.setText("Repair");
+
         javax.swing.GroupLayout repairPanelLayout = new javax.swing.GroupLayout(repairPanel);
         repairPanel.setLayout(repairPanelLayout);
         repairPanelLayout.setHorizontalGroup(
@@ -142,9 +148,14 @@ public class ServiceWindow extends javax.swing.JFrame {
                     .addGroup(repairPanelLayout.createSequentialGroup()
                         .addGroup(repairPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(repairPanelLayout.createSequentialGroup()
-                                .addGap(88, 88, 88)
-                                .addComponent(fieldStartDay2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
+                                .addGroup(repairPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(repairPanelLayout.createSequentialGroup()
+                                        .addGap(88, 88, 88)
+                                        .addComponent(fieldStartDay2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(repairPanelLayout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(repairLabel)))
+                                .addGap(9, 9, 9)
                                 .addGroup(repairPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(labelFromDate)
                                     .addGroup(repairPanelLayout.createSequentialGroup()
@@ -159,7 +170,7 @@ public class ServiceWindow extends javax.swing.JFrame {
                                 .addComponent(monthOfPurchaseLabel2)
                                 .addGap(40, 40, 40)
                                 .addComponent(yearOfPurchaseLabel2)))
-                        .addGap(0, 142, Short.MAX_VALUE))
+                        .addGap(0, 143, Short.MAX_VALUE))
                     .addGroup(repairPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(repairPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,7 +192,9 @@ public class ServiceWindow extends javax.swing.JFrame {
             repairPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(repairPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelFromDate)
+                .addGroup(repairPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelFromDate)
+                    .addComponent(repairLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(repairPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dayOfPurchaseLabel2)
@@ -230,6 +243,8 @@ public class ServiceWindow extends javax.swing.JFrame {
             }
         });
 
+        chipTuningLabel.setText("Chip tuning");
+
         javax.swing.GroupLayout chipPanelLayout = new javax.swing.GroupLayout(chipPanel);
         chipPanel.setLayout(chipPanelLayout);
         chipPanelLayout.setHorizontalGroup(
@@ -259,7 +274,7 @@ public class ServiceWindow extends javax.swing.JFrame {
                             .addGroup(chipPanelLayout.createSequentialGroup()
                                 .addGap(88, 88, 88)
                                 .addComponent(fieldStartDay1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(19, 19, 19)
+                                .addGap(18, 18, 18)
                                 .addComponent(fieldStartMonth1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(fieldStartYear1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -267,16 +282,20 @@ public class ServiceWindow extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addComponent(btnCommit1))
                             .addGroup(chipPanelLayout.createSequentialGroup()
-                                .addGap(150, 150, 150)
+                                .addContainerGap()
+                                .addComponent(chipTuningLabel)
+                                .addGap(85, 85, 85)
                                 .addComponent(labelFromDate1)))
-                        .addGap(0, 142, Short.MAX_VALUE)))
+                        .addGap(0, 143, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         chipPanelLayout.setVerticalGroup(
             chipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(chipPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelFromDate1)
+                .addGroup(chipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelFromDate1)
+                    .addComponent(chipTuningLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(chipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dayOfPurchaseLabel1)
@@ -337,6 +356,8 @@ public class ServiceWindow extends javax.swing.JFrame {
 
         hoursLabel2.setText("Hours");
 
+        tireLabel.setText("Tire");
+
         javax.swing.GroupLayout tirePanelLayout = new javax.swing.GroupLayout(tirePanel);
         tirePanel.setLayout(tirePanelLayout);
         tirePanelLayout.setHorizontalGroup(
@@ -352,7 +373,7 @@ public class ServiceWindow extends javax.swing.JFrame {
                         .addComponent(fieldEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(tirePanelLayout.createSequentialGroup()
-                        .addGap(0, 76, Short.MAX_VALUE)
+                        .addGap(0, 85, Short.MAX_VALUE)
                         .addComponent(monthOfPurchaseLabel3)
                         .addGap(39, 39, 39)
                         .addComponent(yearOfPurchaseLabel3)
@@ -369,19 +390,6 @@ public class ServiceWindow extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tirePanelLayout.createSequentialGroup()
                 .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(tirePanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(hoursLabel2)
-                        .addGap(44, 44, 44)
-                        .addComponent(hoursTextField2))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tirePanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCommit)
-                            .addGroup(tirePanelLayout.createSequentialGroup()
-                                .addComponent(descriptionLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(descriptionTextField2))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tirePanelLayout.createSequentialGroup()
                         .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tirePanelLayout.createSequentialGroup()
@@ -395,16 +403,32 @@ public class ServiceWindow extends javax.swing.JFrame {
                                 .addGap(99, 99, 99)
                                 .addComponent(dayOfPurchaseLabel3))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tirePanelLayout.createSequentialGroup()
-                                .addGap(150, 150, 150)
+                                .addContainerGap()
+                                .addComponent(tireLabel)
+                                .addGap(121, 121, 121)
                                 .addComponent(labelFromDate3)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(tirePanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(tirePanelLayout.createSequentialGroup()
+                                .addComponent(hoursLabel2)
+                                .addGap(44, 44, 44)
+                                .addComponent(hoursTextField2))
+                            .addComponent(btnCommit, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tirePanelLayout.createSequentialGroup()
+                                .addComponent(descriptionLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(descriptionTextField2)))))
                 .addGap(16, 16, 16))
         );
         tirePanelLayout.setVerticalGroup(
             tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tirePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelFromDate3)
+                .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelFromDate3)
+                    .addComponent(tireLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tirePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dayOfPurchaseLabel)
@@ -499,14 +523,35 @@ public class ServiceWindow extends javax.swing.JFrame {
         int eM = ctr.stringToInt(fieldEndMonth.getText());
         int eY = ctr.stringToInt(fieldEndYear.getText());
         
+        MainMenu mainMenu = new MainMenu(ctr);
+        
+        mainMenu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        mainMenu.setResizable(false);
+        mainMenu.setTitle("Sold Cars Menu");
+        mainMenu.setVisible(true);
+        mainMenu.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnCommitActionPerformed
 
     private void btnCommit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommit1ActionPerformed
+        MainMenu mainMenu = new MainMenu(ctr);
+        
+        mainMenu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        mainMenu.setResizable(false);
+        mainMenu.setTitle("Sold Cars Menu");
+        mainMenu.setVisible(true);
+        mainMenu.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnCommit1ActionPerformed
 
     private void btnCommit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommit2ActionPerformed
+        MainMenu mainMenu = new MainMenu(ctr);
+        
+        mainMenu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        mainMenu.setResizable(false);
+        mainMenu.setTitle("Sold Cars Menu");
+        mainMenu.setVisible(true);
+        mainMenu.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnCommit2ActionPerformed
 
@@ -518,6 +563,7 @@ public class ServiceWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnRepair;
     private javax.swing.JButton btnTire;
     private javax.swing.JPanel chipPanel;
+    private javax.swing.JLabel chipTuningLabel;
     private javax.swing.JLabel dayOfPurchaseLabel;
     private javax.swing.JLabel dayOfPurchaseLabel1;
     private javax.swing.JLabel dayOfPurchaseLabel2;
@@ -555,7 +601,9 @@ public class ServiceWindow extends javax.swing.JFrame {
     private javax.swing.JLabel monthOfPurchaseLabel1;
     private javax.swing.JLabel monthOfPurchaseLabel2;
     private javax.swing.JLabel monthOfPurchaseLabel3;
+    private javax.swing.JLabel repairLabel;
     private javax.swing.JPanel repairPanel;
+    private javax.swing.JLabel tireLabel;
     private javax.swing.JPanel tirePanel;
     private javax.swing.JLabel yearOfPurchaseLabel;
     private javax.swing.JLabel yearOfPurchaseLabel1;
