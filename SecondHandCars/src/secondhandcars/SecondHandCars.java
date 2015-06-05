@@ -5,8 +5,15 @@
  */
 package secondhandcars;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JFrame;
 import secondhandcars.application.Controller;
+import secondhandcars.domain.ChipTuning;
+import secondhandcars.domain.Company;
+import secondhandcars.domain.Customer;
+import secondhandcars.domain.Order;
+import secondhandcars.domain.Repair;
 import secondhandcars.ui.gui.MainMenu;
 
 /**
@@ -26,5 +33,20 @@ public class SecondHandCars {
         mainPage.setTitle("Main Menu");
         mainPage.setVisible(true);
         mainPage.setLocationRelativeTo(null);
+        
+        //Testing
+        Customer customer = new Customer("Bo", "Børgensen", "6234523542", "Somewhere", "bbørgensen@something.com", 1);
+        Repair r1 = new Repair(1, customer, 5025);
+        Repair r2 = new Repair(2, customer, 1552);
+        ChipTuning ct = new ChipTuning(3, customer, 500);
+        
+        List<Order> orders = new ArrayList();
+        orders.add(r1);
+        orders.add(r2);
+        orders.add(ct);
+        
+        Company c = Company.getInstance();
+        
+        c.createTransactionReport(orders, "transactions.txt");
     }
 }

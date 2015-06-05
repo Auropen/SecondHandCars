@@ -13,26 +13,40 @@ import java.util.List;
  */
 public class TireVacation extends Order{
     private int durationDays;
-    private List<TireSet> tireSets;
+    private TireSet tireSet;
 
-    public TireVacation(int durationDays, List<TireSet> tireSets) {
+    public TireVacation(int orderID, Customer customer, double amountPayable, int durationDays, TireSet tireSet) {
+        super(orderID, customer, amountPayable);
         this.durationDays = durationDays;
-        this.tireSets = tireSets;
+        this.tireSet = tireSet;
     }
 
+    public String toString() {
+        return "_______________________________________\n" +
+               "Customer: " + getCustomer().getFirstName() + " " + getCustomer().getLastName() + "\n" +
+               "CustomerID: " + getCustomer().getCustomerID() + "\n" +
+               "Address: " + getCustomer().getAddress()+ "\n" +
+               "E-mail: " + getCustomer().getEmail()+ "\n" +
+               "PhoneNumber: " + getCustomer().getPhoneNumber()+ "\n" +
+               "OrderID:" + getOrderID() + "\n" +
+               "_______________________________________\n" +
+               "Not implemented yet!" +
+               "\n_______________________________________";
+    }
+    
     public int getDurationDays() {
         return durationDays;
     }
 
-    public List<TireSet> getTireSets() {
-        return tireSets;
+    public TireSet getTireSet() {
+        return tireSet;
     }
 
     public void setDurationDays(int durationDays) {
         this.durationDays = durationDays;
     }
 
-    public void setTireSets(List<TireSet> tireSets) {
-        this.tireSets = tireSets;
+    public void setTireSet(TireSet tireSet) {
+        this.tireSet = tireSet;
     }
 }

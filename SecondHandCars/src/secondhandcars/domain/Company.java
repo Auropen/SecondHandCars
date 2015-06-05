@@ -5,6 +5,12 @@
  */
 package secondhandcars.domain;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.List;
+
 /**
  *
  * @author Kritian
@@ -35,6 +41,32 @@ public class Company {
         return instance;
     }
 
+    public void createTransactionReport(List<Order> orderList, String dest) {
+        BufferedWriter writer = null;
+        File f = new File(dest);
+        if (f.exists()) {
+            System.err.println("File exists already!");
+        }
+        else {
+            try {
+                writer = new BufferedWriter(new FileWriter(dest));
+
+                for (Order o : orderList) {
+                    writer.write("\n" + o.toString());
+                }
+
+            } catch (IOException ex) {
+                ex.getMessage();
+            } finally {
+                try {
+                    writer.close();
+                } catch (IOException ex) {
+                    ex.getMessage();
+                }
+            }
+        }
+    }
+    
     //Accesors method
     public String getCompanyName()  {   return companyName;     }
     public String getAddress()      {   return address;         }

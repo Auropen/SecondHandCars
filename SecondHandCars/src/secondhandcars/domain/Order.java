@@ -12,23 +12,20 @@ package secondhandcars.domain;
 public abstract class Order {
     private int orderID;
     private Customer customer;
-    private Invoice invoice;
     private double amountPayable;
 
+    public Order(int orderID, Customer customer, double amountPayable) {
+        this.orderID = orderID;
+        this.customer = customer;
+        this.amountPayable = amountPayable;
+    }
+    
     public Customer getCustomer() {
         return customer;
     }
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
-    }
-
-    public Invoice getInvoice() {
-        return invoice;
-    }
-
-    public void setInvoice(Invoice invoice) {
-        this.invoice = invoice;
     }
 
     public double getAmountPayable() {

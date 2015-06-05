@@ -3,3 +3,4 @@
 *.properties
 /SecondHandCars/dist/
 SecondHandCars/nbproject/project.properties
+SecondHandCars/transactions.txt
