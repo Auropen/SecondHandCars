@@ -21,6 +21,7 @@ import secondhandcars.technical.DBHandler;
  * @author Kristian
  */
 public class Controller implements IController {
+
     Company company;
     DBHandler dbHandler;
 
@@ -28,10 +29,12 @@ public class Controller implements IController {
         this.company = Company.getInstance();
         dbHandler = new DBHandler();
     }
-    
+
     /**
-     * Search for a list of specific cars, using all data from the Car class except stock status. 
-     * An empty String, -1 for numeric values or null for date will skip that criteria.
+     * Search for a list of specific cars, using all data from the Car class
+     * except stock status. An empty String, -1 for numeric values or null for
+     * date will skip that criteria.
+     *
      * @param fuelType - The fuel of the car.
      * @param sellingPrice - the sellingPrice of the car.
      * @param licensePlate - the licensePlate of the car.
@@ -51,10 +54,12 @@ public class Controller implements IController {
     public List<Car> searchCars(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase) {
         return company.getCarStock().searchCar(fuelType, sellingPrice, licensePlate, year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, description, dateOfPurchase);
     }
-    
+
     /**
-     * Search for a list of specific cars, using all data from the Car class including stock status. 
-     * An empty String, -1 for numeric values or null for date will skip that criteria.
+     * Search for a list of specific cars, using all data from the Car class
+     * including stock status. An empty String, -1 for numeric values or null
+     * for date will skip that criteria.
+     *
      * @param fuelType - The fuel of the car.
      * @param sellingPrice - the sellingPrice of the car.
      * @param licensePlate - the licensePlate of the car.
@@ -75,25 +80,28 @@ public class Controller implements IController {
     public List<Car> searchCars(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
         return company.getCarStock().searchCar(fuelType, sellingPrice, licensePlate, year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, description, dateOfPurchase, inStock);
     }
-    
+
     /**
-     *  Gets the all car from the dbHandler, and converts the data to car objects
-     *  @return a list of cars
+     * Gets the all car from the dbHandler, and converts the data to car objects
+     *
+     * @return a list of cars
      */
     @Override
-    public List<Car> getAllCars(){
+    public List<Car> getAllCars() {
         List<Car> cars;
         ResultSet rs = dbHandler.getAllCarsInStock();
         cars = getCarsFromResultSet(rs);
         return cars;
     }
-    
+
     /**
-     *  Gets the sold car from the dbHandler, and converts the data to car objects
-     *  @return a list of cars
+     * Gets the sold car from the dbHandler, and converts the data to car
+     * objects
+     *
+     * @return a list of cars
      */
     @Override
-    public List<Car> getSoldCars(){
+    public List<Car> getSoldCars() {
         List<Car> cars;
         ResultSet rs = dbHandler.getSoldCars();
         cars = getCarsFromResultSet(rs);
@@ -102,6 +110,7 @@ public class Controller implements IController {
 
     /**
      * Takes a ResultSet and creates cars from the data.
+     *
      * @param rs - the ResultSet of cars
      * @return a list of car
      */
@@ -115,17 +124,17 @@ public class Controller implements IController {
                         rs.getString("type"), rs.getString("description"), rs.getDate("dateOfPurchase"), rs.getBoolean("inStock"));
                 cars.add(car);
             }
-        } catch (SQLException ex) {
+        }
+        catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
-        }
-        finally {
-             dbHandler.closeConnection();
+        } finally {
+            dbHandler.closeConnection();
         }
         return cars;
     }
-    
+
     /**
      * Stores the cars from the database to the CarStock
      */
@@ -146,7 +155,7 @@ public class Controller implements IController {
     }
 
     /**
-     * 
+     *
      * @param fuelType
      * @param sellingPrice
      * @param licensePlate
@@ -160,7 +169,7 @@ public class Controller implements IController {
      * @param type
      * @param description
      * @param dateOfPurchase
-     * @param inStock 
+     * @param inStock
      */
     @Override
     public void createCar(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
@@ -168,13 +177,13 @@ public class Controller implements IController {
     }
 
     /**
-     * 
+     *
      * @param c
      * @param sellingPrice
      * @param licensePlate
      * @param odometer
      * @param description
-     * @param inStock 
+     * @param inStock
      */
     @Override
     public void updateCar(Car c, double sellingPrice, String licensePlate, double odometer, String description, boolean inStock) {
@@ -182,7 +191,7 @@ public class Controller implements IController {
     }
 
     /**
-     * 
+     *
      * @param c The car to be deleted
      */
     @Override
@@ -191,8 +200,7 @@ public class Controller implements IController {
     }
 
     /**
-     * 
-     * @param r 
+     *
      */
     @Override
     public void createRepairService() {
@@ -200,8 +208,7 @@ public class Controller implements IController {
     }
 
     /**
-     * 
-     * @param r 
+     *
      */
     @Override
     public void updateRepairService(int id) {
@@ -209,8 +216,7 @@ public class Controller implements IController {
     }
 
     /**
-     * 
-     * @param r 
+     *
      */
     @Override
     public void deleteRepairService(int id) {
@@ -218,8 +224,7 @@ public class Controller implements IController {
     }
 
     /**
-     * 
-     * @param ct 
+     *
      */
     @Override
     public void createChipTuningService() {
@@ -227,8 +232,8 @@ public class Controller implements IController {
     }
 
     /**
-     * 
-     * @param ct 
+     *
+     * @param id
      */
     @Override
     public void updateChipTuningService(int id) {
@@ -236,8 +241,8 @@ public class Controller implements IController {
     }
 
     /**
-     * 
-     * @param ct 
+     *
+     * @param id
      */
     @Override
     public void deleteChipTuningService(int id) {
@@ -245,8 +250,8 @@ public class Controller implements IController {
     }
 
     /**
-     * 
-     * @param description 
+     *
+     * @param description
      */
     @Override
     public void createTireService(String description) {
@@ -254,9 +259,9 @@ public class Controller implements IController {
     }
 
     /**
-     * 
+     *
      * @param id
-     * @param description 
+     * @param description
      */
     @Override
     public void updateTireService(int id, String description) {
@@ -264,8 +269,8 @@ public class Controller implements IController {
     }
 
     /**
-     * 
-     * @param id 
+     *
+     * @param id
      */
     @Override
     public void deleteTireService(int id) {
@@ -281,13 +286,13 @@ public class Controller implements IController {
     public double stringToDouble(String s) {
         try {
             return Double.parseDouble(s);
-        }
-        catch(NumberFormatException ex) {}
+        } 
+        catch (NumberFormatException ex) {}
         return -1;
     }
 
     /**
-     * Safely converts string to a integer
+     * Safely converts string to an integer
      * @param s The string of the integer
      * @return the converted integer
      */
@@ -295,8 +300,8 @@ public class Controller implements IController {
     public int stringToInt(String s) {
         try {
             return Integer.parseInt(s);
-        }
-        catch(NumberFormatException ex) {}
+        } 
+        catch (NumberFormatException ex) {}
         return -1;
     }
 }
