@@ -18,15 +18,13 @@ public class Sale extends Order{
     }
     
     public String toString() {
-        return "_______________________________________\n" +
-               "Customer: " + getCustomer().getFirstName() + " " + getCustomer().getLastName() + "\n" +
-               "CustomerID: " + getCustomer().getCustomerID() + "\n" +
-               "Address: " + getCustomer().getAddress()+ "\n" +
-               "E-mail: " + getCustomer().getEmail()+ "\n" +
-               "PhoneNumber: " + getCustomer().getPhoneNumber()+ "\n" +
-               "OrderID:" + getOrderID() + "\n" +
-               "_______________________________________\n" +
-               "Not implemented yet!" +
-               "\n_______________________________________";
+        return "_______________________________________\r\n" +
+               "Customer: " + getCustomer().getFirstName() + " " + getCustomer().getLastName() + "\r\n" +
+               "CustomerID: " + getCustomer().getCustomerID() + "\r\n" +
+               "OrderID:" + getOrderID() + "\r\n" +
+               "_______________________________________\r\n" +
+               "Sale price: " + getAmountPayable() + "kr\r\n" +
+               "Not implemented yet!\r\n" +
+               "_______________________________________";
     }
 }

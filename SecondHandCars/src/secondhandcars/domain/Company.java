@@ -51,9 +51,13 @@ public class Company {
             try {
                 writer = new BufferedWriter(new FileWriter(dest));
 
+                double totalPrice = 0;
                 for (Order o : orderList) {
-                    writer.write("\n" + o.toString());
+                    writer.write("\r\n" + o.toString());
+                    totalPrice += o.getAmountPayable();
                 }
+                
+                writer.write("\r\nTotal price: " + totalPrice + "kr");
 
             } catch (IOException ex) {
                 ex.getMessage();
