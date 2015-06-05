@@ -119,4 +119,124 @@ public class DBHandler {
         
         return rs;
     }
+    
+    /**
+     * Gets all the repairs recorded in the database
+     * @return a ResultSet of repairs
+     */
+    public ResultSet getAllRepairs() {
+        connectToCarDatabase();
+        createStatement();
+        ResultSet rs = null;
+        
+        try {
+            rs = stmt.executeQuery("USE " + databaseName + " SELECT * FROM getAllRepairs");
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        
+        return rs;
+    }
+    
+    /**
+     * Gets all the repairs of petrol cars recorded in the database
+     * @return a ResultSet of repairs
+     */
+    public ResultSet getPetrolRepairs() {
+        connectToCarDatabase();
+        createStatement();
+        ResultSet rs = null;
+        
+        try {
+            rs = stmt.executeQuery("USE " + databaseName + " SELECT * FROM getPetrolRepairs");
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        
+        return rs;
+    }
+    
+    /**
+     * Gets all the repairs of diesel cars recorded in the database
+     * @return a ResultSet of repairs
+     */
+    public ResultSet getDieselRepairs() {
+        connectToCarDatabase();
+        createStatement();
+        ResultSet rs = null;
+        
+        try {
+            rs = stmt.executeQuery("USE " + databaseName + " SELECT * FROM getDieselRepairs");
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        
+        return rs;
+    }
+    
+    /**
+     * Gets all the chip tunings recorded in the database
+     * @return a ResultSet of chip tunings
+     */
+    public ResultSet getChipTunings() {
+        connectToCarDatabase();
+        createStatement();
+        ResultSet rs = null;
+        
+        try {
+            rs = stmt.executeQuery("USE " + databaseName + " SELECT * FROM getChipTunings");
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        
+        return rs;
+    }
+    
+    /**
+     * Gets all the tire services recorded in the database
+     * @return a ResultSet of tire services
+     */
+    public ResultSet getTireServices() {
+        connectToCarDatabase();
+        createStatement();
+        ResultSet rs = null;
+        
+        try {
+            rs = stmt.executeQuery("USE " + databaseName + " SELECT * FROM getTireServices");
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        
+        return rs;
+    }
+    
+    /**
+     * Gets all the tire vacations recorded in the database
+     * @return a ResultSet of tire vacations
+     */
+    public ResultSet getTireVacations() {
+        connectToCarDatabase();
+        createStatement();
+        ResultSet rs = null;
+        
+        try {
+            rs = stmt.executeQuery("USE " + databaseName + " SELECT * FROM getTireVacations");
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        
+        return rs;
+    }
 }
