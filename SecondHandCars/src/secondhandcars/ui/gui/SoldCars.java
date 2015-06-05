@@ -22,6 +22,8 @@ public class SoldCars extends javax.swing.JFrame {
 
     /**
      * Creates new form SoldCars
+     * @param ctr
+     * @param carWindow
      */
     public SoldCars(IController ctr, CarWindow carWindow) {
         this.ctr = ctr;
@@ -288,7 +290,7 @@ public class SoldCars extends javax.swing.JFrame {
         return null;
     }
     
-    public void removeGetCarsPanel(){
+    private void removeGetCarsPanel(){
         panelGetCars.setVisible(false);
     }
 
