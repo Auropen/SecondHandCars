@@ -17,14 +17,16 @@ public class Sale extends Order{
         super(orderID, customer, amountPayable);
     }
     
+    @Override
     public String toString() {
         return "_______________________________________\r\n" +
                "Customer: " + getCustomer().getFirstName() + " " + getCustomer().getLastName() + "\r\n" +
                "CustomerID: " + getCustomer().getCustomerID() + "\r\n" +
-               "OrderID:" + getOrderID() + "\r\n" +
+               "OrderID: " + getOrderID() + "\r\n" +
+               "Order Type: Sale\r\n" +
                "_______________________________________\r\n" +
-               "Sale price: " + getAmountPayable() + "kr\r\n" +
-               "Not implemented yet!\r\n" +
-               "_______________________________________";
+               "Price: " + getAmountPayable() + "kr\r\n" +
+               "Description: " + 123456 + " \r\n" +
+               "_______________________________________\r\n";
     }
 }

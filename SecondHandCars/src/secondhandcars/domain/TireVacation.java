@@ -21,30 +21,22 @@ public class TireVacation extends Order{
         this.tireSet = tireSet;
     }
 
+    @Override
     public String toString() {
         return "_______________________________________\r\n" +
                "Customer: " + getCustomer().getFirstName() + " " + getCustomer().getLastName() + "\r\n" +
                "CustomerID: " + getCustomer().getCustomerID() + "\r\n" +
-               "OrderID:" + getOrderID() + "\r\n" +
+               "OrderID: " + getOrderID() + "\r\n" +
+               "Order Type: Tire Vacation\r\n" +
                "_______________________________________\r\n" +
-               "Tire Vacation price: " + getAmountPayable() + "kr\r\n" +
-               "Not implemented yet!\r\n" +
-               "_______________________________________";
+               "Price: " + getAmountPayable() + "kr\r\n" +
+               "Description: " + 123456 + " \r\n" +
+               "_______________________________________\r\n";
     }
     
-    public int getDurationDays() {
-        return durationDays;
-    }
+    public int getDurationDays()    {   return durationDays;    }
+    public TireSet getTireSet()     {   return tireSet;         }
 
-    public TireSet getTireSet() {
-        return tireSet;
-    }
-
-    public void setDurationDays(int durationDays) {
-        this.durationDays = durationDays;
-    }
-
-    public void setTireSet(TireSet tireSet) {
-        this.tireSet = tireSet;
-    }
+    public void setDurationDays(int durationDays)   {   this.durationDays = durationDays;   }
+    public void setTireSet(TireSet tireSet)         {   this.tireSet = tireSet;             }
 }

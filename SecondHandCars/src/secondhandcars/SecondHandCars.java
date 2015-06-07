@@ -6,6 +6,7 @@
 package secondhandcars;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import javax.swing.JFrame;
 import secondhandcars.application.Controller;
@@ -36,9 +37,9 @@ public class SecondHandCars {
         
         //Testing
         Customer customer = new Customer("Bo", "Børgensen", "12345678", "Somewhere", "bbørgensen@something.com", 1);
-        Repair r1 = new Repair(1, customer, 5025);
-        Repair r2 = new Repair(2, customer, 1552);
-        ChipTuning ct = new ChipTuning(3, customer, 500);
+        Repair r1 = new Repair(Calendar.getInstance().getTime(), "Engine broken", 129, 1, customer, 5025);
+        Repair r2 = new Repair(Calendar.getInstance().getTime(), "Hull damage", 46, 2, customer, 1552);
+        ChipTuning ct = new ChipTuning(Calendar.getInstance().getTime(), "New chip tuning", 12, 3, customer, 500);
         
         List<Order> orders = new ArrayList();
         orders.add(r1);

@@ -44,29 +44,26 @@ public class Company {
     public void createTransactionReport(List<Order> orderList, String dest) {
         BufferedWriter writer = null;
         File f = new File(dest);
-        if (f.exists()) {
-            System.err.println("File exists already!");
-        }
-        else {
+        if (f.exists())
+            f.delete();
+        try {
+            writer = new BufferedWriter(new FileWriter(dest));
+
+            double totalPrice = 0;
+            for (Order o : orderList) {
+                writer.write(o.toString());
+                totalPrice += o.getAmountPayable();
+            }
+
+            writer.write("\r\nTotal price: " + totalPrice + "kr");
+
+        } catch (IOException ex) {
+            ex.getMessage();
+        } finally {
             try {
-                writer = new BufferedWriter(new FileWriter(dest));
-
-                double totalPrice = 0;
-                for (Order o : orderList) {
-                    writer.write("\r\n" + o.toString());
-                    totalPrice += o.getAmountPayable();
-                }
-                
-                writer.write("\r\nTotal price: " + totalPrice + "kr");
-
+                writer.close();
             } catch (IOException ex) {
                 ex.getMessage();
-            } finally {
-                try {
-                    writer.close();
-                } catch (IOException ex) {
-                    ex.getMessage();
-                }
             }
         }
     }
