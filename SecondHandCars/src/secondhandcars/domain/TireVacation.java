@@ -5,8 +5,6 @@
  */
 package secondhandcars.domain;
 
-import java.util.List;
-
 /**
  *
  * @author Baku

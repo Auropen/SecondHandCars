@@ -11,9 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import secondhandcars.domain.Car;
-import secondhandcars.domain.ChipTuning;
 import secondhandcars.domain.Company;
-import secondhandcars.domain.Repair;
 import secondhandcars.technical.DBHandler;
 
 /**
