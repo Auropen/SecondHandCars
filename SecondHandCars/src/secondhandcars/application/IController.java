@@ -38,6 +38,7 @@ public interface IController {
     //Sales methods
     public void createTransactionReport(List<Order> orders, String dest);
     public void createTransactionReportBetweenDate(List<Order> orders, String dest, Date startDate, Date endDate);
+    public List<Order> getAllOrders();
     
     //Customer methods
     public void createCustomersFromDB();

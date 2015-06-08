@@ -241,6 +241,11 @@ public class Controller implements IController {
     }
     
     @Override
+    public List<Order> getAllOrders() {
+        return company.getOrders();
+    }
+    
+    @Override
     public void createCustomersFromDB() {
         try {
             ResultSet rs = dbHandler.getAllCustomers();
