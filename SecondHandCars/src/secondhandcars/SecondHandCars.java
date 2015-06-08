@@ -5,8 +5,10 @@
  */
 package secondhandcars;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import javax.swing.JFrame;
 import secondhandcars.application.Controller;
@@ -15,6 +17,8 @@ import secondhandcars.domain.Company;
 import secondhandcars.domain.Customer;
 import secondhandcars.domain.Order;
 import secondhandcars.domain.Repair;
+import secondhandcars.domain.TireSet;
+import secondhandcars.domain.TireVacation;
 import secondhandcars.ui.gui.MainMenu;
 
 /**
@@ -40,11 +44,13 @@ public class SecondHandCars {
         Repair r1 = new Repair(Calendar.getInstance().getTime(), "Engine broken", 129, 1, customer, 5025);
         Repair r2 = new Repair(Calendar.getInstance().getTime(), "Hull damage", 46, 2, customer, 1552);
         ChipTuning ct = new ChipTuning(Calendar.getInstance().getTime(), "New chip tuning", 12, 3, customer, 500);
+        TireVacation tv = new TireVacation(4, customer, 200, new TireSet("Continental Winter 205/65 R16\"", 4, customer), Calendar.getInstance().getTime(), new Date(System.currentTimeMillis() + 604800000L));
         
         List<Order> orders = new ArrayList();
         orders.add(r1);
         orders.add(r2);
         orders.add(ct);
+        orders.add(tv);
         
         Company c = Company.getInstance();
         

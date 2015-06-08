@@ -5,18 +5,21 @@
  */
 package secondhandcars.domain;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author Baku
  */
 public class TireVacation extends Order{
-    private int durationDays;
     private TireSet tireSet;
+    private Date endDate;
 
-    public TireVacation(int orderID, Customer customer, double amountPayable, int durationDays, TireSet tireSet) {
-        super(orderID, customer, amountPayable);
-        this.durationDays = durationDays;
+    public TireVacation(int orderID, Customer customer, double amountPayable, TireSet tireSet, Date startDate , Date endDate) {
+        super(orderID, customer, amountPayable, startDate);
         this.tireSet = tireSet;
+        this.endDate = endDate;
     }
 
     @Override
@@ -28,13 +31,14 @@ public class TireVacation extends Order{
                "Order Type: Tire Vacation\r\n" +
                "_______________________________________\r\n" +
                "Price: " + getAmountPayable() + "kr\r\n" +
-               "Description: " + 123456 + " \r\n" +
+               "Description: Tire - " + tireSet.getDescription() + " \r\n" +
+               "Duration: " + new SimpleDateFormat("dd-MM-yyyy").format(getOrderDate()) + " - " + new SimpleDateFormat("dd-MM-yyyy").format(endDate) + " \r\n" +
                "_______________________________________\r\n";
     }
     
-    public int getDurationDays()    {   return durationDays;    }
+    public Date getEndDate()        {   return endDate;         }
     public TireSet getTireSet()     {   return tireSet;         }
 
-    public void setDurationDays(int durationDays)   {   this.durationDays = durationDays;   }
+    public void setEndDate(Date endDate)   {   this.endDate = endDate;   }
     public void setTireSet(TireSet tireSet)         {   this.tireSet = tireSet;             }
 }
