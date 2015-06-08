@@ -10,14 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import secondhandcars.domain.Car;
-import secondhandcars.domain.ChipTuning;
-import secondhandcars.domain.Company;
-import secondhandcars.domain.Customer;
-import secondhandcars.domain.Order;
-import secondhandcars.domain.Repair;
-import secondhandcars.domain.TireSet;
-import secondhandcars.domain.TireVacation;
+import secondhandcars.domain.*;
 import secondhandcars.technical.DBHandler;
 
 /**
@@ -34,7 +27,7 @@ public final class Controller implements IController {
         dbHandler = new DBHandler();
         createCarsFromDB();                     //Stores cars from the database to the memory of the program.
         createCustomersFromDB();                //Stores customers from the database to the memory of the program.
-        createTireSetFromDB();                  //Stores customers from the database to the memory of the program.
+        createTireSetFromDB();                  //Stores tire sets from the database to the memory of the program.
         createOrdersFromDB();                   //Stores orders from the database to the memory of the program.
     }
 
@@ -232,8 +225,8 @@ public final class Controller implements IController {
         try {
             ResultSet rs = dbHandler.getAllTireSets();
             while (rs.next()) {
-                TireSet ts = new TireSet(rs.getInt("TireSetID"), rs.getString("Description"), rs.getInt("NumberOfTireSet"), getCustomerByID(rs.getInt("CustomerID")));
-                company.getTireHotel().setTireSet(Byte.parseByte(rs.getString("Location"), 2), ts);
+                TireSet ts = new TireSet(rs.getInt("TireSetID"), rs.getString("Description"), rs.getInt("NumberOfTires"), getCustomerByID(rs.getInt("CustomerID")));
+                company.getTireHotel().setTireSet(rs.getString("Location"), ts);
             }
         }
         catch (SQLException ex) {
@@ -272,7 +265,8 @@ public final class Controller implements IController {
         try {
             ResultSet rs = dbHandler.getAllCustomers();
             while (rs.next()) {
-                company.getCustomers().add(new Customer(rs.getString("FirstName"), rs.getString("LastName"), rs.getString("PhoneNumber"), rs.getString("Address"), rs.getString("Email"), rs.getInt("CustomerID")));
+                Customer customer = new Customer(rs.getString("FirstName"), rs.getString("LastName"), rs.getString("PhoneNumber"), rs.getString("Address"), rs.getString("Email"), rs.getInt("CustomerID"));
+                company.getCustomers().add(customer);
             }
         }
         catch (SQLException ex) {
