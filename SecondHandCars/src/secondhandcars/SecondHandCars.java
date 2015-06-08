@@ -44,7 +44,7 @@ public class SecondHandCars {
         Repair r1 = new Repair(Calendar.getInstance().getTime(), "Engine broken", 129, 1, customer, 5025);
         Repair r2 = new Repair(Calendar.getInstance().getTime(), "Hull damage", 46, 2, customer, 1552);
         ChipTuning ct = new ChipTuning(Calendar.getInstance().getTime(), "New chip tuning", 12, 3, customer, 500);
-        TireVacation tv = new TireVacation(4, customer, 200, new TireSet("Continental Winter 205/65 R16\"", 4, customer), Calendar.getInstance().getTime(), new Date(System.currentTimeMillis() + 604800000L));
+        TireVacation tv = new TireVacation(4, customer, 200, new TireSet(1, "Continental Winter 205/65 R16\"", 4, customer), Calendar.getInstance().getTime(), new Date(System.currentTimeMillis() + 604800000L));
         
         List<Order> orders = new ArrayList();
         orders.add(r1);

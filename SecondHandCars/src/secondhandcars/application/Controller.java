@@ -16,6 +16,7 @@ import secondhandcars.domain.Company;
 import secondhandcars.domain.Customer;
 import secondhandcars.domain.Order;
 import secondhandcars.domain.Repair;
+import secondhandcars.domain.TireSet;
 import secondhandcars.domain.TireVacation;
 import secondhandcars.technical.DBHandler;
 
@@ -176,6 +177,58 @@ public class Controller implements IController {
         }
         return repairs;
     }
+    
+    @Override
+    public List<ChipTuning> getAllChipTuningFromDB() {
+        List<ChipTuning> chipTunings = new ArrayList();
+        try {
+            ResultSet rs = dbHandler.getChipTunings();
+            while (rs.next()) {
+                ChipTuning chipTuning = new ChipTuning(rs.getDate("TuningDate"), rs.getString("Description"), rs.getInt("Hours"), rs.getInt("TuningID"), getCustomerByID(rs.getInt("CustomerID")), rs.getDouble("Amount"));
+                chipTunings.add(chipTuning);
+            }
+        }
+        catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        } finally {
+            dbHandler.closeConnection();
+        }
+        return chipTunings;
+    }
+
+    @Override
+    public List<TireVacation> getAllTireVacationFromDB() {
+        List<TireVacation> tireVacations = new ArrayList();
+        try {
+            ResultSet rs = dbHandler.getChipTunings();
+            while (rs.next()) {
+                TireVacation tireVacation = new TireVacation(rs.getInt("TireVacationID"), getCustomerByID(rs.getInt("CustomerID")), rs.getDouble("Amount"), getTireSetByID(rs.getInt("TireSetID")), rs.getDate("StartDate"), rs.getDate("EndDate"));
+                tireVacations.add(tireVacation);
+            }
+        }
+        catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        } finally {
+            dbHandler.closeConnection();
+        }
+        return tireVacations;
+    }
+
+    @Override
+    public void createOrdersFromDB() {
+        company.getOrders().addAll(getAllRepairsFromDB());
+        company.getOrders().addAll(getAllChipTuningFromDB());
+        company.getOrders().addAll(getAllTireVacationFromDB());
+    }
+    
+    @Override
+    public TireSet getTireSetByID(int id) {
+        return company.getTireHotel().getTireSetByID(id);
+    }
 
     @Override
     public void createCustomersFromDB() {
@@ -204,23 +257,6 @@ public class Controller implements IController {
             }
         }
         return result;
-    }
-    
-    @Override
-    public List<ChipTuning> getAllChipTuningFromDB() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<TireVacation> getAllTireVacationFromDB() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void createOrdersFromDB() {
-        company.getOrders().addAll(getAllRepairsFromDB());
-        company.getOrders().addAll(getAllChipTuningFromDB());
-        company.getOrders().addAll(getAllTireVacationFromDB());
     }
     
     /**

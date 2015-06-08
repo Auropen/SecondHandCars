@@ -12,6 +12,7 @@ import secondhandcars.domain.ChipTuning;
 import secondhandcars.domain.Customer;
 import secondhandcars.domain.Order;
 import secondhandcars.domain.Repair;
+import secondhandcars.domain.TireSet;
 import secondhandcars.domain.TireVacation;
 
 /**
@@ -32,6 +33,7 @@ public interface IController {
     public List<ChipTuning> getAllChipTuningFromDB();
     public List<TireVacation> getAllTireVacationFromDB();
     public void createOrdersFromDB();
+    public TireSet getTireSetByID(int id);
     
     //Customer methods
     public void createCustomersFromDB();

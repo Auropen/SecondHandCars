@@ -34,20 +34,33 @@ public class TireHotel {
         byte y = Byte.parseByte(binary.substring(5, 7), 2); //Next 2 bits for the y (Rows)
         byte z = Byte.parseByte(binary.substring(7), 2);    //Last bit for the z (Depths)
         
-        return tireSets[x][y][z];                            //Gets the specific tireSet
+        return getTireSets()[x][y][z];                            //Gets the specific tireSet
     }
     
     public void setTireSet(byte x, byte y, byte z, TireSet ts) {
-        tireSets[x][y][z] = ts;                             //Sets specified tireset in the tiresets
+        getTireSets()[x][y][z] = ts;                             //Sets specified tireset in the tiresets
     }
     
     public TireSet getTireSetByLocation(byte x, byte y, byte z) {
-        return tireSets[x][y][z];                            //Gets the specific tireSet
+        return getTireSets()[x][y][z];                            //Gets the specific tireSet
+    }
+    
+    public TireSet getTireSetByID(int id) {
+        for(TireSet[][] tireSet : getTireSets()){
+            for(TireSet[] tireSet2 : tireSet){
+                for(TireSet tireSet3 : tireSet2){
+                    if(tireSet3.getTireSetID() == id){
+                        return tireSet3;
+                    }
+                }
+            }
+        }
+        return null;
     }
     
     public ArrayList<TireSet> getTireSetByDescription(String description) {
         ArrayList<TireSet> returnSet = new ArrayList();
-        for(TireSet[][] tireSet : tireSets){
+        for(TireSet[][] tireSet : getTireSets()){
             for(TireSet[] tireSet2 : tireSet){
                 for(TireSet tireSet3 : tireSet2){
                     if(tireSet3.getDescription().contains(description)){
@@ -58,9 +71,10 @@ public class TireHotel {
         }
         return returnSet;
     }
+    
     public ArrayList<TireSet> getTireSetByCustomerName(String firstName, String lastName){
         ArrayList<TireSet> returnSet = new ArrayList();
-        for(TireSet[][] tireSet : tireSets){
+        for(TireSet[][] tireSet : getTireSets()){
             for(TireSet[] tireSet2 : tireSet){
                 for(TireSet tireSet3 : tireSet2){
                     if(tireSet3.getCustomer().getFirstName().equalsIgnoreCase(firstName) && tireSet3.getCustomer().getLastName().equalsIgnoreCase(lastName)){
@@ -73,7 +87,7 @@ public class TireHotel {
     }
     public ArrayList<TireSet> getTireSetByCustomerID(int customerID){
         ArrayList<TireSet> returnSet = new ArrayList();
-        for(TireSet[][] tireSet : tireSets){
+        for(TireSet[][] tireSet : getTireSets()){
             for(TireSet[] tireSet2 : tireSet){
                 for(TireSet tireSet3 : tireSet2){
                     if(tireSet3.getCustomer().getCustomerID() == customerID){
@@ -86,8 +100,10 @@ public class TireHotel {
     }
 
     //Accessor methods
-    public String getAddress() {    return address;     }
+    public String getAddress()          {    return address;    }
+    public TireSet[][][] getTireSets()  {   return tireSets;    }
 
     //Mutator methods
-    public void setAddress(String address)  {   this.address = address;     }
+    public void setAddress(String address)          {   this.address = address;     }
+    public void setTireSets(TireSet[][][] tireSets) {   this.tireSets = tireSets;   }
 }
