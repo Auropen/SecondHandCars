@@ -23,7 +23,6 @@ public class MainMenu extends javax.swing.JFrame {
     public MainMenu(IController ctr) {
         this.ctr = ctr;
         initComponents();
-        
     }
 
     /**

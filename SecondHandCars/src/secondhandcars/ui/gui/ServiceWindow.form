@@ -26,8 +26,11 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="mainPanel" max="32767" attributes="0"/>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="mainPanel" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="btnRepair" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnChip" min="-2" max="-2" attributes="0"/>
@@ -35,9 +38,9 @@
                       <Component id="btnTire" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="btnBack" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -154,7 +157,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnCommitRepair" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCreateRepair" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -190,7 +193,7 @@
                           <Component id="hoursTextField" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="129" max="32767" attributes="0"/>
-                      <Component id="btnCommitRepair" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCreateRepair" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -243,12 +246,12 @@
             </Component>
             <Component class="javax.swing.JTextField" name="hoursTextField">
             </Component>
-            <Component class="javax.swing.JButton" name="btnCommitRepair">
+            <Component class="javax.swing.JButton" name="btnCreateRepair">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Commit"/>
+                <Property name="text" type="java.lang.String" value="Create"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommitRepairActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateRepairActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="repairLabel">
@@ -305,7 +308,7 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="btnCommitChipTuning" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnCreateChipTuning" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
@@ -352,7 +355,7 @@
                           <Component id="hoursTextField1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="129" max="32767" attributes="0"/>
-                      <Component id="btnCommitChipTuning" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCreateChipTuning" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -405,12 +408,12 @@
             </Component>
             <Component class="javax.swing.JTextField" name="hoursTextField1">
             </Component>
-            <Component class="javax.swing.JButton" name="btnCommitChipTuning">
+            <Component class="javax.swing.JButton" name="btnCreateChipTuning">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Commit"/>
+                <Property name="text" type="java.lang.String" value="Create"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommitChipTuningActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateChipTuningActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="chipTuningLabel">
@@ -453,11 +456,11 @@
                                   <Component id="labelToTheDate" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Component id="fieldStartDay" min="-2" pref="52" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                       <Component id="fieldStartMonth" min="-2" pref="52" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Component id="fieldStartYear" min="-2" pref="52" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -496,7 +499,7 @@
                                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                                       <Component id="hoursTextField2" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="btnCommitTire" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnCreateTire" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="descriptionLabel2" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -554,7 +557,7 @@
                           <Component id="hoursTextField2" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="56" max="32767" attributes="0"/>
-                      <Component id="btnCommitTire" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCreateTire" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -577,12 +580,12 @@
                 <Property name="text" type="java.lang.String" value="To Date"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnCommitTire">
+            <Component class="javax.swing.JButton" name="btnCreateTire">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Commit"/>
+                <Property name="text" type="java.lang.String" value="Create"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCommitTireActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateTireActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="fieldStartYear">

@@ -29,7 +29,8 @@ public class SoldCars extends javax.swing.JFrame {
         this.ctr = ctr;
         this.carWindow = carWindow;
         initComponents();
-        removeGetCarsPanel();
+        panelGetCars.setVisible(false);
+
     }
 
     /**
@@ -134,13 +135,13 @@ public class SoldCars extends javax.swing.JFrame {
             .addGroup(panelGetCarsLayout.createSequentialGroup()
                 .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelGetCarsLayout.createSequentialGroup()
-                        .addGap(146, 146, 146)
+                        .addGap(142, 142, 142)
                         .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelGetCarsLayout.createSequentialGroup()
                                 .addComponent(dayOfPurchaseLabel)
-                                .addGap(43, 43, 43)
-                                .addComponent(monthOfPurchaseLabel)
                                 .addGap(34, 34, 34)
+                                .addComponent(monthOfPurchaseLabel)
+                                .addGap(36, 36, 36)
                                 .addComponent(yearOfPurchaseLabel))
                             .addGroup(panelGetCarsLayout.createSequentialGroup()
                                 .addGap(1, 1, 1)
@@ -149,9 +150,9 @@ public class SoldCars extends javax.swing.JFrame {
                                 .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(labelToTheDate)
                                     .addGroup(panelGetCarsLayout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
+                                        .addGap(17, 17, 17)
                                         .addComponent(monthOfPurchaseLabel1)
-                                        .addGap(41, 41, 41)
+                                        .addGap(37, 37, 37)
                                         .addComponent(yearOfPurchaseLabel1))))))
                     .addGroup(panelGetCarsLayout.createSequentialGroup()
                         .addGap(175, 175, 175)
@@ -290,10 +291,6 @@ public class SoldCars extends javax.swing.JFrame {
         return null;
     }
     
-    private void removeGetCarsPanel(){
-        panelGetCars.setVisible(false);
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGetCars;
     private javax.swing.JButton btnGetSoldCars;

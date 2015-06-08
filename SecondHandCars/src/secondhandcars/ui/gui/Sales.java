@@ -9,6 +9,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import javax.swing.JFrame;
 import secondhandcars.application.IController;
 import secondhandcars.domain.Car;
 
@@ -26,7 +27,7 @@ public class Sales extends javax.swing.JFrame {
     public Sales(IController ctr) {
         this.ctr = ctr;
         initComponents();
-        removeGetCarsPanel();
+        panelGetCars.setVisible(false);
     }
 
     /**
@@ -57,6 +58,7 @@ public class Sales extends javax.swing.JFrame {
         monthOfPurchaseLabel1 = new javax.swing.JLabel();
         yearOfPurchaseLabel1 = new javax.swing.JLabel();
         btnCreateReport = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -131,13 +133,13 @@ public class Sales extends javax.swing.JFrame {
             .addGroup(panelGetCarsLayout.createSequentialGroup()
                 .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelGetCarsLayout.createSequentialGroup()
-                        .addGap(146, 146, 146)
+                        .addGap(142, 142, 142)
                         .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelGetCarsLayout.createSequentialGroup()
                                 .addComponent(dayOfPurchaseLabel)
-                                .addGap(43, 43, 43)
-                                .addComponent(monthOfPurchaseLabel)
                                 .addGap(34, 34, 34)
+                                .addComponent(monthOfPurchaseLabel)
+                                .addGap(36, 36, 36)
                                 .addComponent(yearOfPurchaseLabel))
                             .addGroup(panelGetCarsLayout.createSequentialGroup()
                                 .addGap(1, 1, 1)
@@ -146,9 +148,9 @@ public class Sales extends javax.swing.JFrame {
                                 .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(labelToTheDate)
                                     .addGroup(panelGetCarsLayout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
+                                        .addGap(17, 17, 17)
                                         .addComponent(monthOfPurchaseLabel1)
-                                        .addGap(41, 41, 41)
+                                        .addGap(37, 37, 37)
                                         .addComponent(yearOfPurchaseLabel1))))))
                     .addGroup(panelGetCarsLayout.createSequentialGroup()
                         .addGap(175, 175, 175)
@@ -187,6 +189,13 @@ public class Sales extends javax.swing.JFrame {
                 .addComponent(btnCreateReport))
         );
 
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -194,12 +203,14 @@ public class Sales extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelGetCars, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelGetCars, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnCreateReportOfTransactions)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCreateReportBetweenDates)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnCreateReportBetweenDates)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnBack)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,7 +218,8 @@ public class Sales extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCreateReportOfTransactions)
-                    .addComponent(btnCreateReportBetweenDates))
+                    .addComponent(btnCreateReportBetweenDates)
+                    .addComponent(btnBack))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelGetCars, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -243,19 +255,25 @@ public class Sales extends javax.swing.JFrame {
         int eD = ctr.stringToInt(fieldEndDay.getText());                                       
         int eM = ctr.stringToInt(fieldEndMonth.getText());                                       
         int eY = ctr.stringToInt(fieldEndYear.getText());
-        
-  
     }//GEN-LAST:event_btnCreateReportActionPerformed
 
     private void btnCreateReportOfTransactionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateReportOfTransactionsActionPerformed
         
     }//GEN-LAST:event_btnCreateReportOfTransactionsActionPerformed
 
-    private void removeGetCarsPanel(){
-        panelGetCars.setVisible(false);
-    }
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        MainMenu mainMenu = new MainMenu(ctr);
+        
+        mainMenu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        mainMenu.setResizable(false);
+        mainMenu.setTitle("Sold Cars Menu");
+        mainMenu.setVisible(true);
+        mainMenu.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnBackActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreateReport;
     private javax.swing.JButton btnCreateReportBetweenDates;
     private javax.swing.JButton btnCreateReportOfTransactions;
