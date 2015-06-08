@@ -255,4 +255,20 @@ public class DBHandler {
         
         return rs;
     }
+    
+    public ResultSet getAllTireSets() {
+        connectToCarDatabase();
+        createStatement();
+        ResultSet rs = null;
+        
+        try {
+            rs = stmt.executeQuery("USE " + databaseName + " SELECT * FROM getAllTireSets");
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        
+        return rs;
+    }
 }
