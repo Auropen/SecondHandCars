@@ -11,7 +11,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import secondhandcars.domain.Car;
+import secondhandcars.domain.ChipTuning;
 import secondhandcars.domain.Company;
+import secondhandcars.domain.Order;
+import secondhandcars.domain.Repair;
+import secondhandcars.domain.TireVacation;
 import secondhandcars.technical.DBHandler;
 
 /**
@@ -151,130 +155,27 @@ public class Controller implements IController {
     public List<Car> getSoldCarsBetweenDate(Date startDate, Date endDate) {
         return company.getCarStock().getSoldCarsBetweenDate(startDate, endDate);
     }
-
-    /**
-     *
-     * @param fuelType
-     * @param sellingPrice
-     * @param licensePlate
-     * @param year
-     * @param mark
-     * @param model
-     * @param version
-     * @param volumeOfEngine
-     * @param odometer
-     * @param priceOfPurchase
-     * @param type
-     * @param description
-     * @param dateOfPurchase
-     * @param inStock
-     */
+    
     @Override
-    public void createCar(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
+    public List<Repair> getAllRepairsFromDB() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    /**
-     *
-     * @param c
-     * @param sellingPrice
-     * @param licensePlate
-     * @param odometer
-     * @param description
-     * @param inStock
-     */
     @Override
-    public void updateCar(Car c, double sellingPrice, String licensePlate, double odometer, String description, boolean inStock) {
+    public List<ChipTuning> getAllChipTuningFromDB() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    /**
-     *
-     * @param c The car to be deleted
-     */
     @Override
-    public void deleteCar(Car c) {
+    public List<TireVacation> getAllTireVacationFromDB() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    /**
-     *
-     */
     @Override
-    public void createRepairService() {
+    public List<Order> createOrdersFromDB() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    /**
-     *
-     */
-    @Override
-    public void updateRepairService(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    /**
-     *
-     */
-    @Override
-    public void deleteRepairService(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    /**
-     *
-     */
-    @Override
-    public void createChipTuningService() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    /**
-     *
-     * @param id
-     */
-    @Override
-    public void updateChipTuningService(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    /**
-     *
-     * @param id
-     */
-    @Override
-    public void deleteChipTuningService(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    /**
-     *
-     * @param description
-     */
-    @Override
-    public void createTireService(String description) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    /**
-     *
-     * @param id
-     * @param description
-     */
-    @Override
-    public void updateTireService(int id, String description) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    /**
-     *
-     * @param id
-     */
-    @Override
-    public void deleteTireService(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
     /**
      * Safely converts string to a double
      * @param s The string of the double
