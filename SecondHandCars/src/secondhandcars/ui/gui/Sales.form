@@ -52,11 +52,11 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="panelGetCars" pref="0" max="32767" attributes="0"/>
+                      <Component id="panelGetCars" pref="425" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="btnCreateReportOfTransactions" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnCreateTransactionReport" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnCreateReportBetweenDates" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnOpenBetweenDate" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="btnBack" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -70,8 +70,8 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnCreateReportOfTransactions" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnCreateReportBetweenDates" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCreateTransactionReport" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnOpenBetweenDate" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnBack" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -82,20 +82,20 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btnCreateReportOfTransactions">
+        <Component class="javax.swing.JButton" name="btnCreateTransactionReport">
           <Properties>
             <Property name="text" type="java.lang.String" value="Create report"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateReportOfTransactionsActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateTransactionReportActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnCreateReportBetweenDates">
+        <Component class="javax.swing.JButton" name="btnOpenBetweenDate">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Create report between dates"/>
+            <Property name="text" type="java.lang.String" value="Use between dates"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateReportBetweenDatesActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOpenBetweenDateActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="panelGetCars">
@@ -156,7 +156,7 @@
                               <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
                               <Component id="labelFromDate" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="btnCreateReport" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnCreateReportBetweenDates" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -194,7 +194,7 @@
                           <Component id="fieldEndDay" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="102" max="32767" attributes="0"/>
-                      <Component id="btnCreateReport" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCreateReportBetweenDates" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -264,12 +264,12 @@
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnCreateReport">
+            <Component class="javax.swing.JButton" name="btnCreateReportBetweenDates">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Create"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateReportActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateReportBetweenDatesActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
