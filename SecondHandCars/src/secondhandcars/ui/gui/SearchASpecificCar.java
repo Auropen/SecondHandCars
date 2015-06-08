@@ -18,6 +18,12 @@ public class SearchASpecificCar extends javax.swing.JFrame {
     CarWindow carWindow;
     IController ctr;
     
+     /**
+     * Creates new form SearchSpecificCar
+     * @param ctr
+     * @param carWindow
+     */
+    
     public SearchASpecificCar(IController ctr, CarWindow carWindow) {
         this.ctr = ctr;
         this.carWindow = carWindow;

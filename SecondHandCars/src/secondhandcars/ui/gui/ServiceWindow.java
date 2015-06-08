@@ -18,7 +18,8 @@ public class ServiceWindow extends javax.swing.JFrame {
     IController ctr;
 
     /**
-     * Creates new form test
+     * Creates new form ServiceWindow
+     * @param ctr
      */
     public ServiceWindow(IController ctr) {
 
@@ -51,7 +52,7 @@ public class ServiceWindow extends javax.swing.JFrame {
         descriptionTextField = new javax.swing.JTextField();
         hoursLabel = new javax.swing.JLabel();
         hoursTextField = new javax.swing.JTextField();
-        btnCommit2 = new javax.swing.JButton();
+        btnCommitRepair = new javax.swing.JButton();
         repairLabel = new javax.swing.JLabel();
         chipPanel = new javax.swing.JPanel();
         labelFromDate1 = new javax.swing.JLabel();
@@ -65,12 +66,12 @@ public class ServiceWindow extends javax.swing.JFrame {
         descriptionTextField1 = new javax.swing.JTextField();
         hoursLabel1 = new javax.swing.JLabel();
         hoursTextField1 = new javax.swing.JTextField();
-        btnCommit1 = new javax.swing.JButton();
+        btnCommitChipTuning = new javax.swing.JButton();
         chipTuningLabel = new javax.swing.JLabel();
         tirePanel = new javax.swing.JPanel();
         labelFromDate3 = new javax.swing.JLabel();
         labelToTheDate = new javax.swing.JLabel();
-        btnCommit = new javax.swing.JButton();
+        btnCommitTire = new javax.swing.JButton();
         fieldStartYear = new javax.swing.JTextField();
         fieldStartMonth = new javax.swing.JTextField();
         fieldStartDay = new javax.swing.JTextField();
@@ -88,6 +89,7 @@ public class ServiceWindow extends javax.swing.JFrame {
         hoursLabel2 = new javax.swing.JLabel();
         hoursTextField2 = new javax.swing.JTextField();
         tireLabel = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -130,10 +132,10 @@ public class ServiceWindow extends javax.swing.JFrame {
 
         hoursLabel.setText("Hours");
 
-        btnCommit2.setText("Commit");
-        btnCommit2.addActionListener(new java.awt.event.ActionListener() {
+        btnCommitRepair.setText("Commit");
+        btnCommitRepair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCommit2ActionPerformed(evt);
+                btnCommitRepairActionPerformed(evt);
             }
         });
 
@@ -185,7 +187,7 @@ public class ServiceWindow extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(repairPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnCommit2)
+                .addComponent(btnCommitRepair)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         repairPanelLayout.setVerticalGroup(
@@ -214,7 +216,7 @@ public class ServiceWindow extends javax.swing.JFrame {
                     .addComponent(hoursLabel)
                     .addComponent(hoursTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
-                .addComponent(btnCommit2)
+                .addComponent(btnCommitRepair)
                 .addContainerGap())
         );
 
@@ -236,10 +238,10 @@ public class ServiceWindow extends javax.swing.JFrame {
 
         hoursLabel1.setText("Hours");
 
-        btnCommit1.setText("Commit");
-        btnCommit1.addActionListener(new java.awt.event.ActionListener() {
+        btnCommitChipTuning.setText("Commit");
+        btnCommitChipTuning.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCommit1ActionPerformed(evt);
+                btnCommitChipTuningActionPerformed(evt);
             }
         });
 
@@ -280,7 +282,7 @@ public class ServiceWindow extends javax.swing.JFrame {
                                 .addComponent(fieldStartYear1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(chipPanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(btnCommit1))
+                                .addComponent(btnCommitChipTuning))
                             .addGroup(chipPanelLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(chipTuningLabel)
@@ -315,7 +317,7 @@ public class ServiceWindow extends javax.swing.JFrame {
                     .addComponent(hoursLabel1)
                     .addComponent(hoursTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
-                .addComponent(btnCommit1)
+                .addComponent(btnCommitChipTuning)
                 .addContainerGap())
         );
 
@@ -327,10 +329,10 @@ public class ServiceWindow extends javax.swing.JFrame {
         labelToTheDate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         labelToTheDate.setText("To Date");
 
-        btnCommit.setText("Commit");
-        btnCommit.addActionListener(new java.awt.event.ActionListener() {
+        btnCommitTire.setText("Commit");
+        btnCommitTire.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCommitActionPerformed(evt);
+                btnCommitTireActionPerformed(evt);
             }
         });
 
@@ -415,7 +417,7 @@ public class ServiceWindow extends javax.swing.JFrame {
                                 .addComponent(hoursLabel2)
                                 .addGap(44, 44, 44)
                                 .addComponent(hoursTextField2))
-                            .addComponent(btnCommit, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCommitTire, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tirePanelLayout.createSequentialGroup()
                                 .addComponent(descriptionLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -460,11 +462,18 @@ public class ServiceWindow extends javax.swing.JFrame {
                     .addComponent(hoursLabel2)
                     .addComponent(hoursTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                .addComponent(btnCommit)
+                .addComponent(btnCommitTire)
                 .addContainerGap())
         );
 
         mainPanel.add(tirePanel, "tirePanel");
+
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -480,7 +489,8 @@ public class ServiceWindow extends javax.swing.JFrame {
                         .addComponent(btnChip)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnTire)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnBack)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -490,7 +500,8 @@ public class ServiceWindow extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRepair)
                     .addComponent(btnChip)
-                    .addComponent(btnTire))
+                    .addComponent(btnTire)
+                    .addComponent(btnBack))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -514,7 +525,7 @@ public class ServiceWindow extends javax.swing.JFrame {
         card.show(mainPanel, "tirePanel");
     }//GEN-LAST:event_btnTireActionPerformed
 
-    private void btnCommitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommitActionPerformed
+    private void btnCommitTireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommitTireActionPerformed
         //Creates the date
         int sD = ctr.stringToInt(fieldStartDay.getText());
         int sM = ctr.stringToInt(fieldStartMonth.getText());
@@ -531,9 +542,9 @@ public class ServiceWindow extends javax.swing.JFrame {
         mainMenu.setVisible(true);
         mainMenu.setLocationRelativeTo(null);
         this.dispose();
-    }//GEN-LAST:event_btnCommitActionPerformed
+    }//GEN-LAST:event_btnCommitTireActionPerformed
 
-    private void btnCommit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommit1ActionPerformed
+    private void btnCommitChipTuningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommitChipTuningActionPerformed
         MainMenu mainMenu = new MainMenu(ctr);
         
         mainMenu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -542,9 +553,9 @@ public class ServiceWindow extends javax.swing.JFrame {
         mainMenu.setVisible(true);
         mainMenu.setLocationRelativeTo(null);
         this.dispose();
-    }//GEN-LAST:event_btnCommit1ActionPerformed
+    }//GEN-LAST:event_btnCommitChipTuningActionPerformed
 
-    private void btnCommit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommit2ActionPerformed
+    private void btnCommitRepairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommitRepairActionPerformed
         MainMenu mainMenu = new MainMenu(ctr);
         
         mainMenu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -553,13 +564,25 @@ public class ServiceWindow extends javax.swing.JFrame {
         mainMenu.setVisible(true);
         mainMenu.setLocationRelativeTo(null);
         this.dispose();
-    }//GEN-LAST:event_btnCommit2ActionPerformed
+    }//GEN-LAST:event_btnCommitRepairActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        MainMenu mainMenu = new MainMenu(ctr);
+        
+        mainMenu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        mainMenu.setResizable(false);
+        mainMenu.setTitle("Sold Cars Menu");
+        mainMenu.setVisible(true);
+        mainMenu.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnBackActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnChip;
-    private javax.swing.JButton btnCommit;
-    private javax.swing.JButton btnCommit1;
-    private javax.swing.JButton btnCommit2;
+    private javax.swing.JButton btnCommitChipTuning;
+    private javax.swing.JButton btnCommitRepair;
+    private javax.swing.JButton btnCommitTire;
     private javax.swing.JButton btnRepair;
     private javax.swing.JButton btnTire;
     private javax.swing.JPanel chipPanel;

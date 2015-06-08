@@ -52,15 +52,14 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="panelGetCars" pref="425" max="32767" attributes="0"/>
+                      <Component id="panelGetCars" min="-2" pref="428" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="btnGetSoldCars" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnCreateReportOfTransactions" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnGetCars" min="-2" pref="86" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="btnCreateReportBetweenDates" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -69,8 +68,8 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnGetSoldCars" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnGetCars" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCreateReportOfTransactions" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCreateReportBetweenDates" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="panelGetCars" max="32767" attributes="0"/>
@@ -80,20 +79,20 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btnGetSoldCars">
+        <Component class="javax.swing.JButton" name="btnCreateReportOfTransactions">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Get sold cars"/>
+            <Property name="text" type="java.lang.String" value="Create report"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGetSoldCarsActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateReportOfTransactionsActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnGetCars">
+        <Component class="javax.swing.JButton" name="btnCreateReportBetweenDates">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Get cars"/>
+            <Property name="text" type="java.lang.String" value="Create report between dates"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGetCarsActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateReportBetweenDatesActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="panelGetCars">
@@ -154,7 +153,7 @@
                               <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
                               <Component id="labelFromDate" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="btnSearchGetCars" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnCreateReport" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -192,7 +191,7 @@
                           <Component id="fieldEndDay" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="102" max="32767" attributes="0"/>
-                      <Component id="btnSearchGetCars" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCreateReport" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -262,12 +261,12 @@
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnSearchGetCars">
+            <Component class="javax.swing.JButton" name="btnCreateReport">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Search"/>
+                <Property name="text" type="java.lang.String" value="Create"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchGetCarsActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateReportActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

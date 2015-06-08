@@ -16,18 +16,15 @@ import secondhandcars.domain.Car;
  *
  * @author Cornel
  */
-public class SoldCars extends javax.swing.JFrame {
-    CarWindow carWindow;
+public class Sales extends javax.swing.JFrame {
     IController ctr;
 
     /**
-     * Creates new form SoldCars
+     * Creates new form Sales
      * @param ctr
-     * @param carWindow
      */
-    public SoldCars(IController ctr, CarWindow carWindow) {
+    public Sales(IController ctr) {
         this.ctr = ctr;
-        this.carWindow = carWindow;
         initComponents();
         removeGetCarsPanel();
     }
@@ -42,8 +39,8 @@ public class SoldCars extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnGetSoldCars = new javax.swing.JButton();
-        btnGetCars = new javax.swing.JButton();
+        btnCreateReportOfTransactions = new javax.swing.JButton();
+        btnCreateReportBetweenDates = new javax.swing.JButton();
         panelGetCars = new javax.swing.JPanel();
         labelFromDate = new javax.swing.JLabel();
         labelToTheDate = new javax.swing.JLabel();
@@ -59,23 +56,23 @@ public class SoldCars extends javax.swing.JFrame {
         dayOfPurchaseLabel1 = new javax.swing.JLabel();
         monthOfPurchaseLabel1 = new javax.swing.JLabel();
         yearOfPurchaseLabel1 = new javax.swing.JLabel();
-        btnSearchGetCars = new javax.swing.JButton();
+        btnCreateReport = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(445, 345));
 
-        btnGetSoldCars.setText("Get sold cars");
-        btnGetSoldCars.addActionListener(new java.awt.event.ActionListener() {
+        btnCreateReportOfTransactions.setText("Create report");
+        btnCreateReportOfTransactions.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGetSoldCarsActionPerformed(evt);
+                btnCreateReportOfTransactionsActionPerformed(evt);
             }
         });
 
-        btnGetCars.setText("Get cars");
-        btnGetCars.addActionListener(new java.awt.event.ActionListener() {
+        btnCreateReportBetweenDates.setText("Create report between dates");
+        btnCreateReportBetweenDates.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGetCarsActionPerformed(evt);
+                btnCreateReportBetweenDatesActionPerformed(evt);
             }
         });
 
@@ -103,10 +100,10 @@ public class SoldCars extends javax.swing.JFrame {
         yearOfPurchaseLabel1.setText("year");
         yearOfPurchaseLabel1.setToolTipText("");
 
-        btnSearchGetCars.setText("Search");
-        btnSearchGetCars.addActionListener(new java.awt.event.ActionListener() {
+        btnCreateReport.setText("Create");
+        btnCreateReport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchGetCarsActionPerformed(evt);
+                btnCreateReportActionPerformed(evt);
             }
         });
 
@@ -156,7 +153,7 @@ public class SoldCars extends javax.swing.JFrame {
                     .addGroup(panelGetCarsLayout.createSequentialGroup()
                         .addGap(175, 175, 175)
                         .addComponent(labelFromDate))
-                    .addComponent(btnSearchGetCars))
+                    .addComponent(btnCreateReport))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelGetCarsLayout.setVerticalGroup(
@@ -187,7 +184,7 @@ public class SoldCars extends javax.swing.JFrame {
                     .addComponent(fieldEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fieldEndDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
-                .addComponent(btnSearchGetCars))
+                .addComponent(btnCreateReport))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -197,21 +194,20 @@ public class SoldCars extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelGetCars, javax.swing.GroupLayout.PREFERRED_SIZE, 425, Short.MAX_VALUE)
+                    .addComponent(panelGetCars, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnGetSoldCars)
+                        .addComponent(btnCreateReportOfTransactions)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnGetCars, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(btnCreateReportBetweenDates)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGetSoldCars)
-                    .addComponent(btnGetCars))
+                    .addComponent(btnCreateReportOfTransactions)
+                    .addComponent(btnCreateReportBetweenDates))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelGetCars, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -235,11 +231,11 @@ public class SoldCars extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnGetCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetCarsActionPerformed
+    private void btnCreateReportBetweenDatesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateReportBetweenDatesActionPerformed
         panelGetCars.setVisible(true);
-    }//GEN-LAST:event_btnGetCarsActionPerformed
+    }//GEN-LAST:event_btnCreateReportBetweenDatesActionPerformed
 
-    private void btnSearchGetCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchGetCarsActionPerformed
+    private void btnCreateReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateReportActionPerformed
         //Creates the date
         int sD = ctr.stringToInt(fieldStartDay.getText());                                       
         int sM = ctr.stringToInt(fieldStartMonth.getText());                                       
@@ -247,57 +243,22 @@ public class SoldCars extends javax.swing.JFrame {
         int eD = ctr.stringToInt(fieldEndDay.getText());                                       
         int eM = ctr.stringToInt(fieldEndMonth.getText());                                       
         int eY = ctr.stringToInt(fieldEndYear.getText());
-        Date startDate;
-        Date endDate;
-        if (sD < 0 || sM < 0 || sY < 0 || eD < 0 || eM < 0 || eY < 0) {
-            startDate = null;                       //If one or more fields of the date are empty.
-            endDate = null;
-        }
-        else {
-            startDate = createDate(sD, sM, sY);     //Creates the dates if fields were filled.
-            endDate = createDate(eD, eM, eY);
-        }
-        if (startDate != null) {
-            List<Car> cars = ctr.getSoldCarsBetweenDate(startDate, endDate);
-            carWindow.displayCars(cars);
-        }
-        else
-            carWindow.setInfoText("Invalid date!", true);
-        this.dispose();
-    }//GEN-LAST:event_btnSearchGetCarsActionPerformed
+        
+  
+    }//GEN-LAST:event_btnCreateReportActionPerformed
 
-    private void btnGetSoldCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetSoldCarsActionPerformed
-        List<Car> cars = ctr.getSoldCars();
-        carWindow.displayCars(cars);
-        this.dispose();
-    }//GEN-LAST:event_btnGetSoldCarsActionPerformed
+    private void btnCreateReportOfTransactionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateReportOfTransactionsActionPerformed
+        
+    }//GEN-LAST:event_btnCreateReportOfTransactionsActionPerformed
 
-    /**
-     * Creates a date from an integer day, month and year.
-     * @param d - the day to be parsed
-     * @param m - the month to be parsed
-     * @param y - the year to be parsed
-     * @return the date
-     */
-    private Date createDate(int d, int m, int y) {
-        String sD = (d < 10) ? "0" + d: "" + d;
-        String sM = (m < 10) ? "0" + m: "" + m;
-        try {
-            return new SimpleDateFormat("dd-MM-yyyy").parse(sD + "-" + sM + "-" + y);
-        } catch (ParseException ex) {
-            ex.getMessage();
-        }
-        return null;
-    }
-    
     private void removeGetCarsPanel(){
         panelGetCars.setVisible(false);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGetCars;
-    private javax.swing.JButton btnGetSoldCars;
-    private javax.swing.JButton btnSearchGetCars;
+    private javax.swing.JButton btnCreateReport;
+    private javax.swing.JButton btnCreateReportBetweenDates;
+    private javax.swing.JButton btnCreateReportOfTransactions;
     private javax.swing.JLabel dayOfPurchaseLabel;
     private javax.swing.JLabel dayOfPurchaseLabel1;
     private javax.swing.JTextField fieldEndDay;

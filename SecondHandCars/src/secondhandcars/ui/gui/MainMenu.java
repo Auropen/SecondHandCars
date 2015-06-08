@@ -18,6 +18,7 @@ public class MainMenu extends javax.swing.JFrame {
     IController ctr;
     /**
      * Creates new form MainMenu
+     * @param ctr
      */
     public MainMenu(IController ctr) {
         this.ctr = ctr;
@@ -37,6 +38,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btnCars = new javax.swing.JButton();
         btnService = new javax.swing.JButton();
+        btnSales = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,6 +56,13 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        btnSales.setText("Sales");
+        btnSales.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -61,6 +70,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(123, 123, 123)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSales, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnService, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCars, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(123, Short.MAX_VALUE))
@@ -68,11 +78,13 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addComponent(btnCars, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnService, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnSales, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -111,9 +123,21 @@ public class MainMenu extends javax.swing.JFrame {
         serviceWindow.setLocationRelativeTo(null);   
     }//GEN-LAST:event_btnServiceActionPerformed
 
+    private void btnSalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalesActionPerformed
+        Sales sales = new Sales(ctr);
+        
+        this.dispose();
+        sales.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        sales.setResizable(false);
+        sales.setTitle("Sales Window");
+        sales.setVisible(true);
+        sales.setLocationRelativeTo(null);   
+    }//GEN-LAST:event_btnSalesActionPerformed
+
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCars;
+    private javax.swing.JButton btnSales;
     private javax.swing.JButton btnService;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
