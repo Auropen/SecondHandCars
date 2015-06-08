@@ -14,9 +14,9 @@ INSERT INTO Customers
 VALUES('Casper','Carlsen','75982734','','ccarlsen@gmail.com')
 
 INSERT INTO TireHotel
-VALUES('10001101','Off-road tires',4)
+VALUES('10001101','Off-road tires',4,3)
 INSERT INTO TireHotel
-VALUES('00011001','Winter-tires',4)
+VALUES('00011001','Winter-tires',4,1)
 
 INSERT INTO CarSale
 VALUES(2,'2015-05-06',3,139900)
