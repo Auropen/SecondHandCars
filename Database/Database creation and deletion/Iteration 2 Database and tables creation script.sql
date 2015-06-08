@@ -1,5 +1,23 @@
+CREATE DATABASE SecondhandCars
+GO
 USE SecondhandCars
 GO
+CREATE TABLE CarStock (
+	carID INTEGER NOT NULL IDENTITY PRIMARY KEY,
+	year INTEGER NOT NULL,
+	mark VARCHAR(50) NOT NULL,
+	model VARCHAR(50) NOT NULL,
+	version VARCHAR(50),
+	volumeOfEngine VARCHAR(50) NOT NULL,
+	fuelType VARCHAR(50) NOT NULL,
+	odometer INTEGER NOT NULL,
+	priceOfPurchase MONEY NOT NULL,
+	sellingPrice MONEY NOT NULL,
+	type VARCHAR(50) NOT NULL,
+	description VARCHAR(500),
+	licensePlate VARCHAR(50) NOT NULL,
+	dateOfPurchase DATE NOT NULL,
+	inStock BIT NOT NULL)
 CREATE TABLE Customers(
 	CustomerID INTEGER NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	FirstName VARCHAR(50) NOT NULL,

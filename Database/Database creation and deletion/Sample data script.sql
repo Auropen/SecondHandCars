@@ -1,11 +1,11 @@
 USE SecondhandCars
 GO
 INSERT INTO Customers
-VALUES('Andreas','Andersen','29475911',NULL,NULL)
+VALUES('Andreas','Andersen','29475911','','')
 INSERT INTO Customers
-VALUES('Bo','Børgesen','10928467','Benthoffsgade 17, 6300 Aabenraa',NULL)
+VALUES('Bo','Børgesen','10928467','Benthoffsgade 17, 6300 Aabenraa','')
 INSERT INTO Customers
-VALUES('Casper','Carlsen','75982734',NULL,'ccarlsen@gmail.com')
+VALUES('Casper','Carlsen','75982734','','ccarlsen@gmail.com')
 
 INSERT INTO TireHotel
 VALUES('10001101','Off-road tires',4)
