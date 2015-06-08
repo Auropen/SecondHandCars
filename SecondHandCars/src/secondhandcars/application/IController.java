@@ -33,6 +33,7 @@ public interface IController {
     public List<ChipTuning> getAllChipTuningFromDB();
     public List<TireVacation> getAllTireVacationFromDB();
     public void createOrdersFromDB();
+    public void createTireSetFromDB();
     public TireSet getTireSetByID(int id);
     
     //Sales methods

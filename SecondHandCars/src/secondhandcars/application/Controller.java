@@ -24,7 +24,7 @@ import secondhandcars.technical.DBHandler;
  *
  * @author Kristian
  */
-public class Controller implements IController {
+public final class Controller implements IController {
 
     Company company;
     DBHandler dbHandler;
@@ -32,6 +32,10 @@ public class Controller implements IController {
     public Controller() {
         this.company = Company.getInstance();
         dbHandler = new DBHandler();
+        createCarsFromDB();                     //Stores cars from the database to the memory of the program.
+        createCustomersFromDB();                //Stores customers from the database to the memory of the program.
+        createTireSetFromDB();                  //Stores customers from the database to the memory of the program.
+        createOrdersFromDB();                   //Stores orders from the database to the memory of the program.
     }
 
     /**
@@ -217,17 +221,35 @@ public class Controller implements IController {
         }
         return tireVacations;
     }
+    
+    @Override
+    public TireSet getTireSetByID(int id) {
+        return company.getTireHotel().getTireSetByID(id);
+    }
+    
+    @Override
+    public void createTireSetFromDB() {
+        try {
+            ResultSet rs = dbHandler.getAllTireSets();
+            while (rs.next()) {
+                TireSet ts = new TireSet(rs.getInt("TireSetID"), rs.getString("Description"), rs.getInt("NumberOfTireSet"), getCustomerByID(rs.getInt("CustomerID")));
+                company.getTireHotel().setTireSet(Byte.parseByte(rs.getString("Location"), 2), ts);
+            }
+        }
+        catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        } finally {
+            dbHandler.closeConnection();
+        }
+    }
 
     @Override
     public void createOrdersFromDB() {
         company.getOrders().addAll(getAllRepairsFromDB());
         company.getOrders().addAll(getAllChipTuningFromDB());
         company.getOrders().addAll(getAllTireVacationFromDB());
-    }
-    
-    @Override
-    public TireSet getTireSetByID(int id) {
-        return company.getTireHotel().getTireSetByID(id);
     }
 
     @Override
