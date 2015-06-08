@@ -237,7 +237,7 @@ public final class Controller implements IController {
             dbHandler.closeConnection();
         }
     }
-
+    
     @Override
     public void createOrdersFromDB() {
         company.getOrders().addAll(getAllRepairsFromDB());

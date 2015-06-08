@@ -29,7 +29,7 @@ public class Sale extends Order{
                "Order Type: Sale\r\n" +
                "_______________________________________\r\n" +
                "Price: " + getAmountPayable() + "kr\r\n" +
-               "Description: " + getCar().getModel() + " " + getCar().getDescription() + " \r\n" +
+               "Description: " + getCar().getModel() + " " + getCar().getMark() + " " + getCar().getDescription() + " \r\n" +
                "Date purchased: " + new SimpleDateFormat("dd-MM-yyyy").format(getOrderDate()) + " \r\n" +
                "_______________________________________\r\n";
     }

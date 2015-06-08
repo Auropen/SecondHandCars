@@ -6,10 +6,8 @@
 package secondhandcars.ui.gui;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.util.List;
 import javax.swing.JFrame;
-import javax.swing.plaf.FontUIResource;
 import javax.swing.table.DefaultTableModel;
 import secondhandcars.application.IController;
 import secondhandcars.domain.Car;
