@@ -10,14 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import secondhandcars.domain.Car;
-import secondhandcars.domain.ChipTuning;
-import secondhandcars.domain.Company;
-import secondhandcars.domain.Customer;
-import secondhandcars.domain.Order;
-import secondhandcars.domain.Repair;
-import secondhandcars.domain.TireSet;
-import secondhandcars.domain.TireVacation;
+import secondhandcars.domain.*;
 import secondhandcars.technical.DBHandler;
 
 /**
@@ -34,7 +27,7 @@ public final class Controller implements IController {
         dbHandler = new DBHandler();
         createCarsFromDB();                     //Stores cars from the database to the memory of the program.
         createCustomersFromDB();                //Stores customers from the database to the memory of the program.
-        createTireSetFromDB();                  //Stores customers from the database to the memory of the program.
+        createTireSetFromDB();                  //Stores tire sets from the database to the memory of the program.
         createOrdersFromDB();                   //Stores orders from the database to the memory of the program.
     }
 
