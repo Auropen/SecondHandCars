@@ -240,6 +240,10 @@ public class DBHandler {
         return rs;
     }
     
+    /**
+     * Gets all the customers recorded in the database
+     * @return a ResultSet of customers
+     */
     public ResultSet getAllCustomers() {
         connectToCarDatabase();
         createStatement();
@@ -256,6 +260,10 @@ public class DBHandler {
         return rs;
     }
     
+    /**
+     * Gets all the tire sets recorded in the database
+     * @return a ResultSet of tire sets
+     */
     public ResultSet getAllTireSets() {
         connectToCarDatabase();
         createStatement();
