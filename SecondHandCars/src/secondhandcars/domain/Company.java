@@ -33,6 +33,7 @@ public class Company {
         this.phoneNumber = "78862209";
         this.carStock = CarStock.getInstance();
         this.tireHotel = TireHotel.getInstance();
+        customers = new ArrayList<Customer>();
         orders = new ArrayList<Order>();
     }
     

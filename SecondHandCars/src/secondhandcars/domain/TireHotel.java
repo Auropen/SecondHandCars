@@ -26,24 +26,18 @@ public class TireHotel {
         return instance;
     }
     
-    public TireSet getTireSetByLocation(byte binaryCode) {
-        //Takes a byte and converts it to binary as a 32 bit (Integer), and removes the unsigned bits which results in a 8 bits (1 Byte) long binary
-        String binary = String.format("%8s", Integer.toBinaryString(binaryCode & 0xFF)).replace(' ', '0');
-        
-        byte x = Byte.parseByte(binary.substring(0, 5), 2); //First 5 bits for the x (Columns)
-        byte y = Byte.parseByte(binary.substring(5, 7), 2); //Next 2 bits for the y (Rows)
-        byte z = Byte.parseByte(binary.substring(7), 2);    //Last bit for the z (Depths)
+    public TireSet getTireSetByLocation(String binaryCode) {
+        byte x = Byte.parseByte(binaryCode.substring(0, 5), 2); //First 5 bits for the x (Columns)
+        byte y = Byte.parseByte(binaryCode.substring(5, 7), 2); //Next 2 bits for the y (Rows)
+        byte z = Byte.parseByte(binaryCode.substring(7), 2);    //Last bit for the z (Depths)
         
         return getTireSets()[x][y][z];                      //Gets the specific tireSet
     }
     
-    public void setTireSet(byte binaryCode, TireSet ts) {
-        //Takes a byte and converts it to binary as a 32 bit (Integer), and removes the unsigned bits which results in a 8 bits (1 Byte) long binary
-        String binary = String.format("%8s", Integer.toBinaryString(binaryCode & 0xFF)).replace(' ', '0');
-        
-        byte x = Byte.parseByte(binary.substring(0, 5), 2); //First 5 bits for the x (Columns)
-        byte y = Byte.parseByte(binary.substring(5, 7), 2); //Next 2 bits for the y (Rows)
-        byte z = Byte.parseByte(binary.substring(7), 2);    //Last bit for the z (Depths)
+    public void setTireSet(String binaryCode, TireSet ts) {
+        byte x = Byte.parseByte(binaryCode.substring(0, 5), 2); //First 5 bits for the x (Columns)
+        byte y = Byte.parseByte(binaryCode.substring(5, 7), 2); //Next 2 bits for the y (Rows)
+        byte z = Byte.parseByte(binaryCode.substring(7), 2);    //Last bit for the z (Depths)
         
         setTireSet(x,y,z,ts);                               //Sets specified tireset in the tiresets
     }
