@@ -52,11 +52,13 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="panelGetCars" pref="425" max="32767" attributes="0"/>
+                      <Component id="panelGetCars" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Component id="btnCreateTransactionReport" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnOpenBetweenDate" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="cBoxDateName" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="btnBack" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -73,6 +75,7 @@
                       <Component id="btnCreateTransactionReport" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnOpenBetweenDate" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnBack" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cBoxDateName" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="panelGetCars" max="32767" attributes="0"/>
@@ -103,7 +106,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
@@ -112,7 +115,7 @@
                               <Component id="fieldEndMonth" min="-2" pref="52" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="fieldEndYear" min="-2" pref="52" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                              <EmptySpace pref="124" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="fieldStartDay" min="-2" pref="52" max="-2" attributes="0"/>
@@ -120,7 +123,7 @@
                               <Component id="fieldStartMonth" min="-2" pref="52" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="fieldStartYear" min="-2" pref="52" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace pref="124" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -281,6 +284,12 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="cBoxDateName">
+          <Properties>
+            <Property name="selected" type="boolean" value="true"/>
+            <Property name="text" type="java.lang.String" value="Date on filename"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

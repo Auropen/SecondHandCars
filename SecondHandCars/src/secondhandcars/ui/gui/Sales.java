@@ -7,11 +7,10 @@ package secondhandcars.ui.gui;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 import javax.swing.JFrame;
 import secondhandcars.application.IController;
-import secondhandcars.domain.Car;
 
 /**
  *
@@ -59,6 +58,7 @@ public class Sales extends javax.swing.JFrame {
         yearOfPurchaseLabel1 = new javax.swing.JLabel();
         btnCreateReportBetweenDates = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
+        cBoxDateName = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -122,14 +122,14 @@ public class Sales extends javax.swing.JFrame {
                         .addComponent(fieldEndMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(fieldEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(154, 154, 154))
+                        .addContainerGap(124, Short.MAX_VALUE))
                     .addGroup(panelGetCarsLayout.createSequentialGroup()
                         .addComponent(fieldStartDay, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(fieldStartMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(fieldStartYear, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addContainerGap(124, Short.MAX_VALUE))))
             .addGroup(panelGetCarsLayout.createSequentialGroup()
                 .addGroup(panelGetCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelGetCarsLayout.createSequentialGroup()
@@ -196,6 +196,9 @@ public class Sales extends javax.swing.JFrame {
             }
         });
 
+        cBoxDateName.setSelected(true);
+        cBoxDateName.setText("Date on filename");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -203,11 +206,13 @@ public class Sales extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelGetCars, javax.swing.GroupLayout.PREFERRED_SIZE, 425, Short.MAX_VALUE)
+                    .addComponent(panelGetCars, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnCreateTransactionReport)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnOpenBetweenDate)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cBoxDateName)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnBack)))
                 .addContainerGap())
@@ -219,7 +224,8 @@ public class Sales extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCreateTransactionReport)
                     .addComponent(btnOpenBetweenDate)
-                    .addComponent(btnBack))
+                    .addComponent(btnBack)
+                    .addComponent(cBoxDateName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelGetCars, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -259,7 +265,11 @@ public class Sales extends javax.swing.JFrame {
         Date startDate = createDate(sD, sM, sY);
         Date endDate = createDate(eD, eM, eY);
         
-        ctr.createTransactionReportBetweenDate(ctr.getAllOrders(), "Transactions.txt", startDate, endDate);
+        if (cBoxDateName.isSelected())
+            ctr.createTransactionReportBetweenDate(ctr.getAllOrders(), "transactions-" + 
+                    new SimpleDateFormat("yyyyMMdd-HHmmss").format(Calendar.getInstance().getTime()) + ".txt", startDate, endDate);
+        else
+            ctr.createTransactionReportBetweenDate(ctr.getAllOrders(), "transactions.txt", startDate, endDate);
     }//GEN-LAST:event_btnCreateReportBetweenDatesActionPerformed
 
     
@@ -282,7 +292,11 @@ public class Sales extends javax.swing.JFrame {
     }
     
     private void btnCreateTransactionReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateTransactionReportActionPerformed
-        ctr.createTransactionReport(ctr.getAllOrders(), "Transactions.txt");
+        if (cBoxDateName.isSelected())
+            ctr.createTransactionReport(ctr.getAllOrders(), "transactions-" + 
+                    new SimpleDateFormat("yyyyMMdd-HHmmss").format(Calendar.getInstance().getTime()) + ".txt");
+        else
+            ctr.createTransactionReport(ctr.getAllOrders(), "transactions.txt");
     }//GEN-LAST:event_btnCreateTransactionReportActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -301,6 +315,7 @@ public class Sales extends javax.swing.JFrame {
     private javax.swing.JButton btnCreateReportBetweenDates;
     private javax.swing.JButton btnCreateTransactionReport;
     private javax.swing.JButton btnOpenBetweenDate;
+    private javax.swing.JCheckBox cBoxDateName;
     private javax.swing.JLabel dayOfPurchaseLabel;
     private javax.swing.JLabel dayOfPurchaseLabel1;
     private javax.swing.JTextField fieldEndDay;
