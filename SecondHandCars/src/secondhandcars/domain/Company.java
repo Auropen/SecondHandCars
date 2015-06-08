@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -70,6 +71,14 @@ public class Company {
                 ex.getMessage();
             }
         }
+    }
+    
+    public void createTransactionReportBetweenDate(List<Order> orders, String dest, Date startDate, Date endDate) {
+        for (Order o : orders) {
+            if (!(o.getOrderDate().after(startDate) && o.getOrderDate().before(endDate)))
+                orders.remove(o);
+        }
+        createTransactionReport(orders, dest);
     }
     
     //Accesors method
