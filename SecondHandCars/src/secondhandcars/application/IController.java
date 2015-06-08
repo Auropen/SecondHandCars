@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.List;
 import secondhandcars.domain.Car;
 import secondhandcars.domain.ChipTuning;
+import secondhandcars.domain.Customer;
 import secondhandcars.domain.Order;
 import secondhandcars.domain.Repair;
 import secondhandcars.domain.TireVacation;
@@ -30,7 +31,11 @@ public interface IController {
     public List<Repair> getAllRepairsFromDB();
     public List<ChipTuning> getAllChipTuningFromDB();
     public List<TireVacation> getAllTireVacationFromDB();
-    public List<Order> createOrdersFromDB();
+    public void createOrdersFromDB();
+    
+    //Customer methods
+    public void createCustomersFromDB();
+    public Customer getCustomerByID(int id);
     
     //Utilities methods
     public double stringToDouble(String s);

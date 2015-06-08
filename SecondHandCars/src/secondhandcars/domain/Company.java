@@ -9,6 +9,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,6 +23,8 @@ public class Company {
     private String phoneNumber;
     private CarStock carStock;
     private TireHotel tireHotel;
+    private List<Customer> customers;
+    private List<Order> orders;
     
     private Company(){
         this.companyName = "Second Hand Cars";
@@ -29,6 +32,7 @@ public class Company {
         this.phoneNumber = "78862209";
         this.carStock = CarStock.getInstance();
         this.tireHotel = TireHotel.getInstance();
+        orders = new ArrayList<Order>();
     }
     
     /**
@@ -69,16 +73,20 @@ public class Company {
     }
     
     //Accesors method
-    public String getCompanyName()  {   return companyName;     }
-    public String getAddress()      {   return address;         }
-    public String getPhoneNumber()  {   return phoneNumber;     }
-    public CarStock getCarStock()   {   return carStock;        }
-    public TireHotel getTireHotel() {   return tireHotel;       }
+    public String getCompanyName()          {   return companyName;     }
+    public String getAddress()              {   return address;         }
+    public String getPhoneNumber()          {   return phoneNumber;     }
+    public CarStock getCarStock()           {   return carStock;        }
+    public TireHotel getTireHotel()         {   return tireHotel;       }
+    public List<Order> getOrders()          {   return orders;          }
+    public List<Customer> getCustomers()    {   return customers;       }
     
     //Mutator methods
-    public void setCompanyName(String companyName)  {   this.companyName = companyName;     }
-    public void setAddress(String address)          {   this.address = address;             }
-    public void setPhoneNumber(String phoneNumber)  {   this.phoneNumber = phoneNumber;     }
-    public void setCarStock(CarStock carStock)      {   this.carStock = carStock;           }
-    public void setTireHotel(TireHotel tireHotel)   {   this.tireHotel = tireHotel;         }
+    public void setCompanyName(String companyName)      {   this.companyName = companyName;     }
+    public void setAddress(String address)              {   this.address = address;             }
+    public void setPhoneNumber(String phoneNumber)      {   this.phoneNumber = phoneNumber;     }
+    public void setCarStock(CarStock carStock)          {   this.carStock = carStock;           }
+    public void setTireHotel(TireHotel tireHotel)       {   this.tireHotel = tireHotel;         }
+    public void setOrders(List<Order> orders)           {   this.orders = orders;               }
+    public void setCustomers(List<Customer> customers)  {   this.customers = customers;         }
 }

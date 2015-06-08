@@ -13,6 +13,7 @@ import java.util.List;
 import secondhandcars.domain.Car;
 import secondhandcars.domain.ChipTuning;
 import secondhandcars.domain.Company;
+import secondhandcars.domain.Customer;
 import secondhandcars.domain.Order;
 import secondhandcars.domain.Repair;
 import secondhandcars.domain.TireVacation;
@@ -158,9 +159,53 @@ public class Controller implements IController {
     
     @Override
     public List<Repair> getAllRepairsFromDB() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Repair> repairs = new ArrayList();
+        try {
+            ResultSet rs = dbHandler.getAllRepairs();
+            while (rs.next()) {
+                Repair repair = new Repair(rs.getDate("RepairDate"), rs.getString("Description"), rs.getInt("Hours"), rs.getInt("RepairID"), getCustomerByID(rs.getInt("CustomerID")), rs.getDouble("Amount"));
+                repairs.add(repair);
+            }
+        }
+        catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        } finally {
+            dbHandler.closeConnection();
+        }
+        return repairs;
     }
 
+    @Override
+    public void createCustomersFromDB() {
+        try {
+            ResultSet rs = dbHandler.getAllCustomers();
+            while (rs.next()) {
+                company.getCustomers().add(new Customer(rs.getString("FirstName"), rs.getString("LastName"), rs.getString("PhoneNumber"), rs.getString("Address"), rs.getString("Email"), rs.getInt("CustomerID")));
+            }
+        }
+        catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        } finally {
+            dbHandler.closeConnection();
+        }
+    }
+    
+    @Override
+    public Customer getCustomerByID(int id) {
+        Customer result = null;
+        for (Customer c : company.getCustomers()) {
+            if (c.getCustomerID() == id) {
+                result = c;
+                break;
+            }
+        }
+        return result;
+    }
+    
     @Override
     public List<ChipTuning> getAllChipTuningFromDB() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -172,8 +217,10 @@ public class Controller implements IController {
     }
 
     @Override
-    public List<Order> createOrdersFromDB() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void createOrdersFromDB() {
+        company.getOrders().addAll(getAllRepairsFromDB());
+        company.getOrders().addAll(getAllChipTuningFromDB());
+        company.getOrders().addAll(getAllTireVacationFromDB());
     }
     
     /**
