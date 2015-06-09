@@ -181,7 +181,7 @@ public final class Controller implements IController {
         try {
             ResultSet rs = dbHandler.getChipTunings();
             while (rs.next()) {
-                ChipTuning chipTuning = new ChipTuning(rs.getDate("TuningDate"), rs.getString("Description"), rs.getInt("Hours"), rs.getInt("TuningID"), getCustomerByID(rs.getInt("CustomerID")), rs.getDouble("Amount"));
+                ChipTuning chipTuning = new ChipTuning(rs.getDate("TuningDate"), rs.getString("Description"), rs.getInt("Hours"), rs.getInt("ChipTuningID"), getCustomerByID(rs.getInt("CustomerID")), rs.getDouble("Amount"));
                 chipTunings.add(chipTuning);
             }
         }
@@ -199,7 +199,7 @@ public final class Controller implements IController {
     public List<TireVacation> getAllTireVacationFromDB() {
         List<TireVacation> tireVacations = new ArrayList();
         try {
-            ResultSet rs = dbHandler.getChipTunings();
+            ResultSet rs = dbHandler.getTireVacations();
             while (rs.next()) {
                 TireVacation tireVacation = new TireVacation(rs.getInt("TireVacationID"), getCustomerByID(rs.getInt("CustomerID")), rs.getDouble("Amount"), getTireSetByID(rs.getInt("TireSetID")), rs.getDate("StartDate"), rs.getDate("EndDate"));
                 tireVacations.add(tireVacation);
