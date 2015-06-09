@@ -59,6 +59,7 @@ public class Sales extends javax.swing.JFrame {
         btnCreateReportBetweenDates = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         cBoxDateName = new javax.swing.JCheckBox();
+        infoLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -183,7 +184,7 @@ public class Sales extends javax.swing.JFrame {
                     .addComponent(fieldEndMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fieldEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fieldEndDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addComponent(btnCreateReportBetweenDates))
         );
 
@@ -213,7 +214,10 @@ public class Sales extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cBoxDateName)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
-                        .addComponent(btnBack)))
+                        .addComponent(btnBack))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(infoLabel)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -226,7 +230,9 @@ public class Sales extends javax.swing.JFrame {
                     .addComponent(btnBack)
                     .addComponent(cBoxDateName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(panelGetCars, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(infoLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(panelGetCars, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -271,6 +277,7 @@ public class Sales extends javax.swing.JFrame {
                     new SimpleDateFormat("yyyyMMdd-HHmmss").format(Calendar.getInstance().getTime()) + ".txt", startDate, endDate);
         else
             ctr.createTransactionReportBetweenDate(ctr.getAllOrders(), "transactions.txt", startDate, endDate);
+        infoLabel.setText("Report with date created");
     }//GEN-LAST:event_btnCreateReportBetweenDatesActionPerformed
 
     
@@ -298,6 +305,7 @@ public class Sales extends javax.swing.JFrame {
                     new SimpleDateFormat("yyyyMMdd-HHmmss").format(Calendar.getInstance().getTime()) + ".txt");
         else
             ctr.createTransactionReport(ctr.getAllOrders(), "transactions.txt");
+        infoLabel.setText("Report created");
     }//GEN-LAST:event_btnCreateTransactionReportActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -325,6 +333,7 @@ public class Sales extends javax.swing.JFrame {
     private javax.swing.JTextField fieldStartDay;
     private javax.swing.JTextField fieldStartMonth;
     private javax.swing.JTextField fieldStartYear;
+    private javax.swing.JLabel infoLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelFromDate;
     private javax.swing.JLabel labelToTheDate;
