@@ -47,7 +47,7 @@ public class Company {
         return instance;
     }
 
-    public void createTransactionReport(List<Order> orderList, String dest) {
+    public boolean createTransactionReport(List<Order> orderList, String dest) {
         BufferedWriter writer = null;
         File f = new File(dest);
         if (f.exists())
@@ -62,9 +62,10 @@ public class Company {
             }
 
             writer.write("\r\nTotal price: " + totalPrice + "kr");
-
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) {
             ex.getMessage();
+            return false;
         } finally {
             try {
                 writer.close();
@@ -72,14 +73,15 @@ public class Company {
                 ex.getMessage();
             }
         }
+        return true;
     }
     
-    public void createTransactionReportBetweenDate(List<Order> orders, String dest, Date startDate, Date endDate) {
+    public boolean createTransactionReportBetweenDate(List<Order> orders, String dest, Date startDate, Date endDate) {
         for (Order o : orders) {
             if (!(o.getOrderDate().after(startDate) && o.getOrderDate().before(endDate)))
                 orders.remove(o);
         }
-        createTransactionReport(orders, dest);
+        return createTransactionReport(orders, dest);
     }
     
     //Accesors method

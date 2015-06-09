@@ -31,8 +31,8 @@ public interface IController {
     public TireSet getTireSetByID(int id);
     
     //Sales methods
-    public void createTransactionReport(List<Order> orders, String dest);
-    public void createTransactionReportBetweenDate(List<Order> orders, String dest, Date startDate, Date endDate);
+    public boolean createTransactionReport(List<Order> orders, String dest);
+    public boolean createTransactionReportBetweenDate(List<Order> orders, String dest, Date startDate, Date endDate);
     public List<Order> getAllOrders();
     
     //Customer methods

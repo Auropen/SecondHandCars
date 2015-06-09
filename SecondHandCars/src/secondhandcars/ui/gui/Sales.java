@@ -261,6 +261,8 @@ public class Sales extends javax.swing.JFrame {
     }//GEN-LAST:event_btnOpenBetweenDateActionPerformed
 
     private void btnCreateReportBetweenDatesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateReportBetweenDatesActionPerformed
+        boolean success = false;
+
         //Creates the date
         int sD = ctr.stringToInt(fieldStartDay.getText());                                       
         int sM = ctr.stringToInt(fieldStartMonth.getText());                                       
@@ -273,11 +275,11 @@ public class Sales extends javax.swing.JFrame {
         Date endDate = createDate(eD, eM, eY);
         
         if (cBoxDateName.isSelected())
-            ctr.createTransactionReportBetweenDate(ctr.getAllOrders(), "transactions-" + 
-                    new SimpleDateFormat("yyyyMMdd-HHmmss").format(Calendar.getInstance().getTime()) + ".txt", startDate, endDate);
+            success = ctr.createTransactionReportBetweenDate(ctr.getAllOrders(), "transactions-" + 
+                            new SimpleDateFormat("yyyyMMdd-HHmmss").format(Calendar.getInstance().getTime()) + ".txt", startDate, endDate);
         else
-            ctr.createTransactionReportBetweenDate(ctr.getAllOrders(), "transactions.txt", startDate, endDate);
-        infoLabel.setText("Report with date created");
+            success = ctr.createTransactionReportBetweenDate(ctr.getAllOrders(), "transactions.txt", startDate, endDate);
+        infoLabel.setText((success) ? "Report was created succesfully!" : "Report was not created!");
     }//GEN-LAST:event_btnCreateReportBetweenDatesActionPerformed
 
     
@@ -300,12 +302,13 @@ public class Sales extends javax.swing.JFrame {
     }
     
     private void btnCreateTransactionReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateTransactionReportActionPerformed
+        boolean success = false;
         if (cBoxDateName.isSelected())
-            ctr.createTransactionReport(ctr.getAllOrders(), "transactions-" + 
-                    new SimpleDateFormat("yyyyMMdd-HHmmss").format(Calendar.getInstance().getTime()) + ".txt");
+            success = ctr.createTransactionReport(ctr.getAllOrders(), "transactions-" + 
+                        new SimpleDateFormat("yyyyMMdd-HHmmss").format(Calendar.getInstance().getTime()) + ".txt");
         else
-            ctr.createTransactionReport(ctr.getAllOrders(), "transactions.txt");
-        infoLabel.setText("Report created");
+            success = ctr.createTransactionReport(ctr.getAllOrders(), "transactions.txt");
+        infoLabel.setText((success) ? "Report was created succesfully!" : "Report was not created!");
     }//GEN-LAST:event_btnCreateTransactionReportActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

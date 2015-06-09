@@ -246,13 +246,13 @@ public final class Controller implements IController {
     }
 
     @Override
-    public void createTransactionReport(List<Order> orders, String dest) {
-        company.createTransactionReport(orders, dest);
+    public boolean createTransactionReport(List<Order> orders, String dest) {
+        return company.createTransactionReport(orders, dest);
     }
     
     @Override
-    public void createTransactionReportBetweenDate(List<Order> orders, String dest, Date startDate, Date endDate) {
-        company.createTransactionReportBetweenDate(orders, dest, startDate, endDate);
+    public boolean createTransactionReportBetweenDate(List<Order> orders, String dest, Date startDate, Date endDate) {
+        return company.createTransactionReportBetweenDate(orders, dest, startDate, endDate);
     }
     
     @Override
