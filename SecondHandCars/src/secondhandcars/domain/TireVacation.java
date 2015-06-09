@@ -31,7 +31,7 @@ public class TireVacation extends Order{
                "Order Type: Tire Vacation\r\n" +
                "_______________________________________\r\n" +
                "Price: " + getAmountPayable() + "kr\r\n" +
-               "Description: Tire - " + tireSet.getDescription() + " \r\n" +
+               "Description: Tire - " + ((tireSet != null) ? tireSet.getDescription() : "Not existent") + " \r\n" +
                "Duration: " + new SimpleDateFormat("dd-MM-yyyy").format(getOrderDate()) + " - " + new SimpleDateFormat("dd-MM-yyyy").format(endDate) + " \r\n" +
                "_______________________________________\r\n";
     }

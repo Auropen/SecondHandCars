@@ -20,9 +20,8 @@ public class TireHotel {
         tireSets = new TireSet[25][3][2];
     }
     public static synchronized TireHotel getInstance(){
-        if(instance == null){
+        if(instance == null)
             instance = new TireHotel();
-        }
         return instance;
     }
     
@@ -54,7 +53,7 @@ public class TireHotel {
         for(TireSet[][] tireSet : getTireSets()){
             for(TireSet[] tireSet2 : tireSet){
                 for(TireSet tireSet3 : tireSet2){
-                    if(tireSet3.getTireSetID() == id){
+                    if(tireSet3 != null && tireSet3.getTireSetID() == id){
                         return tireSet3;
                     }
                 }
