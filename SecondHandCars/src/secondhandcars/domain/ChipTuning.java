@@ -21,7 +21,7 @@ public class ChipTuning extends Order{
         this.description = description;
         this.hours = hours;
     }
-    
+
     @Override
     public String toString() {
         return "_______________________________________\r\n" +
@@ -37,9 +37,11 @@ public class ChipTuning extends Order{
                "_______________________________________\r\n";
     }
 
+    //Accessor methods
     public String getDescription()  {   return description; }
     public int getHours()           {   return hours;       }
 
+    //Mutator methods
     public void setDescription(String description)  {   this.description = description; }
     public void setHours(int hours)                 {   this.hours = hours;             }
 }

@@ -18,7 +18,7 @@ public class ServiceWindow extends javax.swing.JFrame {
 
     /**
      * Creates new form ServiceWindow
-     * @param ctr
+     * @param ctr - The controller of the MVC pattern
      */
     public ServiceWindow(IController ctr) {
 

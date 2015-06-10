@@ -5,9 +5,7 @@
  */
 package secondhandcars.ui.gui;
 
-import java.awt.Toolkit;
 import javax.swing.JFrame;
-import javax.swing.ImageIcon;
 import secondhandcars.application.IController;
 
 /**

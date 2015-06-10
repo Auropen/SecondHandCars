@@ -24,11 +24,13 @@ public abstract class Order {
         this.orderDate = orderDate;
     }
     
+    //Accessor method
     public Customer getCustomer()       {   return customer;        }
     public double getAmountPayable()    {   return amountPayable;   }
     public int getOrderID()             {   return orderID;         }
     public Date getOrderDate()          {   return orderDate;       }
 
+    //Mutator method
     public void setCustomer(Customer customer)          {   this.customer = customer;           }
     public void setAmountPayable(double amountPayable)  {   this.amountPayable = amountPayable; }
     public void setOrderID(int orderID)                 {   this.orderID = orderID;             }

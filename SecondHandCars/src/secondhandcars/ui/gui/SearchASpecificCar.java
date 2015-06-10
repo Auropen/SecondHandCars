@@ -20,10 +20,9 @@ public class SearchASpecificCar extends javax.swing.JFrame {
     
      /**
      * Creates new form SearchSpecificCar
-     * @param ctr
-     * @param carWindow
+     * @param ctr - The controller of the MVC pattern
+     * @param carWindow - The carWindow, to drop the result onto
      */
-    
     public SearchASpecificCar(IController ctr, CarWindow carWindow) {
         this.ctr = ctr;
         this.carWindow = carWindow;

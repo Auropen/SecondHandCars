@@ -7,6 +7,7 @@ package secondhandcars;
 
 import javax.swing.JFrame;
 import secondhandcars.application.Controller;
+import secondhandcars.application.IController;
 import secondhandcars.ui.gui.MainMenu;
 
 /**
@@ -16,7 +17,8 @@ import secondhandcars.ui.gui.MainMenu;
 public class SecondHandCars {
     
     public static void main(String[] args) {
-        Controller ctr = new Controller();
+        //Creates the controller (Application) for the MVC pattern
+        IController ctr = new Controller();
         
         //Sets up the GUI with dispose closing and passing the controller to the GUI
         MainMenu mainPage = new MainMenu(ctr);

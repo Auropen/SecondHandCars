@@ -269,6 +269,11 @@ public class CarWindow extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Sets the text of the label above the result tabel
+     * @param text - the text to be used in the label
+     * @param error - whether the text is a error or info
+     */
     public void setInfoText(String text, boolean error) {
         if (error) {
             infoText.setDisabledTextColor(Color.red);

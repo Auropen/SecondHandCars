@@ -47,7 +47,14 @@ public class Company {
         return instance;
     }
 
-    public boolean createTransactionReport(List<Order> orderList, String dest) {
+    /**
+     * Creates a transactions report in a file, with the given orders and name
+     * 
+     * @param orders - the orders to be written to the file
+     * @param dest - the name of the file
+     * @return a boolean whether the file was created successfully
+     */
+    public boolean createTransactionReport(List<Order> orders, String dest) {
         BufferedWriter writer = null;
         File f = new File(dest);
         if (f.exists())
@@ -56,7 +63,7 @@ public class Company {
             writer = new BufferedWriter(new FileWriter(dest));
 
             double totalPrice = 0;
-            for (Order o : orderList) {
+            for (Order o : orders) {
                 writer.write(o.toString());
                 totalPrice += o.getAmountPayable();
             }
@@ -76,6 +83,16 @@ public class Company {
         return true;
     }
     
+    /**
+     * Creates a transactions report in a file, with the given orders and name
+     * for between the given date
+     * 
+     * @param orders - the orders to be written to the file
+     * @param dest - the name of the file
+     * @param startDate - the start date for a period of time
+     * @param endDate - the end date for a period of time
+     * @return a boolean whether the file was created successfully
+     */
     public boolean createTransactionReportBetweenDate(List<Order> orders, String dest, Date startDate, Date endDate) {
         for (Order o : orders) {
             if (!(o.getOrderDate().after(startDate) && o.getOrderDate().before(endDate)))

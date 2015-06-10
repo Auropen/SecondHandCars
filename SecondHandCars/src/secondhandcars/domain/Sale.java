@@ -34,8 +34,9 @@ public class Sale extends Order{
                "_______________________________________\r\n";
     }
 
-    
+    //Accessor methods
     public Car getCar()     {   return car; }
 
+    //Mutator methods
     public void setCar(Car car)     {   this.car = car;     }
 }

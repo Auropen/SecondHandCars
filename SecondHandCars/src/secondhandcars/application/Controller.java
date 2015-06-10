@@ -23,8 +23,11 @@ public final class Controller implements IController {
     DBHandler dbHandler;
 
     public Controller() {
+        //Creates the company (Domain) and the dbHandler (Technical)
         this.company = Company.getInstance();
         dbHandler = new DBHandler();
+        
+        //Initializes the data from the database
         createCarsFromDB();                     //Stores cars from the database to the memory of the program.
         createCustomersFromDB();                //Stores customers from the database to the memory of the program.
         createTireSetFromDB();                  //Stores tire sets from the database to the memory of the program.
@@ -145,7 +148,8 @@ public final class Controller implements IController {
     }
 
     /**
-     *
+     * Gets a list of cars in between dates
+     * 
      * @param startDate
      * @param endDate
      * @return
@@ -155,6 +159,11 @@ public final class Controller implements IController {
         return company.getCarStock().getSoldCarsBetweenDate(startDate, endDate);
     }
     
+    /**
+     * Queries the database for all the Repair and returns them as a list.
+     * 
+     * @return A list of Repair.
+     */
     @Override
     public List<Repair> getAllRepairsFromDB() {
         List<Repair> repairs = new ArrayList();
@@ -175,6 +184,11 @@ public final class Controller implements IController {
         return repairs;
     }
     
+    /**
+     * Queries the database for all the ChipTuning and returns them as a list.
+     * 
+     * @return A list of ChipTuning.
+     */
     @Override
     public List<ChipTuning> getAllChipTuningFromDB() {
         List<ChipTuning> chipTunings = new ArrayList();
@@ -195,6 +209,11 @@ public final class Controller implements IController {
         return chipTunings;
     }
 
+    /**
+     * Queries the database for all the TireVacation and returns them as a list.
+     * 
+     * @return A list of TireVacation.
+     */
     @Override
     public List<TireVacation> getAllTireVacationFromDB() {
         List<TireVacation> tireVacations = new ArrayList();
@@ -215,11 +234,20 @@ public final class Controller implements IController {
         return tireVacations;
     }
     
+    /**
+     * Find a specific TireSet by ID
+     * 
+     * @param id the identifier of the TireSet
+     * @return a TireSet belonging to the ID
+     */
     @Override
     public TireSet getTireSetByID(int id) {
         return company.getTireHotel().getTireSetByID(id);
     }
     
+    /**
+     * Stores the TireSet from the database to the TireHotel
+     */
     @Override
     public void createTireSetFromDB() {
         try {
@@ -238,6 +266,10 @@ public final class Controller implements IController {
         }
     }
     
+    /**
+     * Stores all orders, as in all Repair, ChipTuning and TireVacation from
+     * the database to the Company's Order List
+     */
     @Override
     public void createOrdersFromDB() {
         company.getOrders().addAll(getAllRepairsFromDB());
@@ -245,21 +277,45 @@ public final class Controller implements IController {
         company.getOrders().addAll(getAllTireVacationFromDB());
     }
 
+    /**
+     * Creates a transactions report in a file, with the given orders and name
+     * 
+     * @param orders - the orders to be written to the file
+     * @param dest - the name of the file
+     * @return a boolean whether the file was created successfully
+     */
     @Override
     public boolean createTransactionReport(List<Order> orders, String dest) {
         return company.createTransactionReport(orders, dest);
     }
     
+    /**
+     * Creates a transactions report in a file, with the given orders and name
+     * 
+     * @param orders - the orders to be written to the file
+     * @param dest - the name of the file
+     * @param startDate - the start date for a period of time
+     * @param endDate - the end date for a period of time
+     * @return a boolean whether the file was created successfully
+     */
     @Override
     public boolean createTransactionReportBetweenDate(List<Order> orders, String dest, Date startDate, Date endDate) {
         return company.createTransactionReportBetweenDate(orders, dest, startDate, endDate);
     }
     
+    /**
+     * Gets all the orders from the company
+     * 
+     * @return a list of all orders
+     */
     @Override
     public List<Order> getAllOrders() {
         return company.getOrders();
     }
     
+    /**
+     * Stores all customers from the database to the Company's Customer List
+     */
     @Override
     public void createCustomersFromDB() {
         try {
@@ -278,6 +334,11 @@ public final class Controller implements IController {
         }
     }
     
+    /**
+     * Gets a specific customer by a given ID
+     * @param id - the ID of the customer
+     * @return The customer belonging to the ID
+     */
     @Override
     public Customer getCustomerByID(int id) {
         Customer result = null;

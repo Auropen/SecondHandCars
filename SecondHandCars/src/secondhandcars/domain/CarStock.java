@@ -48,8 +48,7 @@ public class CarStock {
      * @param type - the type of the car.
      * @param description - the description of the car.
      * @param dateOfPurchase - the date of purchase of the car.
-     * @param inStock - if the car is in stock.
-     * @return the list of cars that fulfills the search criteria.
+     * @return the list of cars that fulfils the search criteria.
      */
     public List<Car> searchCar(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase) {
         ArrayList<Car> result = new ArrayList<Car>();
@@ -116,7 +115,7 @@ public class CarStock {
      * @param description - the description of the car.
      * @param dateOfPurchase - the date of purchase of the car.
      * @param inStock - if the car is in stock.
-     * @return the list of cars that fulfills the search criteria.
+     * @return the list of cars that fulfils the search criteria.
      */
     public List<Car> searchCar(String fuelType, double sellingPrice, String licensePlate, int year, String mark, String model, String version, String volumeOfEngine, double odometer, double priceOfPurchase, String type, String description, Date dateOfPurchase, boolean inStock) {
         List<Car> result = searchCar(fuelType, sellingPrice, licensePlate, year, mark, model, version, volumeOfEngine, odometer, priceOfPurchase, type, description, dateOfPurchase);

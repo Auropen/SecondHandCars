@@ -37,9 +37,11 @@ public class Repair extends Order {
                "_______________________________________\r\n";
     }
 
+    //Accessor method
     public String getDescription()  {   return description; }
     public int getHours()           {   return hours;       }
 
+    //Mutator method
     public void setDescription(String description)  {   this.description = description; }
     public void setHours(int hours)                 {   this.hours = hours;             }
 }

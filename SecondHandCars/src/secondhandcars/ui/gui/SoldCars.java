@@ -22,8 +22,8 @@ public class SoldCars extends javax.swing.JFrame {
 
     /**
      * Creates new form SoldCars
-     * @param ctr
-     * @param carWindow
+     * @param ctr - The controller of the MVC pattern
+     * @param carWindow - The carWindow, to drop the result onto
      */
     public SoldCars(IController ctr, CarWindow carWindow) {
         this.ctr = ctr;
