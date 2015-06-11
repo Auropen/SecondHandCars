@@ -233,7 +233,7 @@ public class CarWindow extends javax.swing.JFrame {
         
         mainMenu.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         mainMenu.setResizable(false);
-        mainMenu.setTitle("Sold Cars Menu");
+        mainMenu.setTitle("Main Menu");
         mainMenu.setVisible(true);
         mainMenu.setLocationRelativeTo(null);
         this.dispose();
