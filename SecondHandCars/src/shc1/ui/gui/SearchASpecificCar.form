@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="labelMark" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelModel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelVersion" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelYear" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelVolumeOfEngine" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelFuel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelOdometer" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="fieldOdometer" max="32767" attributes="0"/>
+                              <Component id="fieldFuel" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="fieldModel" pref="191" max="32767" attributes="0"/>
+                                  <Component id="fieldVolumeOfEngine" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="fieldVersion" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
+                                      <Component id="fieldYear" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
+                                      <Component id="fieldMark" alignment="1" min="-2" pref="191" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="labelPriceOfPurchase" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <Component id="fieldPriceOfPurchase" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="labelSellingPrice" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="fieldSellingPrice" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="labelType" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                          <Component id="fieldType" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="labelDescription" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                          <Component id="fieldDescription" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="labelLicensePlate" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="fieldLicensePlate" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                  <Component id="dayOfPurchaseLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                  <Component id="monthOfPurchaseLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="yearOfPurchaseLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="labelDateOfPurchase" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <Component id="fieldDayOfPurchase" min="-2" pref="52" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="fieldMonthOfPurchase" min="-2" pref="52" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="fieldYearOfPurchase" min="-2" pref="52" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="fieldYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="fieldMark" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelMark" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="fieldModel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelModel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="fieldVersion" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelVersion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="fieldVolumeOfEngine" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelVolumeOfEngine" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="labelFuel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="fieldFuel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="fieldOdometer" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelOdometer" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="fieldPriceOfPurchase" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelPriceOfPurchase" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="fieldSellingPrice" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelSellingPrice" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="fieldType" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelType" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="fieldDescription" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelDescription" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="fieldLicensePlate" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelLicensePlate" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="dayOfPurchaseLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="monthOfPurchaseLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="yearOfPurchaseLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="labelDateOfPurchase" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="fieldMonthOfPurchase" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="fieldDayOfPurchase" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="fieldYearOfPurchase" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="46" max="32767" attributes="0"/>
+                  <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="labelYear">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Year:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="fieldYear">
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelMark">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Mark:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="fieldMark">
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelModel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Model"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="fieldModel">
+        </Component>
+        <Component class="javax.swing.JTextField" name="fieldVersion">
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelVersion">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Version"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="fieldVolumeOfEngine">
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelVolumeOfEngine">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Volume of engine"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelFuel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fuel"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelOdometer">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Odometer"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="fieldFuel">
+        </Component>
+        <Component class="javax.swing.JTextField" name="fieldOdometer">
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelPriceOfPurchase">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Price of purchase"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="fieldPriceOfPurchase">
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelSellingPrice">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Selling price"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="fieldSellingPrice">
+        </Component>
+        <Component class="javax.swing.JTextField" name="fieldType">
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelType">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Type"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelDescription">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Description"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="fieldDescription">
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelLicensePlate">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="License place"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="fieldLicensePlate">
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelDateOfPurchase">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Date of purchase"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="fieldDayOfPurchase">
+        </Component>
+        <Component class="javax.swing.JLabel" name="dayOfPurchaseLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="day"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="fieldMonthOfPurchase">
+        </Component>
+        <Component class="javax.swing.JLabel" name="yearOfPurchaseLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="year"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="monthOfPurchaseLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="month"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="fieldYearOfPurchase">
+        </Component>
+        <Component class="javax.swing.JButton" name="btnSearch">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Search"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

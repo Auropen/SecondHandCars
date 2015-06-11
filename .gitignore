@@ -7,3 +7,4 @@ SecondHandCars/transactions.txt
 SecondHandCars/dist/SecondHandCars.jar
 *.jar
 *.TXT
+/Itr1SHC/nbproject/private/
